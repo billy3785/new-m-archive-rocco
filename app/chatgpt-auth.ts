@@ -22,7 +22,7 @@ export async function getChatGPTUser(): Promise<ChatGPTUser | null> {
   const requestHeaders = await headers();
   const userId = requestHeaders.get(USER_ID_HEADER);
   const email = requestHeaders.get(USER_EMAIL_HEADER);
-  if (!userId || !email) return null;
+  if (!email) return null;
 
   const encodedFullName = requestHeaders.get(USER_FULL_NAME_HEADER);
   const fullName =
@@ -32,7 +32,11 @@ export async function getChatGPTUser(): Promise<ChatGPTUser | null> {
       : null;
 
   return {
-    userId,
+    // The owner-only Sites dispatch currently supplies the authenticated email
+    // on some browser requests without its stable account-id header. This Site
+    // has one explicitly allowed owner, so the verified email is a safe
+    // per-site fallback for that narrow case. It never grants anonymous access.
+    userId: userId ?? `email:${email.toLowerCase()}`,
     displayName: fullName ?? email,
     email,
     fullName,

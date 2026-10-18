@@ -2,26 +2,9 @@
 
 import { useEffect, useMemo, useState, type ComponentType } from "react";
 import {
-  ArrowRight,
-  Award,
-  BadgeCheck,
-  BookOpen,
-  Check,
-  ChevronRight,
-  CircleDot,
-  Clock3,
-  HeartHandshake,
-  Link2,
-  LockKeyhole,
-  MapPin,
-  Network,
-  Plus,
-  Search,
-  Sparkles,
-  Trophy,
-  Unlink,
-  Users,
-  X,
+  ArrowRight, Award, BadgeCheck, BookOpen, Check, ChevronRight, CircleDot,
+  Clock3, Eye, HeartHandshake, ImageIcon, Images, Link2, LockKeyhole, MapPin,
+  Maximize2, Network, Plus, Search, Sparkles, Trophy, Unlink, Users, X,
 } from "lucide-react";
 
 type Domain = "Person" | "Place" | "Thing" | "Relationship";
@@ -30,116 +13,53 @@ type Scope = "this_case" | "matching_claims" | "source_family" | "precedent";
 type EvidenceBasis = "curator_assertion" | "retained_source" | "combined";
 type Icon = ComponentType<{ size?: number; className?: string }>;
 
-type DecisionRecord = {
-  id: string;
-  decisionType: DecisionType;
-  domain: Domain;
-  subjectLabel: string;
-  targetLabel: string;
-  note: string;
-  scope: Scope;
-  evidenceBasis: EvidenceBasis;
-  pointAward: number;
-  promotionStatus: "recorded" | "ready_for_promotion" | "promoted" | "held";
-  createdAt: string;
-};
+type DecisionRecord = { id: string; decisionType: DecisionType; domain: Domain; subjectLabel: string; targetLabel: string; note: string; scope: Scope; evidenceBasis: EvidenceBasis; pointAward: number; promotionStatus: "recorded" | "ready_for_promotion" | "promoted" | "held"; createdAt: string; };
+type MediaPreview = { id: string; src: string; title: string; sourceLabel: string; caption: string; caution: string; };
+type Challenge = { id: string; domain: Domain; eyebrow: string; title: string; source: string; detail: string; suggestedTarget: string; points: number; relationship?: string; mediaId: string; accent: "violet" | "gold" | "blue"; };
 
-type Challenge = {
-  id: string;
-  domain: Domain;
-  eyebrow: string;
-  title: string;
-  source: string;
-  detail: string;
-  suggestedTarget: string;
-  scopeCount: number;
-  points: number;
-  relationship?: string;
-  accent: "violet" | "gold" | "blue";
-};
+const mediaPreviews: MediaPreview[] = [
+  { id: "peter-anderson", src: "/archive-previews/peter-anderson-1984.jpg", title: "Portrait from the Peter Anderson photo folder", sourceLabel: "Archive folder label · 1984", caption: "A visual item selected from your archive for this private desk.", caution: "The folder label is a clue. It does not automatically prove who took the photo, who is pictured, or an exact event date." },
+  { id: "kienitz", src: "/archive-previews/kienitz-1984.jpg", title: "Portrait in a photo collection labelled Kienitz", sourceLabel: "Archive folder label · 1984", caption: "You can inspect the image before deciding what the collection label should mean in the archive.", caution: "Keep the folder wording, even if you make a better connection around it. The label is not proof on its own." },
+  { id: "saturday-show", src: "/archive-previews/saturday-show-press-photo.jpg", title: "Press photo showing Madonna and Tommy Boyd", sourceLabel: "Printed wire-photo credit line · date shown on image", caption: "The image carries its own printed source wording, including a credit and date claim.", caution: "The printed words are evidence to preserve. They still need your call before the archive treats a date, person, or show link as settled." },
+];
 
 const challenges: Challenge[] = [
-  {
-    id: "alberto-tolot",
-    domain: "Person",
-    eyebrow: "SOURCE-SCOPED PERSON",
-    title: "Alberto Tolot",
-    source: "Relationship context · Express Yourself",
-    detail: "A retained source says Alberto Tolot photographed Madonna and the Express Yourself work context. The source label is preserved; you decide whether to establish the canonical person connection and role.",
-    suggestedTarget: "Create or connect canonical person: Alberto Tolot",
-    scopeCount: 3,
-    points: 32,
-    relationship: "photographed",
-    accent: "violet",
-  },
-  {
-    id: "lourdes-identity",
-    domain: "Person",
-    eyebrow: "IDENTITY KNOT",
-    title: "Lourdes / Lola",
-    source: "Alias cluster · retained source references",
-    detail: "Several records use a short name. A curator decision can keep every original wording while establishing the right identity and teaching the archive when that connection is safe.",
-    suggestedTarget: "Lourdes Leon",
-    scopeCount: 12,
-    points: 48,
-    accent: "gold",
-  },
-  {
-    id: "studio-place",
-    domain: "Place",
-    eyebrow: "PLACE CONTEXT",
-    title: "Recording-studio reference",
-    source: "Event context · place label unresolved",
-    detail: "Turn a raw place label into a place record with aliases and hierarchy, without turning a vague caption into an invented street address or exact date.",
-    suggestedTarget: "Connect to a canonical place",
-    scopeCount: 5,
-    points: 28,
-    accent: "blue",
-  },
+  { id: "peter-anderson", domain: "Person", eyebrow: "LOOK AT THE PHOTO FIRST", title: "Peter Anderson", source: "A photo collection is labelled “Peter Anderson.”", detail: "Does that name tell us who took this photo, who is in it, or neither? Look closely, then say exactly what you know.", suggestedTarget: "Peter Anderson", points: 24, relationship: "may have photographed", mediaId: "peter-anderson", accent: "violet" },
+  { id: "kienitz-collection", domain: "Thing", eyebrow: "WHAT DOES THIS LABEL MEAN?", title: "Kienitz photo collection", source: "A photo collection is labelled “Kienitz.”", detail: "You do not have to guess. Tell the archive whether this is a person, a photographer credit, a collection name, or something that should stay open for now.", suggestedTarget: "Kienitz", points: 26, relationship: "is connected to", mediaId: "kienitz", accent: "gold" },
+  { id: "tommy-boyd", domain: "Relationship", eyebrow: "THE PHOTO HAS WORDS ON IT", title: "Madonna and Tommy Boyd", source: "A press photo has a printed credit line and date claim.", detail: "The people shown and the printed words may help answer several questions. You decide which link is safe to make—and which details should remain only source wording.", suggestedTarget: "Tommy Boyd", points: 30, relationship: "appears with", mediaId: "saturday-show", accent: "blue" },
 ];
 
 const decisionCopy: Record<DecisionType, { label: string; title: string; copy: string; icon: Icon }> = {
-  confirm_identity: { label: "Same identity", title: "Confirm one identity", copy: "Link this source-specific record to the chosen canonical person, place, or thing. Raw source wording remains intact.", icon: BadgeCheck },
-  separate_identity: { label: "Keep separate", title: "Prevent a false merge", copy: "Record that these records are not the same in this scope. The app will stop proposing the same unsafe connection.", icon: Unlink },
-  connect: { label: "Connect in graph", title: "Create a contextual connection", copy: "Add a relationship and role for this moment, event, work, or source context. A role never becomes a global label by accident.", icon: Link2 },
-  new_canonical: { label: "New canonical record", title: "Create a new archive identity", copy: "Create a proposed canonical entity when the right record does not yet exist. It receives its own promotion review and receipt.", icon: Plus },
+  confirm_identity: { label: "Yes — same one", title: "Tell the archive these are the same", copy: "Keep every original name and label, but remember that they point to the same person, place, or thing.", icon: BadgeCheck },
+  separate_identity: { label: "No — keep apart", title: "Tell the archive these are different", copy: "Save a clear ‘do not merge’ call so this unsafe suggestion does not keep coming back.", icon: Unlink },
+  connect: { label: "Link them", title: "Save a link between them", copy: "Add a connection for this photo, event, work, or source. It stays tied to this context instead of becoming a blanket label.", icon: Link2 },
+  new_canonical: { label: "Make a new record", title: "Start a new archive record", copy: "Use this when the right person, place, or thing simply does not have its own record yet.", icon: Plus },
 };
 
 const scopeCopy: Record<Scope, { label: string; copy: string; bonus: string }> = {
-  this_case: { label: "Only this case", copy: "Resolve the visible card only.", bonus: "+0 impact" },
-  matching_claims: { label: "Matching claims", copy: "Use this answer for the matching nearby claims shown in the impact preview.", bonus: "+5 impact" },
-  source_family: { label: "This source family", copy: "Apply to the same labels in the named retained-source family only.", bonus: "+10 impact" },
-  precedent: { label: "Reusable precedent", copy: "Save a bounded rule for future matching questions; exceptions will still come back to you.", bonus: "+15 impact" },
+  this_case: { label: "Just this one", copy: "Save the answer for the item in front of you.", bonus: "+0 points" },
+  matching_claims: { label: "Other exact matches", copy: "Keep this answer handy for clearly identical matches when you review them later.", bonus: "+5 points" },
+  source_family: { label: "This source group", copy: "Use it as a guide for the same source group; each match can still be checked.", bonus: "+10 points" },
+  precedent: { label: "A careful rule for later", copy: "Give future matching questions a bounded rule. Add a note so its limits are clear.", bonus: "+15 points" },
 };
 
 const tabItems: Array<{ label: string; icon: Icon }> = [
-  { label: "Desk", icon: Sparkles },
-  { label: "Graph", icon: Network },
-  { label: "Impact", icon: Trophy },
-  { label: "History", icon: BookOpen },
+  { label: "Desk", icon: Sparkles }, { label: "Media", icon: Images }, { label: "Connections", icon: Network }, { label: "Progress", icon: Trophy }, { label: "My calls", icon: BookOpen },
 ];
 
-const statusCopy: Record<DecisionRecord["promotionStatus"], string> = {
-  recorded: "Recorded",
-  ready_for_promotion: "Ready for promotion",
-  promoted: "Canonical receipt returned",
-  held: "Held for context",
-};
+const statusCopy: Record<DecisionRecord["promotionStatus"], string> = { recorded: "Saved", ready_for_promotion: "Saved · waiting for the protected check", promoted: "Promotion receipt returned", held: "Needs more context" };
 
 function formatDate(value: string) {
-  try {
-    return new Intl.DateTimeFormat("en", { month: "short", day: "numeric" }).format(new Date(value));
-  } catch {
-    return "Today";
-  }
+  try { return new Intl.DateTimeFormat("en", { month: "short", day: "numeric" }).format(new Date(value)); } catch { return "Today"; }
 }
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState("Desk");
   const [challengeIndex, setChallengeIndex] = useState(0);
+  const [activeMediaId, setActiveMediaId] = useState<string | null>(null);
   const [isSheetOpen, setSheetOpen] = useState(false);
   const [decisionType, setDecisionType] = useState<DecisionType>("confirm_identity");
-  const [scope, setScope] = useState<Scope>("matching_claims");
+  const [scope, setScope] = useState<Scope>("this_case");
   const [basis, setBasis] = useState<EvidenceBasis>("curator_assertion");
   const [note, setNote] = useState("");
   const [target, setTarget] = useState("");
@@ -150,26 +70,26 @@ export default function Home() {
   const [search, setSearch] = useState("");
 
   const challenge = challenges[challengeIndex];
+  const challengeMedia = mediaPreviews.find((item) => item.id === challenge.mediaId) ?? mediaPreviews[0];
+  const activeMedia = mediaPreviews.find((item) => item.id === activeMediaId);
   const currentPoints = decisions.reduce((total, decision) => total + decision.pointAward, 0);
   const pointPreview = decisionType === "connect" ? challenge.points + 10 : challenge.points;
   const visibleHistory = useMemo(() => decisions.filter((decision) => `${decision.subjectLabel} ${decision.targetLabel} ${decision.note}`.toLowerCase().includes(search.toLowerCase())), [decisions, search]);
+  const DomainIcon = challenge.domain === "Person" ? Users : challenge.domain === "Place" ? MapPin : CircleDot;
 
   useEffect(() => {
     let mounted = true;
     fetch("/api/decisions", { cache: "no-store" })
-      .then(async (response) => {
-        if (!response.ok) throw new Error("The private decision ledger is unavailable.");
-        return (await response.json()) as { decisions: DecisionRecord[] };
-      })
+      .then(async (response) => { if (!response.ok) throw new Error("The private decision list is unavailable."); return (await response.json()) as { decisions: DecisionRecord[] }; })
       .then((payload) => { if (mounted) setDecisions(payload.decisions); })
-      .catch(() => { if (mounted) setToast("Sign in to connect your private decision ledger."); })
+      .catch(() => { if (mounted) setToast("Sign in to see and save your private calls."); })
       .finally(() => { if (mounted) setLoadingDecisions(false); });
     return () => { mounted = false; };
   }, []);
 
   function openDecision(nextType: DecisionType) {
     setDecisionType(nextType);
-    setTarget(nextType === "separate_identity" ? "Do not merge with this proposed match" : challenge.suggestedTarget);
+    setTarget(nextType === "separate_identity" ? "Keep separate from this suggested match" : challenge.suggestedTarget);
     setNote("");
     setScope(nextType === "separate_identity" ? "this_case" : "matching_claims");
     setSheetOpen(true);
@@ -178,68 +98,42 @@ export default function Home() {
   async function saveDecision() {
     const trimmedTarget = target.trim();
     const trimmedNote = note.trim();
-    if (!trimmedTarget) { setToast("Choose the identity or relationship target first."); return; }
-    if (scope === "precedent" && trimmedNote.length < 12) { setToast("Add a short note so this precedent has a clear boundary."); return; }
+    if (!trimmedTarget) { setToast("Say who or what this should be linked to first."); return; }
+    if (scope === "precedent" && trimmedNote.length < 12) { setToast("Add a short note so you will remember where this rule should stop."); return; }
     setSaving(true);
     try {
-      const response = await fetch("/api/decisions", {
-        method: "POST",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify({ decisionType, domain: challenge.domain, subjectLabel: challenge.title, targetLabel: trimmedTarget, note: trimmedNote, scope, evidenceBasis: basis, sourceContext: challenge.source, impactItems: scope === "this_case" ? 1 : challenge.scopeCount, relationship: challenge.relationship ?? null }),
-      });
+      const response = await fetch("/api/decisions", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ decisionType, domain: challenge.domain, subjectLabel: challenge.title, targetLabel: trimmedTarget, note: trimmedNote, scope, evidenceBasis: basis, sourceContext: challenge.source, impactItems: 1, relationship: challenge.relationship ?? null }) });
       const payload = (await response.json()) as { decision?: DecisionRecord; error?: string };
-      if (!response.ok || !payload.decision) throw new Error(payload.error ?? "The decision could not be recorded.");
+      if (!response.ok || !payload.decision) throw new Error(payload.error ?? "Your call could not be saved.");
       setDecisions((current) => [payload.decision!, ...current]);
       setSheetOpen(false);
-      setToast(`+${payload.decision.pointAward} Archive Impact · decision recorded`);
+      setToast(`+${payload.decision.pointAward} points · your call is saved`);
     } catch (error) {
-      setToast(error instanceof Error ? error.message : "The decision could not be recorded.");
-    } finally {
-      setSaving(false);
-    }
+      setToast(error instanceof Error ? error.message : "Your call could not be saved.");
+    } finally { setSaving(false); }
   }
 
   return (
     <main className="app-shell">
-      <header className="topbar">
-        <div className="brand" aria-label="Madonna Archive Curator Desk"><span className="brand-mark">M<span>·</span></span><div><span className="eyebrow">PRIVATE CURATOR DESK</span><strong>Archive impact</strong></div></div>
-        <button className="profile-button" aria-label="Private, protected workspace"><LockKeyhole size={16} /> Private</button>
-      </header>
-
-      <section className="score-card" aria-label="Archive Impact score"><div><p className="eyebrow">YOUR ARCHIVE IMPACT</p><div className="score-line"><strong>{currentPoints.toLocaleString()}</strong><span>points</span></div><p className="score-caption">Points bank when a curator decision is recorded. Canonical promotion is always receipted separately.</p></div><div className="score-seal"><Trophy size={24} /><span>{decisions.length}</span><small>decisions</small></div></section>
-
-      <nav className="tabbar" aria-label="Curator Desk sections">{tabItems.map(({ label, icon: IconComponent }) => <button key={label} className={activeTab === label ? "active" : ""} onClick={() => setActiveTab(label)}><IconComponent size={17} /><span>{label}</span></button>)}</nav>
+      <header className="topbar"><div className="brand" aria-label="Madonna Archive Curator Desk"><span className="brand-mark">M<span>·</span></span><div><span className="eyebrow">PRIVATE DECISION DESK</span><strong>Your calls, your archive</strong></div></div><span className="profile-button"><LockKeyhole size={16} /> Private</span></header>
+      <section className="score-card" aria-label="Archive progress"><div><p className="eyebrow">YOUR PROGRESS</p><div className="score-line"><strong>{currentPoints.toLocaleString()}</strong><span>points</span></div><p className="score-caption">You earn points when you save a useful call. The archive still checks it before it becomes an approved historical record.</p></div><div className="score-seal"><Trophy size={24} /><span>{decisions.length}</span><small>calls saved</small></div></section>
+      <nav className="tabbar" aria-label="Curator Desk sections">{tabItems.map(({ label, icon: IconComponent }) => <button key={label} type="button" className={activeTab === label ? "active" : ""} onClick={() => setActiveTab(label)}><IconComponent size={17} /><span>{label}</span></button>)}</nav>
 
       {activeTab === "Desk" && <>
-        <section className="welcome"><div><p className="eyebrow">TODAY’S HIGH-IMPACT DECISION</p><h1>Make the connection only <em>you</em> can make.</h1></div><button className="text-button" onClick={() => setChallengeIndex((challengeIndex + 1) % challenges.length)}>Next case <ChevronRight size={16} /></button></section>
-        <article className={`decision-card ${challenge.accent}`}>
-          <div className="card-topline"><span className="domain-chip">{challenge.domain === "Person" ? <Users size={14} /> : challenge.domain === "Place" ? <MapPin size={14} /> : <CircleDot size={14} />}{challenge.domain}</span><span className="impact-reward">+{challenge.points} impact</span></div>
-          <p className="eyebrow">{challenge.eyebrow}</p><h2>{challenge.title}</h2><p className="source-line"><BadgeCheck size={15} /> {challenge.source}</p><p className="card-detail">{challenge.detail}</p>
-          <div className="connection-preview"><Network size={17} /><span>{challenge.relationship ? `${challenge.title} → ${challenge.relationship} → Madonna / work context` : `${challenge.scopeCount} related references are ready for your context`}</span></div>
-          <div className="decision-actions"><button className="primary-action" onClick={() => openDecision("confirm_identity")}><BadgeCheck size={17} /> Same identity</button><button className="secondary-action" onClick={() => openDecision("connect")}><Link2 size={17} /> Connect</button><button className="secondary-action" onClick={() => openDecision("separate_identity")}><Unlink size={17} /> Keep separate</button></div>
-          <button className="quiet-action" onClick={() => openDecision("new_canonical")}><Plus size={15} /> It needs a new canonical record</button>
-        </article>
-        <section className="impact-strip"><div><HeartHandshake size={18} /><span><b>Because I said so</b> is a valid curator basis.</span></div><p>Capture your words and scope; the archive never pretends they came from somewhere else.</p></section>
-        <section className="achievement-panel"><div className="section-heading"><div><p className="eyebrow">YOUR COLLECTION</p><h2>Knowledge you have made durable</h2></div><Award size={21} /></div><div className="achievement-row"><span className="achievement-icon"><Users size={18} /></span><div><b>Alias Detective</b><small>Resolve identity variants without erasing their source history.</small></div><em>{Math.min(decisions.filter((item) => item.decisionType === "confirm_identity").length, 12)}/12</em></div><div className="achievement-row"><span className="achievement-icon gold"><Link2 size={18} /></span><div><b>Connection Maker</b><small>Add meaningful, contextual connections to the graph.</small></div><em>{Math.min(decisions.filter((item) => item.decisionType === "connect").length, 10)}/10</em></div></section>
+        <section className="welcome"><div><p className="eyebrow">START HERE</p><h1>Look at the item. Then tell the archive what it <em>means</em>.</h1></div><button className="text-button" type="button" onClick={() => setChallengeIndex((challengeIndex + 1) % challenges.length)}>Show another <ChevronRight size={16} /></button></section>
+        <article className={`decision-card ${challenge.accent}`}><div className="card-topline"><span className="domain-chip"><DomainIcon size={14} /> {challenge.domain}</span><span className="impact-reward">+{challenge.points} points</span></div><p className="eyebrow">{challenge.eyebrow}</p><h2>{challenge.title}</h2><p className="source-line"><BadgeCheck size={15} /> What the archive says: {challenge.source}</p><button className="case-media" type="button" onClick={() => setActiveMediaId(challengeMedia.id)} aria-label={`Open ${challengeMedia.title}`}><img src={challengeMedia.src} alt={challengeMedia.title} /><span><Eye size={15} /> Tap to look closely</span></button><p className="card-detail">{challenge.detail}</p><div className="connection-preview"><Network size={17} /><span><b>If you link it:</b> the saved connection stays attached to this source and this context. It will not quietly rewrite every other record.</span></div><div className="decision-actions"><button className="primary-action" type="button" onClick={() => openDecision("confirm_identity")}><BadgeCheck size={17} /> Yes — same one</button><button className="secondary-action" type="button" onClick={() => openDecision("connect")}><Link2 size={17} /> Link them</button><button className="secondary-action" type="button" onClick={() => openDecision("separate_identity")}><Unlink size={17} /> No — keep apart</button></div><button className="quiet-action" type="button" onClick={() => openDecision("new_canonical")}><Plus size={15} /> This needs its own archive record</button></article>
+        <section className="impact-strip"><div><HeartHandshake size={18} /><span><b>“Because I said so” counts.</b></span></div><p>Choose “I know this,” write what you want to remember, and the app will label it honestly as your call—not as a made-up source.</p></section>
+        <section className="achievement-panel"><div className="section-heading"><div><p className="eyebrow">YOUR COLLECTION</p><h2>Knowledge you have made reusable</h2></div><Award size={21} /></div><div className="achievement-row"><span className="achievement-icon"><Users size={18} /></span><div><b>Alias Detective</b><small>Save identity calls without throwing away the source’s original words.</small></div><em>{Math.min(decisions.filter((item) => item.decisionType === "confirm_identity").length, 12)}/12</em></div><div className="achievement-row"><span className="achievement-icon gold"><Link2 size={18} /></span><div><b>Connection Maker</b><small>Link people, places, works, and pictures in a way you can explain later.</small></div><em>{Math.min(decisions.filter((item) => item.decisionType === "connect").length, 10)}/10</em></div></section>
       </>}
 
-      {activeTab === "Graph" && <section className="graph-view"><p className="eyebrow">CONNECTED, NOT COLLAPSED</p><h1>Your choices grow a provenance-visible graph.</h1><div className="graph-orbit"><div className="orbit-node madonna">Madonna</div><div className="orbit-node left">People</div><div className="orbit-node right">Places</div><div className="orbit-node bottom">Works & things</div><i className="link one" /><i className="link two" /><i className="link three" /></div><p>Every connection carries its own relationship, date/context, basis, and decision history. The app never turns a role into a global label or removes a source record during an identity decision.</p></section>}
-
-      {activeTab === "Impact" && <section className="impact-view"><p className="eyebrow">HOW THE GAME STAYS HONEST</p><h1>Earn for useful knowledge—not fast taps.</h1><div className="impact-grid"><article><BadgeCheck size={21} /><b>Clarity</b><p>Names, aliases, dates, roles, and place hierarchy give decisions useful boundaries.</p></article><article><Network size={21} /><b>Connection</b><p>Graph edges earn more when they make people, places, events, works, and sources discoverable together.</p></article><article><HeartHandshake size={21} /><b>Leverage</b><p>Scoped precedents earn an impact bonus only when they safely resolve matching cases.</p></article><article><Unlink size={21} /><b>Care</b><p>Preventing a false merge is real preservation work and earns points too.</p></article></div></section>}
-
-      {activeTab === "History" && <section className="history-view"><div className="section-heading"><div><p className="eyebrow">YOUR DECISION LEDGER</p><h1>Every call has a receipt trail.</h1></div><Clock3 size={21} /></div><label className="search-box"><Search size={16} /><input value={search} onChange={(event) => setSearch(event.target.value)} placeholder="Find a person, place, thing, or note" /></label>{loadingDecisions ? <p className="empty-state">Opening your private decision ledger…</p> : visibleHistory.length ? <div className="history-list">{visibleHistory.map((decision) => <article key={decision.id} className="history-row"><div className="history-icon"><Check size={15} /></div><div><p><b>{decision.subjectLabel}</b> → {decision.targetLabel}</p><small>{decisionCopy[decision.decisionType].label} · {statusCopy[decision.promotionStatus]} · {formatDate(decision.createdAt)}</small>{decision.note ? <em>{decision.note}</em> : null}</div><strong>+{decision.pointAward}</strong></article>)}</div> : <p className="empty-state">Your first recorded decision will appear here with its scope, basis, note, and promotion state.</p>}</section>}
-
-      <footer className="safety-note"><LockKeyhole size={15} /><span>Source evidence is preserved. A recorded decision becomes canonical only after a protected promotion receipt validates it.</span></footer>
-
-      {isSheetOpen && <div className="sheet-backdrop" role="presentation" onMouseDown={() => !isSaving && setSheetOpen(false)}><section className="decision-sheet" role="dialog" aria-modal="true" aria-label="Record a curator decision" onMouseDown={(event) => event.stopPropagation()}><div className="sheet-handle" /><div className="sheet-header"><div><p className="eyebrow">CURATOR DECISION</p><h2>{decisionCopy[decisionType].title}</h2></div><button aria-label="Close decision sheet" onClick={() => setSheetOpen(false)}><X size={20} /></button></div><p className="sheet-description">{decisionCopy[decisionType].copy}</p>
-        <fieldset className="choice-grid"><legend>What is your call?</legend>{(Object.keys(decisionCopy) as DecisionType[]).map((type) => { const ChoiceIcon = decisionCopy[type].icon; return <button key={type} className={decisionType === type ? "selected" : ""} onClick={() => { setDecisionType(type); if (type === "separate_identity") setScope("this_case"); }}><ChoiceIcon size={16} />{decisionCopy[type].label}</button>; })}</fieldset>
-        <label className="field-label">Canonical target or relationship<input value={target} onChange={(event) => setTarget(event.target.value)} placeholder="Choose or describe the canonical target" /></label>
-        <fieldset className="basis-row"><legend>Why is this right?</legend>{([ ["curator_assertion", "My curator knowledge"], ["retained_source", "Retained source"], ["combined", "Both"] ] as const).map(([value, label]) => <button key={value} className={basis === value ? "selected" : ""} onClick={() => setBasis(value)}>{label}</button>)}</fieldset>
-        <label className="field-label">Your note <span>optional for one case; required for a reusable rule</span><textarea value={note} onChange={(event) => setNote(event.target.value)} placeholder="For example: “I know this is the same person because…”" rows={4} /></label>
-        <fieldset className="scope-list"><legend>How far should this answer reach?</legend>{(Object.keys(scopeCopy) as Scope[]).map((value) => <button key={value} className={scope === value ? "selected" : ""} onClick={() => setScope(value)}><span><b>{scopeCopy[value].label}</b><small>{scopeCopy[value].copy}</small></span><em>{scopeCopy[value].bonus}</em></button>)}</fieldset>
-        <div className="receipt-preview"><div><Sparkles size={17} /><span><b>Impact preview</b><small>{scope === "this_case" ? "1 visible record" : `${challenge.scopeCount} matching records`} · source text and original records remain untouched</small></span></div><strong>+{pointPreview} points</strong></div><button className="record-button" disabled={isSaving} onClick={saveDecision}>{isSaving ? "Recording your decision…" : <>Record decision <ArrowRight size={18} /></>}</button><p className="sheet-footnote">This creates an auditable curator decision. It is not presented as canonical until the private promotion service returns a validation receipt.</p>
-      </section></div>}
-      {toast && <div className="toast" role="status"><Check size={16} />{toast}<button onClick={() => setToast("")} aria-label="Dismiss"><X size={15} /></button></div>}
+      {activeTab === "Media" && <section className="media-view"><p className="eyebrow">PRIVATE VISUAL SHELF</p><h1>See the evidence before you make the call.</h1><p className="media-intro">These are three small preview copies from your archive. They are here to help you decide; they do not change the original files or turn a folder name into a fact.</p><div className="media-grid">{mediaPreviews.map((media) => <button className="media-card" key={media.id} type="button" onClick={() => setActiveMediaId(media.id)}><span className="media-card-image"><img src={media.src} alt={media.title} /><i><Maximize2 size={16} /></i></span><span><b>{media.title}</b><small>{media.sourceLabel}</small><em>Open and inspect</em></span></button>)}</div><div className="media-rule"><ImageIcon size={18} /><p><b>What you see is evidence.</b> The picture, its printed words, and its folder label can each support a different claim. You choose what to connect.</p></div></section>}
+      {activeTab === "Connections" && <section className="graph-view"><p className="eyebrow">CONNECTED, NOT MUSHED TOGETHER</p><h1>Your calls create clear links instead of vague guesses.</h1><div className="graph-orbit"><div className="orbit-node madonna">Madonna</div><div className="orbit-node left">People</div><div className="orbit-node right">Places</div><div className="orbit-node bottom">Works & pictures</div><i className="link one" /><i className="link two" /><i className="link three" /></div><p>When you connect something, the archive remembers the exact relationship, where the idea came from, and the moment it applies to. A photographer credit on one image does not become someone’s permanent label everywhere.</p></section>}
+      {activeTab === "Progress" && <section className="impact-view"><p className="eyebrow">HOW THE POINTS STAY FAIR</p><h1>Earn for useful knowledge—not quick taps.</h1><div className="impact-grid"><article><BadgeCheck size={21} /><b>Make it clear</b><p>A name, alias, date, role, or place detail gives your call useful edges.</p></article><article><Network size={21} /><b>Make a good link</b><p>Connections matter when they help you discover a person, event, work, and picture together.</p></article><article><HeartHandshake size={21} /><b>Help future you</b><p>A careful rule can speed up later questions—but only when you explain where it applies.</p></article><article><Unlink size={21} /><b>Stop a bad merge</b><p>Saying “these are different” protects the archive and earns points too.</p></article></div></section>}
+      {activeTab === "My calls" && <section className="history-view"><div className="section-heading"><div><p className="eyebrow">YOUR PRIVATE MEMORY</p><h1>Every call is easy to find again.</h1></div><Clock3 size={21} /></div><label className="search-box"><Search size={16} /><input value={search} onChange={(event) => setSearch(event.target.value)} placeholder="Find a person, place, photo, or note" /></label>{loadingDecisions ? <p className="empty-state">Opening your private saved calls…</p> : visibleHistory.length ? <div className="history-list">{visibleHistory.map((decision) => <article key={decision.id} className="history-row"><div className="history-icon"><Check size={15} /></div><div><p><b>{decision.subjectLabel}</b> → {decision.targetLabel}</p><small>{decisionCopy[decision.decisionType].label} · {statusCopy[decision.promotionStatus]} · {formatDate(decision.createdAt)}</small>{decision.note ? <em>{decision.note}</em> : null}</div><strong>+{decision.pointAward}</strong></article>)}</div> : <p className="empty-state">Your first saved call will appear here with your words, where it applies, and what happens next.</p>}</section>}
+      <footer className="safety-note"><LockKeyhole size={15} /><span>The original source and picture stay in the archive. Your saved call is checked before it becomes an approved historical record.</span></footer>
+      {isSheetOpen && <div className="sheet-backdrop" role="presentation" onMouseDown={() => !isSaving && setSheetOpen(false)}><section className="decision-sheet" role="dialog" aria-modal="true" aria-label="Save a curator decision" onMouseDown={(event) => event.stopPropagation()}><div className="sheet-handle" /><div className="sheet-header"><div><p className="eyebrow">YOUR CALL</p><h2>{decisionCopy[decisionType].title}</h2></div><button type="button" aria-label="Close" onClick={() => setSheetOpen(false)}><X size={20} /></button></div><p className="sheet-description">{decisionCopy[decisionType].copy}</p><fieldset className="choice-grid"><legend>What do you want to say?</legend>{(Object.keys(decisionCopy) as DecisionType[]).map((type) => { const ChoiceIcon = decisionCopy[type].icon; return <button type="button" key={type} className={decisionType === type ? "selected" : ""} onClick={() => { setDecisionType(type); if (type === "separate_identity") setScope("this_case"); }}><ChoiceIcon size={16} />{decisionCopy[type].label}</button>; })}</fieldset><label className="field-label">Who or what should this be linked to?<input value={target} onChange={(event) => setTarget(event.target.value)} placeholder="Type a person, place, work, or relationship" /></label><fieldset className="basis-row"><legend>How do you know?</legend>{([ ["curator_assertion", "I know this"], ["retained_source", "Saved source"], ["combined", "Both"] ] as const).map(([value, label]) => <button type="button" key={value} className={basis === value ? "selected" : ""} onClick={() => setBasis(value)}>{label}</button>)}</fieldset><label className="field-label">Anything you want to remember? <span>Optional for one item; needed for a careful rule.</span><textarea value={note} onChange={(event) => setNote(event.target.value)} placeholder="For example: “I remember this because…”" rows={4} /></label><fieldset className="scope-list"><legend>Where should this answer help?</legend>{(Object.keys(scopeCopy) as Scope[]).map((value) => <button type="button" key={value} className={scope === value ? "selected" : ""} onClick={() => setScope(value)}><span><b>{scopeCopy[value].label}</b><small>{scopeCopy[value].copy}</small></span><em>{scopeCopy[value].bonus}</em></button>)}</fieldset><div className="receipt-preview"><div><Sparkles size={17} /><span><b>What happens next</b><small>Your call is saved with your note and source basis. The original picture and wording stay untouched.</small></span></div><strong>+{pointPreview} points</strong></div><button className="record-button" type="button" disabled={isSaving} onClick={saveDecision}>{isSaving ? "Saving your call…" : <>Save my call <ArrowRight size={18} /></>}</button><p className="sheet-footnote">Saving a call does not silently rewrite history. The protected archive check returns a receipt before any approved historical change.</p></section></div>}
+      {activeMedia && <div className="media-lightbox" role="presentation" onMouseDown={() => setActiveMediaId(null)}><section role="dialog" aria-modal="true" aria-label={activeMedia.title} onMouseDown={(event) => event.stopPropagation()}><div className="media-lightbox-head"><div><p className="eyebrow">ARCHIVE PREVIEW</p><h2>{activeMedia.title}</h2></div><button type="button" onClick={() => setActiveMediaId(null)} aria-label="Close image"><X size={20} /></button></div><img src={activeMedia.src} alt={activeMedia.title} /><div className="media-lightbox-note"><p><b>What this is:</b> {activeMedia.caption}</p><p><b>Source:</b> {activeMedia.sourceLabel}</p><p><b>Remember:</b> {activeMedia.caution}</p></div></section></div>}
+      {toast && <div className="toast" role="status"><Check size={16} />{toast}<button type="button" onClick={() => setToast("")} aria-label="Dismiss"><X size={15} /></button></div>}
     </main>
   );
 }
