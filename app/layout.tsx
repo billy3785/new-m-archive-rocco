@@ -2,14 +2,18 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Madonna Archive — Curator Portal",
-  description: "Private curator workspace for archive cleanup, review, canon status, and evidence coverage.",
-  other: {
-    "codex-preview": "Madonna Archive Curator Portal",
+  title: "M· Curator Desk",
+  description: "A private, iPhone-first decision desk for building the connected Madonna Archive.",
+  manifest: "/manifest.webmanifest",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "black-translucent",
+    title: "M· Desk",
   },
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",
+    apple: "/apple-touch-icon.svg",
   },
 };
 

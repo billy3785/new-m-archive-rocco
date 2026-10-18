@@ -36,6 +36,10 @@ yarn-error.log*
 
 # typescript
 next-env.d.ts
+tsconfig.tsbuildinfo
+# Local-only adapter for the mounted archive; never publish it with the hosted desk.
+local.html
+local_portal.py
 /dist/
 /.wrangler/
 # Checkout-local execution profile and tool state; never publish them.
