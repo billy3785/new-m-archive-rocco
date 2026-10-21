@@ -52,6 +52,13 @@ const highlights = await runSqlite(`
       confidence,
       substr(assertion, 1, 240) AS assertion,
       source_lanes_json,
+      (SELECT COUNT(*) FROM source_bundle source_count WHERE source_count.fact_id = fact.fact_id) AS source_item_count,
+      (SELECT source_item_id FROM source_bundle source_first WHERE source_first.fact_id = fact.fact_id ORDER BY ordinal LIMIT 1) AS source_item_id,
+      (SELECT source_authority FROM source_bundle source_first WHERE source_first.fact_id = fact.fact_id ORDER BY ordinal LIMIT 1) AS source_authority,
+      (SELECT source_type FROM source_bundle source_first WHERE source_first.fact_id = fact.fact_id ORDER BY ordinal LIMIT 1) AS source_type,
+      (SELECT source_locator FROM source_bundle source_first WHERE source_first.fact_id = fact.fact_id ORDER BY ordinal LIMIT 1) AS source_locator,
+      (SELECT source_url FROM source_bundle source_first WHERE source_first.fact_id = fact.fact_id ORDER BY ordinal LIMIT 1) AS source_url,
+      (SELECT payload_json FROM source_bundle source_first WHERE source_first.fact_id = fact.fact_id ORDER BY ordinal LIMIT 1) AS source_payload_json,
       ROW_NUMBER() OVER (
         PARTITION BY year
         ORDER BY date_start, confidence DESC, fact_id
@@ -61,7 +68,8 @@ const highlights = await runSqlite(`
       AND fact_type = 'historical_event'
   )
   SELECT year, fact_id, fact_type, title, date_start, date_end, date_precision,
-         confidence, assertion, source_lanes_json
+         confidence, assertion, source_lanes_json, source_item_count, source_item_id,
+         source_authority, source_type, source_locator, source_url, source_payload_json
   FROM ranked
   WHERE rank_in_year <= 6
   ORDER BY year, date_start, confidence DESC, fact_id;
@@ -95,6 +103,17 @@ const lines = [
   "  confidence: number;",
   "  assertion: string;",
   "  sourceLanes: string[];",
+  "  sourceItemCount: number;",
+  "  sourceEvidence: MercyYearSourceEvidence | null;",
+  "};",
+  "",
+  "export type MercyYearSourceEvidence = {",
+  "  sourceItemId: string;",
+  "  authority: string;",
+  "  sourceType: string;",
+  "  locator: string;",
+  "  url: string;",
+  "  excerpt: string;",
   "};",
   "",
   "export const mercyReaderYears: MercyYearSummary[] = ",
@@ -121,6 +140,18 @@ const lines = [
     confidence: row.confidence,
     assertion: row.assertion,
     sourceLanes: JSON.parse(row.source_lanes_json || "[]"),
+    sourceItemCount: row.source_item_count ?? 0,
+    sourceEvidence: row.source_item_id ? (() => {
+      const payload = JSON.parse(row.source_payload_json || "{}");
+      return {
+        sourceItemId: row.source_item_id,
+        authority: row.source_authority || "",
+        sourceType: row.source_type || "",
+        locator: row.source_locator || "",
+        url: row.source_url || payload.url || "",
+        excerpt: payload.caption_excerpt || "",
+      };
+    })() : null,
   }))),
   ";",
   "",

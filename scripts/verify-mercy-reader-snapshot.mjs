@@ -35,6 +35,7 @@ for (const [label, literal] of requiredLiterals) {
 const generatedCounts = [
   ["year summaries", /\"factCount\":/g, 69],
   ["year highlights", /\"factId\": \"mercy\.fact\./g, 113],
+  ["highlight source evidence", /\"sourceEvidence\": \{/g, 113],
 ];
 for (const [label, pattern, expected] of generatedCounts) {
   const actual = yearsSource.match(pattern)?.length ?? 0;
