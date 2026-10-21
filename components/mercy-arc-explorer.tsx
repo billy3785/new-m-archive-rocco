@@ -18,6 +18,13 @@ function uncertaintyText(value: { detail?: string; kind?: string } | string) {
   return typeof value === "string" ? value : value.detail || value.kind || "Uncertainty retained";
 }
 
+function representationTechnicalSummary(representation: MercyArcStep["representations"][number]) {
+  const size = representation.bytes === null ? "size not recorded" : `${representation.bytes.toLocaleString()} bytes`;
+  const kind = [representation.extension, representation.fileKind].filter(Boolean).join(" · ") || "file type not recorded";
+  const senses = representation.sourceSenses.length ? representation.sourceSenses.join(", ") : "source lane not stated";
+  return `${kind} · ${size} · ${senses}`;
+}
+
 export function MercyArcExplorer() {
   const [selectedArcId, setSelectedArcId] = useState(mercyReaderArcs[0]?.arcId ?? "");
   const arc = mercyReaderArcs.find((candidate) => candidate.arcId === selectedArcId) ?? mercyReaderArcs[0];
@@ -68,7 +75,7 @@ export function MercyArcExplorer() {
             <p className="mercy-arc-assertion">{selectedStep.assertion}</p>
             <div className="mercy-arc-facts"><div><span>Date basis</span><strong>{selectedStep.dateBasis}</strong></div>{selectedStep.place ? <div><span>Place</span><strong>{selectedStep.place}</strong></div> : null}<div><span>Evidence</span><strong>{selectedStep.sourceCount} source {selectedStep.sourceCount === 1 ? "item" : "items"} · {Math.round(selectedStep.confidence * 100)}% confidence</strong></div></div>
             <div className="mercy-detail-block"><div className="mercy-block-heading"><h3>Source evidence</h3><span>{selectedStep.sourcePointers.length} pointers</span></div>{selectedStep.sourcePointers.length ? <div className="mercy-arc-source-list">{selectedStep.sourcePointers.map((pointer, index) => <article key={`${selectedStep.stepId}-${index}`}><strong>{pointer.authority || pointer.sourceType || "Retained source"}</strong><small>{pointer.sourceItemId}{pointer.locator ? ` · ${pointer.locator}` : ""}</small>{pointer.excerpt ? <p>{pointer.excerpt}</p> : null}{pointer.url ? <a href={pointer.url} target="_blank" rel="noreferrer">Open source pointer <ExternalLink size={12} /></a> : null}</article>)}</div> : <p className="mercy-muted">No source pointer was materialized for this step. That is a coverage boundary, not proof of absence.</p>}</div>
-            {selectedStep.representations.length ? <div className="mercy-detail-block"><div className="mercy-block-heading"><h3>Local representations observed</h3><span>{selectedStep.representations.length} records</span></div><div className="mercy-arc-representation-list">{selectedStep.representations.map((representation) => <article key={representation.representationId}><strong>{representation.label}</strong><small>{representation.relativePath}</small><span>{representation.observationState.replaceAll("_", " ")} · {representation.matchState.replaceAll("_", " ")}</span><p>{representation.caution}</p></article>)}</div></div> : null}
+            {selectedStep.representations.length ? <div className="mercy-detail-block"><div className="mercy-block-heading"><h3>Local representations observed</h3><span>{selectedStep.representations.length} records</span></div><div className="mercy-arc-representation-list">{selectedStep.representations.map((representation) => <article key={representation.representationId}><strong>{representation.label}</strong><small>{representation.relativePath}</small><span>{representationTechnicalSummary(representation)}</span><span>{representation.observationState.replaceAll("_", " ")} · {representation.matchState.replaceAll("_", " ")}</span>{representation.matchedTokens.length ? <small>Matched filename tokens: {representation.matchedTokens.join(", ")}</small> : null}<p>{representation.caution}</p></article>)}</div></div> : null}
             {selectedStep.uncertainties.length ? <div className="mercy-arc-uncertainty"><CircleAlert size={14} /><div><strong>Uncertainty stays visible</strong>{selectedStep.uncertainties.map((uncertainty) => <span key={uncertaintyText(uncertainty)}>{uncertaintyText(uncertainty)}</span>)}</div></div> : null}
           </> : null}
         </section>

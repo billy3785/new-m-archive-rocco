@@ -11,7 +11,7 @@ export type MercyArcSourcePointer = {
 };
 
 export type MercyArcRepresentation = {
-  representationId: string; label: string; relativePath: string; dateToken: string; observationState: string; provenanceState: string; logicalRepresentationId: string; matchState: string; unresolvedReason: string; caution: string;
+  representationId: string; label: string; relativePath: string; dateToken: string; extension: string; fileKind: string; bytes: number | null; sourceSenses: string[]; matchedTokens: string[]; observationState: string; provenanceState: string; logicalRepresentationId: string; matchState: string; unresolvedReason: string; caution: string;
 };
 
 export type MercyArcStep = {
@@ -662,6 +662,18 @@ export const mercyReaderArcs: MercyReaderArc[] =
             "label": "The Queen of Pop _ Madonna Truth Or Dare MTV Contest 1991.mp4",
             "relativePath": "UNFILED/2011-2023/The Queen of Pop _ Madonna Truth Or Dare MTV Contest 1991.mp4",
             "dateToken": "1991",
+            "extension": "mp4",
+            "fileKind": "file",
+            "bytes": 4631444,
+            "sourceSenses": [
+              "archive.nas.postgresql"
+            ],
+            "matchedTokens": [
+              "contest",
+              "dare",
+              "mtv",
+              "truth"
+            ],
             "observationState": "logical_archive_file",
             "provenanceState": "source_observed",
             "logicalRepresentationId": "",
@@ -714,6 +726,17 @@ export const mercyReaderArcs: MercyReaderArc[] =
             "label": "MADONNA on VANITY FAIR COVER 1992 - ET Report.png",
             "relativePath": "UNFILED/2011-2023/MADONNA on VANITY FAIR COVER 1992 - ET Report.png",
             "dateToken": "1992",
+            "extension": "png",
+            "fileKind": "file",
+            "bytes": 148888,
+            "sourceSenses": [
+              "archive.nas.postgresql"
+            ],
+            "matchedTokens": [
+              "cover",
+              "fair",
+              "vanity"
+            ],
             "observationState": "logical_archive_file",
             "provenanceState": "source_observed",
             "logicalRepresentationId": "",
@@ -726,6 +749,17 @@ export const mercyReaderArcs: MercyReaderArc[] =
             "label": "MADONNA on VANITY FAIR COVER 1992 - ET Report.mp4",
             "relativePath": "UNFILED/2011-2023/MADONNA on VANITY FAIR COVER 1992 - ET Report.mp4",
             "dateToken": "1992",
+            "extension": "mp4",
+            "fileKind": "file",
+            "bytes": 10196286,
+            "sourceSenses": [
+              "archive.nas.postgresql"
+            ],
+            "matchedTokens": [
+              "cover",
+              "fair",
+              "vanity"
+            ],
             "observationState": "logical_archive_file",
             "provenanceState": "source_observed",
             "logicalRepresentationId": "",
@@ -778,6 +812,16 @@ export const mercyReaderArcs: MercyReaderArc[] =
             "label": "Madonna photoshoot for Versace - 1995(1).png",
             "relativePath": "UNFILED/2011-2023/Madonna photoshoot for Versace - 1995(1).png",
             "dateToken": "1995",
+            "extension": "png",
+            "fileKind": "file",
+            "bytes": 216641,
+            "sourceSenses": [
+              "archive.nas.postgresql"
+            ],
+            "matchedTokens": [
+              "photoshoot",
+              "versace"
+            ],
             "observationState": "logical_archive_file",
             "provenanceState": "source_observed",
             "logicalRepresentationId": "",
@@ -790,6 +834,16 @@ export const mercyReaderArcs: MercyReaderArc[] =
             "label": "Madonna photoshoot for Versace - 1995.png",
             "relativePath": "UNFILED/2011-2023/Madonna photoshoot for Versace - 1995.png",
             "dateToken": "1995",
+            "extension": "png",
+            "fileKind": "file",
+            "bytes": 193945,
+            "sourceSenses": [
+              "archive.nas.postgresql"
+            ],
+            "matchedTokens": [
+              "photoshoot",
+              "versace"
+            ],
             "observationState": "logical_archive_file",
             "provenanceState": "source_observed",
             "logicalRepresentationId": "",
@@ -1173,6 +1227,18 @@ export const mercyReaderArcs: MercyReaderArc[] =
             "label": "Madonna introduces BEAUTIFUL STRANGER video on TOP OF THE POPS UK 1999.png",
             "relativePath": "UNFILED/2011-2023/Madonna introduces BEAUTIFUL STRANGER video on TOP OF THE POPS UK 1999.png",
             "dateToken": "1999",
+            "extension": "png",
+            "fileKind": "file",
+            "bytes": 107870,
+            "sourceSenses": [
+              "archive.nas.postgresql"
+            ],
+            "matchedTokens": [
+              "beautiful",
+              "pops",
+              "stranger",
+              "top"
+            ],
             "observationState": "logical_archive_file",
             "provenanceState": "source_observed",
             "logicalRepresentationId": "",
@@ -1185,6 +1251,18 @@ export const mercyReaderArcs: MercyReaderArc[] =
             "label": "Madonna introduces BEAUTIFUL STRANGER video on TOP OF THE POPS UK 1999.mp4",
             "relativePath": "UNFILED/2011-2023/Madonna introduces BEAUTIFUL STRANGER video on TOP OF THE POPS UK 1999.mp4",
             "dateToken": "1999",
+            "extension": "mp4",
+            "fileKind": "file",
+            "bytes": 1744966,
+            "sourceSenses": [
+              "archive.nas.postgresql"
+            ],
+            "matchedTokens": [
+              "beautiful",
+              "pops",
+              "stranger",
+              "top"
+            ],
             "observationState": "logical_archive_file",
             "provenanceState": "source_observed",
             "logicalRepresentationId": "",
@@ -1246,6 +1324,6 @@ export const mercyReaderArcs: MercyReaderArc[] =
     "provenanceJobId": "mercy-working-graph-1958-2026-v1.rebuild-20261021-resumed-qa",
     "sourceSearchState": "source_bundles_and_representation_match_materialized",
     "authorityBoundary": "Derived music-video and representation arc only; source facts, operational inventory, local files, and canonical recording/release authorities remain separate, and no canonical, inventory, media, filesystem, or public-network writes occurred.",
-    "nextAction": "Inspect the two local files and retained source context through an allowlisted read-only representation lane before considering any aired-master, B-roll, tag, or recording-version edge."
+    "nextAction": "The two local files are now receipt-backed read-only observations; consider aired-master, B-roll, tag, or recording-version edges only if additional evidence supports them."
   }
 ];

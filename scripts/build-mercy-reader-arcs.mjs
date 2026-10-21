@@ -112,6 +112,11 @@ const representationPointersFor = (factId) => (representationsByFact.get(factId)
     label: payload.preferred_label || row.representation_id,
     relativePath: payload.relative_path || "",
     dateToken: payload.date_token || "",
+    extension: payload.extension || "",
+    fileKind: payload.file_kind || "",
+    bytes: typeof payload.bytes === "number" ? payload.bytes : null,
+    sourceSenses: Array.isArray(payload.source_senses) ? payload.source_senses : [],
+    matchedTokens: Array.isArray(match.matched_tokens) ? match.matched_tokens : [],
     observationState: row.observation_state,
     provenanceState: payload.provenance_state || "",
     logicalRepresentationId: row.logical_representation_id || "",
@@ -297,7 +302,7 @@ const beautifulStrangerArc = {
   provenanceJobId: graphQa.qa_id,
   sourceSearchState: "source_bundles_and_representation_match_materialized",
   authorityBoundary: "Derived music-video and representation arc only; source facts, operational inventory, local files, and canonical recording/release authorities remain separate, and no canonical, inventory, media, filesystem, or public-network writes occurred.",
-  nextAction: "Inspect the two local files and retained source context through an allowlisted read-only representation lane before considering any aired-master, B-roll, tag, or recording-version edge.",
+  nextAction: "The two local files are now receipt-backed read-only observations; consider aired-master, B-roll, tag, or recording-version edges only if additional evidence supports them.",
 };
 
 const arcs = [arc, likeAVirginArc, photoRepresentationArc, crazyForYouArc, beautifulStrangerArc];
@@ -316,7 +321,7 @@ const lines = [
   "};",
   "",
   "export type MercyArcRepresentation = {",
-  "  representationId: string; label: string; relativePath: string; dateToken: string; observationState: string; provenanceState: string; logicalRepresentationId: string; matchState: string; unresolvedReason: string; caution: string;",
+  "  representationId: string; label: string; relativePath: string; dateToken: string; extension: string; fileKind: string; bytes: number | null; sourceSenses: string[]; matchedTokens: string[]; observationState: string; provenanceState: string; logicalRepresentationId: string; matchState: string; unresolvedReason: string; caution: string;",
   "};",
   "",
   "export type MercyArcStep = {",
