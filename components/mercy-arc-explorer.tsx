@@ -24,6 +24,7 @@ export function MercyArcExplorer() {
   const [selectedStepId, setSelectedStepId] = useState(arc?.steps[0]?.stepId ?? "");
   const selectedStep = arc?.steps.find((step) => step.stepId === selectedStepId) ?? arc?.steps[0];
   const sourcePointerCount = arc?.steps.reduce((total, step) => total + step.sourcePointers.length, 0) ?? 0;
+  const representationCount = arc?.steps.reduce((total, step) => total + step.representations.length, 0) ?? 0;
 
   function chooseArc(nextArcId: string) {
     const nextArc = mercyReaderArcs.find((candidate) => candidate.arcId === nextArcId);
@@ -47,6 +48,7 @@ export function MercyArcExplorer() {
         <div><strong>{arc.years.length}</strong><span>years traversed</span></div>
         <div><strong>{arc.steps.length}</strong><span>source-backed steps</span></div>
         <div><strong>{sourcePointerCount}</strong><span>evidence pointers</span></div>
+        <div><strong>{representationCount}</strong><span>representation observations</span></div>
         <div><strong>{arc.gaps.length}</strong><span>explicit gaps</span></div>
       </div>
 
@@ -66,6 +68,7 @@ export function MercyArcExplorer() {
             <p className="mercy-arc-assertion">{selectedStep.assertion}</p>
             <div className="mercy-arc-facts"><div><span>Date basis</span><strong>{selectedStep.dateBasis}</strong></div>{selectedStep.place ? <div><span>Place</span><strong>{selectedStep.place}</strong></div> : null}<div><span>Evidence</span><strong>{selectedStep.sourceCount} source {selectedStep.sourceCount === 1 ? "item" : "items"} · {Math.round(selectedStep.confidence * 100)}% confidence</strong></div></div>
             <div className="mercy-detail-block"><div className="mercy-block-heading"><h3>Source evidence</h3><span>{selectedStep.sourcePointers.length} pointers</span></div>{selectedStep.sourcePointers.length ? <div className="mercy-arc-source-list">{selectedStep.sourcePointers.map((pointer, index) => <article key={`${selectedStep.stepId}-${index}`}><strong>{pointer.authority || pointer.sourceType || "Retained source"}</strong><small>{pointer.sourceItemId}{pointer.locator ? ` · ${pointer.locator}` : ""}</small>{pointer.excerpt ? <p>{pointer.excerpt}</p> : null}{pointer.url ? <a href={pointer.url} target="_blank" rel="noreferrer">Open source pointer <ExternalLink size={12} /></a> : null}</article>)}</div> : <p className="mercy-muted">No source pointer was materialized for this step. That is a coverage boundary, not proof of absence.</p>}</div>
+            {selectedStep.representations.length ? <div className="mercy-detail-block"><div className="mercy-block-heading"><h3>Local representations observed</h3><span>{selectedStep.representations.length} records</span></div><div className="mercy-arc-representation-list">{selectedStep.representations.map((representation) => <article key={representation.representationId}><strong>{representation.label}</strong><small>{representation.relativePath}</small><span>{representation.observationState.replaceAll("_", " ")} · {representation.matchState.replaceAll("_", " ")}</span><p>{representation.caution}</p></article>)}</div></div> : null}
             {selectedStep.uncertainties.length ? <div className="mercy-arc-uncertainty"><CircleAlert size={14} /><div><strong>Uncertainty stays visible</strong>{selectedStep.uncertainties.map((uncertainty) => <span key={uncertaintyText(uncertainty)}>{uncertaintyText(uncertainty)}</span>)}</div></div> : null}
           </> : null}
         </section>

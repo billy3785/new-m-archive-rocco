@@ -40,10 +40,14 @@ const selectedFactIds = [
   "mercy.fact.e2eba626f586a88ad991",
   "mercy.fact.a2b3bda5b8d8c0f44219",
   "mercy.fact.85b3cfc5c4eab92474d9",
+  "mercy.fact.94de293f928b94d7e2fa",
+  "mercy.fact.7886aba0b9f9fe5a7d68",
+  "mercy.fact.0d47169ef0cfb585f8c3",
 ];
 const ids = selectedFactIds.map((id) => `'${id}'`).join(",");
 const facts = await runSqlite(`SELECT fact_id,year,fact_type,title,assertion,date_start,date_end,date_precision,confidence,visibility_state,source_lanes_json,uncertainties_json FROM fact WHERE fact_id IN (${ids}) ORDER BY year,date_start,fact_id;`);
 const sourceRows = await runSqlite(`SELECT fact_id,ordinal,source_item_id,source_authority,source_type,source_locator,source_url,payload_json FROM source_bundle WHERE fact_id IN (${ids}) ORDER BY fact_id,ordinal;`);
+const representationRows = await runSqlite(`SELECT representation_id,year,observation_state,logical_representation_id,unresolved_reason,payload_json,historical_match_json FROM representation WHERE json_extract(historical_match_json,'$.fact_id') IN (${ids}) ORDER BY year,representation_id;`);
 const receipt = await readJson(resolve(workerDir, "worker-receipt.json"));
 const sourceSearch = await readJson(resolve(workerDir, "source-search-receipt.json"));
 const graphQa = await readJson(resolve(workspaceRoot, "lmstudio_operating_model/receipts/mercy-working-graph/mercy-working-graph-1958-2026-v1.rebuild-20261021-resumed-qa/qa-receipt.json"));
@@ -54,6 +58,14 @@ for (const row of sourceRows) {
   const rows = sourcesByFact.get(row.fact_id) ?? [];
   rows.push(row);
   sourcesByFact.set(row.fact_id, rows);
+}
+
+const representationsByFact = new Map();
+for (const row of representationRows) {
+  const match = parse(row.historical_match_json);
+  const rows = representationsByFact.get(match.fact_id) ?? [];
+  rows.push(row);
+  representationsByFact.set(match.fact_id, rows);
 }
 
 const sourcePayloadText = (row) => {
@@ -82,6 +94,26 @@ const pointersFor = (factId, limit = 4) => (sourcesByFact.get(factId) ?? []).sli
   };
 });
 
+const representationPointersFor = (factId) => (representationsByFact.get(factId) ?? []).map((row) => {
+  const payload = parse(row.payload_json);
+  const match = parse(row.historical_match_json);
+  const isSidecar = row.observation_state === "technical_sidecar";
+  return {
+    representationId: row.representation_id,
+    label: payload.preferred_label || row.representation_id,
+    relativePath: payload.relative_path || "",
+    dateToken: payload.date_token || "",
+    observationState: row.observation_state,
+    provenanceState: payload.provenance_state || "",
+    logicalRepresentationId: row.logical_representation_id || "",
+    matchState: match.state || "",
+    unresolvedReason: row.unresolved_reason || "",
+    caution: isSidecar
+      ? "Technical sidecar observed separately; it is not an additional historical representation."
+      : "Filename/context association is evidence-labelled and does not prove the file is the original shoot, an outtake, or the canonical publication object.",
+  };
+});
+
 const factStep = (factId, lane) => {
   const fact = factsById.get(factId);
   if (!fact) throw new Error(`missing arc fact: ${factId}`);
@@ -105,6 +137,8 @@ const factStep = (factId, lane) => {
     sourceCount: sources.length,
     sourceExcerpt: firstSource?.excerpt || fact.assertion,
     sourcePointers: pointersFor(factId),
+    representationIds: representationPointersFor(factId).map((representation) => representation.representationId),
+    representations: representationPointersFor(factId),
     uncertainties: parse(fact.uncertainties_json),
   };
 };
@@ -131,6 +165,8 @@ const endStep = {
   sourceCount: sourcesByFact.get(endFactId)?.length ?? 0,
   sourceExcerpt: endClaim,
   sourcePointers: pointersFor(endFactId),
+  representationIds: [],
+  representations: [],
   uncertainties: ["This is a year-level relationship-end claim carried by a later source, not a dated 1989 event record.", "It does not establish a precise separation, filing, or divorce day."],
 };
 
@@ -184,7 +220,29 @@ const likeAVirginArc = {
   nextAction: "Extend the arc with typed song-to-release, video-to-broadcast, and representation edges only when their source bundles and endpoint identities are independently visible.",
 };
 
-const arcs = [arc, likeAVirginArc];
+const photoRepresentationArc = {
+  arcId: "mercy.arc.photo-sessions-publications-representations-1991-1995",
+  title: "Photo sessions · publications, campaigns, and local representations",
+  summary: "A source-labelled visual arc from the 1991 Truth or Dare advert through the 1992 Vanity Fair cover story and 1995 Versace campaign, with five matched local representations kept separate.",
+  state: "archive_visible_supported_with_explicit_gap",
+  years: [1991, 1992, 1995],
+  steps: [
+    factStep("mercy.fact.94de293f928b94d7e2fa", "advertisement / broadcast"),
+    factStep("mercy.fact.7886aba0b9f9fe5a7d68", "publication / Vanity Fair"),
+    factStep("mercy.fact.0d47169ef0cfb585f8c3", "campaign / Something to Remember"),
+  ],
+  gaps: [
+    "The 1992 source preserves the location as unknown / Long Island / Hamptons / Miami; the arc does not choose among those alternatives.",
+    "The five local representations are filename/context matches. They are not asserted to be the original shoot, an outtake, or the canonical publication object without further evidence.",
+  ],
+  inputFingerprints: Object.fromEntries(Object.entries(receipt.input_files).map(([key, value]) => [key, value.fingerprint])),
+  provenanceJobId: graphQa.qa_id,
+  sourceSearchState: "representation_historical_match_projection",
+  authorityBoundary: "Derived visual arc and representation projection only; original paths and representation observations remain unchanged, and no canonical, inventory, media, filesystem, or public-network writes occurred.",
+  nextAction: "Inspect source provenance and any retained publication/outtake evidence before upgrading a representation association; preserve each logical file and technical sidecar separately.",
+};
+
+const arcs = [arc, likeAVirginArc, photoRepresentationArc];
 
 const lines = [
   "// Generated from the QA-passed resumed MERCY working graph and the bounded connection-worker receipt. Do not hand-edit.",
@@ -199,8 +257,12 @@ const lines = [
   "  excerpt: string;",
   "};",
   "",
+  "export type MercyArcRepresentation = {",
+  "  representationId: string; label: string; relativePath: string; dateToken: string; observationState: string; provenanceState: string; logicalRepresentationId: string; matchState: string; unresolvedReason: string; caution: string;",
+  "};",
+  "",
   "export type MercyArcStep = {",
-  "  stepId: string; year: number; lane: string; label: string; dateStart: string; dateEnd: string; datePrecision: string; dateRole: string; dateBasis: string; factType: string; assertion: string; confidence: number; state: string; place: string; sourceCount: number; sourceExcerpt: string; sourcePointers: MercyArcSourcePointer[]; uncertainties: Array<{ detail?: string; kind?: string } | string>;",
+  "  stepId: string; year: number; lane: string; label: string; dateStart: string; dateEnd: string; datePrecision: string; dateRole: string; dateBasis: string; factType: string; assertion: string; confidence: number; state: string; place: string; sourceCount: number; sourceExcerpt: string; sourcePointers: MercyArcSourcePointer[]; representationIds: string[]; representations: MercyArcRepresentation[]; uncertainties: Array<{ detail?: string; kind?: string } | string>;",
   "};",
   "",
   "export type MercyReaderArc = {",
