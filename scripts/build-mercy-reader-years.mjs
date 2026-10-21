@@ -8,9 +8,9 @@ const repoDir = resolve(scriptDir, "..");
 const workspaceRoot = resolve(repoDir, "..");
 const dbPath = resolve(
   workspaceRoot,
-  "lmstudio_operating_model/knowledge/mercy-working-canon/mercy-full-span-connected-working-canon-1958-2026-v1.aggregate-v1/mercy-working-graph-1958-2026-v1.rebuild-20261021-resumed.sqlite",
+  "lmstudio_operating_model/knowledge/mercy-working-canon/mercy-full-span-connected-working-canon-1958-2026-v1.aggregate-v1/mercy-working-graph-1958-2026-v1.repaired-20261021-v1.sqlite",
 );
-const sourceLabel = "lmstudio_operating_model/knowledge/mercy-working-canon/mercy-full-span-connected-working-canon-1958-2026-v1.aggregate-v1/mercy-working-graph-1958-2026-v1.rebuild-20261021-resumed.sqlite";
+const sourceLabel = "lmstudio_operating_model/knowledge/mercy-working-canon/mercy-full-span-connected-working-canon-1958-2026-v1.aggregate-v1/mercy-working-graph-1958-2026-v1.repaired-20261021-v1.sqlite";
 const outputPath = resolve(repoDir, "lib/mercy-reader-years.ts");
 
 const runSqlite = (sql) => new Promise((resolvePromise, reject) => {
@@ -125,7 +125,7 @@ const lines = [
   "// Generated from the read-only aggregate MERCY working graph. Do not hand-edit.",
   "// Source graph status is qa_pass_working_graph; this index never promotes canonical or inventory claims.",
   `// Source DB: ${sourceLabel}`,
-  "// Source DB fingerprint: sha256:a58a64bd595ff091637ccd7795fdea601176e1ee9a9b57a0a0ce69adab589b99",
+  "// Source DB fingerprint: sha256:375543de27929855f1f04511a18a8f4f6efe68163ecc662c8dc90d20beb43a8d",
   "",
   "export type MercyYearSummary = {",
   "  year: number;",

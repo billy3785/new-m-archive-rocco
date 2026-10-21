@@ -18,13 +18,13 @@ const requiredLiterals = [
   ["representations", "representations: 12"],
   ["uncertainties", "uncertaintyCount: 70"],
   ["authority boundary", "No canonical, inventory, archive-media, or filesystem mutation."],
-  ["aggregate graph fingerprint", "sourceDbSha256: \"sha256:a58a64bd595ff091637ccd7795fdea601176e1ee9a9b57a0a0ce69adab589b99\""],
+  ["aggregate graph fingerprint", "sourceDbSha256: \"sha256:375543de27929855f1f04511a18a8f4f6efe68163ecc662c8dc90d20beb43a8d\""],
   ["cohort QA pass", 'qaState: "qa_pass_working_canon_visible"'],
   ["aggregate graph QA pass", 'qaState: "qa_pass_working_graph"'],
-  ["upstream aggregate QA hold", "sourceProjectionQaFailure: \"duplicate connection IDs in the aggregate JSON; the Reader does not consume that JSON directly\""],
+  ["repaired projection QA pass", "sourceProjectionQaState: \"qa_pass_repaired_projection\""],
   ["full-span year count", "years: 69"],
   ["full-span fact count", "visibleFacts: 183344"],
-  ["full-span connection count", "typedConnections: 2128583"],
+  ["full-span connection count", "typedConnections: 2254894"],
 ];
 
 const failures = [];
@@ -42,7 +42,7 @@ for (const [label, pattern, expected] of generatedCounts) {
   const actual = yearsSource.match(pattern)?.length ?? 0;
   if (actual !== expected) failures.push(`${label}: expected ${expected}, found ${actual}`);
 }
-if (!yearsSource.includes("sha256:a58a64bd595ff091637ccd7795fdea601176e1ee9a9b57a0a0ce69adab589b99")) {
+if (!yearsSource.includes("sha256:375543de27929855f1f04511a18a8f4f6efe68163ecc662c8dc90d20beb43a8d")) {
   failures.push("generated year index is missing the aggregate graph fingerprint");
 }
 const candidateQueueLiterals = [

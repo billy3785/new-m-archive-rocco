@@ -3,7 +3,7 @@ import { resolve } from "node:path";
 
 const repoDir = resolve(new URL("..", import.meta.url).pathname);
 const workspaceRoot = resolve(repoDir, "..");
-const workerDir = resolve(workspaceRoot, "lmstudio_operating_model/receipts/mercy-connection-worker-2026-10-21-v1");
+const workerDir = resolve(workspaceRoot, "lmstudio_operating_model/receipts/mercy-connection-worker-2026-10-21-v2-repaired-graph");
 const outputPath = resolve(repoDir, "lib/mercy-reader-research.ts");
 
 const readJson = async (path) => JSON.parse(await readFile(path, "utf8"));
@@ -75,8 +75,8 @@ const readerMeta = {
   authorityBoundary: receipt.authority_boundary,
   writes: receipt.writes,
   publicNetwork: receipt.inference?.public_network ?? 0,
-  workerReceiptPath: "lmstudio_operating_model/receipts/mercy-connection-worker-2026-10-21-v1/worker-receipt.json",
-  sourceSearchReceiptPath: "lmstudio_operating_model/receipts/mercy-connection-worker-2026-10-21-v1/source-search-receipt.json",
+  workerReceiptPath: "lmstudio_operating_model/receipts/mercy-connection-worker-2026-10-21-v2-repaired-graph/worker-receipt.json",
+  sourceSearchReceiptPath: "lmstudio_operating_model/receipts/mercy-connection-worker-2026-10-21-v2-repaired-graph/source-search-receipt.json",
 };
 
 const lines = [

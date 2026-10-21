@@ -185,7 +185,7 @@ export function MercyReader() {
         <div>
           <p className="eyebrow">MERCY READER · PRIVATE DERIVED VIEW</p>
           <h1>{selectedYear === mercyReaderMeta.year ? "1985, connected without flattening the evidence." : `${selectedYear}, visible without flattening the evidence.`}</h1>
-          <p className="mercy-reader-intro">A full-span calendar spine from the aggregate working graph, with a connected 1985 research room: timeline, event context, retained sources, local representations, and a safe place to correct a relationship.</p>
+          <p className="mercy-reader-intro">A full-span calendar spine from the repaired, QA-passed working graph, with a connected 1985 research room: timeline, event context, retained sources, local representations, and a safe place to correct a relationship.</p>
         </div>
         <div className="mercy-qa-badge"><ShieldCheck size={15} /> Graph QA passed · cohort QA passed</div>
       </header>
@@ -197,7 +197,7 @@ export function MercyReader() {
         <div><strong>{mercyReaderMeta.fullSpanMetrics.representations.toLocaleString()}</strong><span>representations observed</span></div>
       </div>
 
-      <div className="mercy-reader-note"><ShieldCheck size={17} /><span>{mercyReaderMeta.authorityBoundary} This reader writes only a private curator decision when you explicitly submit a correction. The index is admitted from the independently QA-passed resumed graph; the upstream aggregate JSON&apos;s failed duplicate-ID check remains visible as an audit hold and is not read directly.</span></div>
+      <div className="mercy-reader-note"><ShieldCheck size={17} /><span>{mercyReaderMeta.authorityBoundary} This reader writes only a private curator decision when you explicitly submit a correction. The index is admitted from the independently QA-passed repaired graph; the original aggregate JSON remains preserved as an audit input and is not read directly.</span></div>
 
       <div className="mercy-reader-mode-tabs" role="tablist" aria-label="Reader surfaces">
         <button type="button" role="tab" aria-selected={readerMode === "calendar"} className={readerMode === "calendar" ? "selected" : ""} onClick={() => setReaderMode("calendar")}><CalendarDays size={14} /> Calendar and timeline</button>
@@ -285,7 +285,7 @@ export function MercyReader() {
           </> : <>
             <div className="mercy-detail-kicker"><CalendarDays size={15} /> {searchScope === "all" ? "Historical search result" : "Aggregate year surface"}</div>
             <h2>{searchScope === "all" ? selectedHighlight ? `${selectedHighlight.year} · ${selectedHighlight.title}` : "Search the historical index" : `${selectedYear} working-canon highlights`}</h2>
-            <p className="mercy-detail-assertion">{searchScope === "all" ? "This is a source-labelled result from the QA-passed full-span index. It is a research lead with date precision and provenance, not an automatic canonical claim." : "This year is visible through the independently QA-passed resumed graph snapshot. The compact index keeps date-bearing leads discoverable while the upstream aggregate JSON's duplicate-ID hold remains explicit; no working-graph row becomes a canonical claim."}</p>
+            <p className="mercy-detail-assertion">{searchScope === "all" ? "This is a source-labelled result from the QA-passed full-span index. It is a research lead with date precision and provenance, not an automatic canonical claim." : "This year is visible through the independently QA-passed repaired graph snapshot. No working-graph row becomes a canonical claim; unresolved evidence remains visible as unresolved."}</p>
             <div className="mercy-fact-grid">
               <div><span>Visible facts</span><strong>{selectedHighlightYearSummary.factCount.toLocaleString()}</strong><small>derived year projection</small></div>
               <div><span>Date claims</span><strong>{selectedHighlightYearSummary.dateClaimCount.toLocaleString()}</strong><small>date roles remain separate</small></div>

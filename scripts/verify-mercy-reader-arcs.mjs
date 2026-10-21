@@ -3,8 +3,8 @@ import { resolve } from "node:path";
 
 const repoDir = resolve(new URL("..", import.meta.url).pathname);
 const workspaceRoot = resolve(repoDir, "..");
-const workerDir = resolve(workspaceRoot, "lmstudio_operating_model/receipts/mercy-connection-worker-2026-10-21-v1");
-const graphQaPath = resolve(workspaceRoot, "lmstudio_operating_model/receipts/mercy-working-graph/mercy-working-graph-1958-2026-v1.rebuild-20261021-resumed-qa/qa-receipt.json");
+const workerDir = resolve(workspaceRoot, "lmstudio_operating_model/receipts/mercy-connection-worker-2026-10-21-v2-repaired-graph");
+const graphQaPath = resolve(workspaceRoot, "lmstudio_operating_model/receipts/mercy-working-graph/mercy-working-graph-1958-2026-v1.repaired-20261021-v1-qa/qa-receipt.json");
 const virginTourInspectionPath = resolve(workspaceRoot, "lmstudio_operating_model/receipts/mercy-reader-virgin-tour-opening-inspection-2026-10-21-v1/receipt.json");
 const generatedPath = resolve(repoDir, "lib/mercy-reader-arcs.ts");
 

@@ -287,12 +287,12 @@ export const mercyReaderArcs: MercyReaderArc[] =
       "The 1989 endpoint is supported as a year claim in a later source, not as a separately dated 1989 event record."
     ],
     "inputFingerprints": {
-      "graph_database": "sha256:a58a64bd595ff091637ccd7795fdea601176e1ee9a9b57a0a0ce69adab589b99",
-      "graph_receipt": "sha256:af7f1cc4a9a266f9850217ab22648197430a40357c756e4e2eaa5ae5019c8369",
-      "qa_receipt": "sha256:793838d3eea5f33811a422b5338d8cc47c79cea24ee75b6d240e652630db8205",
+      "graph_database": "sha256:375543de27929855f1f04511a18a8f4f6efe68163ecc662c8dc90d20beb43a8d",
+      "graph_receipt": "sha256:7821e264d0bebcc4d012525da6575cebe2053c3d6e6e1825f55e0fbe12807224",
+      "qa_receipt": "sha256:80edea4fa393d7004d85d09dec2b3432622a6ec97b39efe3dafd44f487e36233",
       "retained_snapshot": "sha256:cf1f1c40f52bf0c43f378c20a31e27a4e8b02d79cf2531c0dde925ccd5e84558"
     },
-    "provenanceJobId": "mercy-connection-worker-2026-10-21-sean-penn-material-girl-v1",
+    "provenanceJobId": "mercy-connection-worker-2026-10-21-v2-repaired-graph",
     "sourceSearchState": "unresolved",
     "authorityBoundary": "Derived arc projection only; source facts remain separately labelled and no canonical, inventory, media, filesystem, or public-network writes occurred.",
     "nextAction": "Resolve or preserve the first-meeting candidate through a new retained-source lane or curator testimony; do not infer it from the arc sequence."
@@ -599,12 +599,12 @@ export const mercyReaderArcs: MercyReaderArc[] =
       "The video and album-cover records retain month-level or source-qualified timing; no exact shoot day is invented."
     ],
     "inputFingerprints": {
-      "graph_database": "sha256:a58a64bd595ff091637ccd7795fdea601176e1ee9a9b57a0a0ce69adab589b99",
-      "graph_receipt": "sha256:af7f1cc4a9a266f9850217ab22648197430a40357c756e4e2eaa5ae5019c8369",
-      "qa_receipt": "sha256:793838d3eea5f33811a422b5338d8cc47c79cea24ee75b6d240e652630db8205",
+      "graph_database": "sha256:375543de27929855f1f04511a18a8f4f6efe68163ecc662c8dc90d20beb43a8d",
+      "graph_receipt": "sha256:7821e264d0bebcc4d012525da6575cebe2053c3d6e6e1825f55e0fbe12807224",
+      "qa_receipt": "sha256:80edea4fa393d7004d85d09dec2b3432622a6ec97b39efe3dafd44f487e36233",
       "retained_snapshot": "sha256:cf1f1c40f52bf0c43f378c20a31e27a4e8b02d79cf2531c0dde925ccd5e84558"
     },
-    "provenanceJobId": "mercy-working-graph-1958-2026-v1.rebuild-20261021-resumed-qa",
+    "provenanceJobId": "mercy-working-graph-1958-2026-v1.repaired-20261021-v1-qa",
     "sourceSearchState": "source_bundles_materialized",
     "authorityBoundary": "Derived arc projection only; source facts remain separately labelled and no canonical, inventory, media, filesystem, or public-network writes occurred.",
     "nextAction": "Extend the arc with typed song-to-release, video-to-broadcast, and representation edges only when their source bundles and endpoint identities are independently visible."
@@ -862,12 +862,12 @@ export const mercyReaderArcs: MercyReaderArc[] =
       "The five local representations are filename/context matches. They are not asserted to be the original shoot, an outtake, or the canonical publication object without further evidence."
     ],
     "inputFingerprints": {
-      "graph_database": "sha256:a58a64bd595ff091637ccd7795fdea601176e1ee9a9b57a0a0ce69adab589b99",
-      "graph_receipt": "sha256:af7f1cc4a9a266f9850217ab22648197430a40357c756e4e2eaa5ae5019c8369",
-      "qa_receipt": "sha256:793838d3eea5f33811a422b5338d8cc47c79cea24ee75b6d240e652630db8205",
+      "graph_database": "sha256:375543de27929855f1f04511a18a8f4f6efe68163ecc662c8dc90d20beb43a8d",
+      "graph_receipt": "sha256:7821e264d0bebcc4d012525da6575cebe2053c3d6e6e1825f55e0fbe12807224",
+      "qa_receipt": "sha256:80edea4fa393d7004d85d09dec2b3432622a6ec97b39efe3dafd44f487e36233",
       "retained_snapshot": "sha256:cf1f1c40f52bf0c43f378c20a31e27a4e8b02d79cf2531c0dde925ccd5e84558"
     },
-    "provenanceJobId": "mercy-working-graph-1958-2026-v1.rebuild-20261021-resumed-qa",
+    "provenanceJobId": "mercy-working-graph-1958-2026-v1.repaired-20261021-v1-qa",
     "sourceSearchState": "representation_historical_match_projection",
     "authorityBoundary": "Derived visual arc and representation projection only; original paths and representation observations remain unchanged, and no canonical, inventory, media, filesystem, or public-network writes occurred.",
     "nextAction": "Inspect source provenance and any retained publication/outtake evidence before upgrading a representation association; preserve each logical file and technical sidecar separately."
@@ -1087,12 +1087,12 @@ export const mercyReaderArcs: MercyReaderArc[] =
       "No local film master, B-roll, tag, or other archive representation was directly matched to these facts in the pinned projection; that is an evidence boundary, not proof that no such file exists."
     ],
     "inputFingerprints": {
-      "graph_database": "sha256:a58a64bd595ff091637ccd7795fdea601176e1ee9a9b57a0a0ce69adab589b99",
-      "graph_receipt": "sha256:af7f1cc4a9a266f9850217ab22648197430a40357c756e4e2eaa5ae5019c8369",
-      "qa_receipt": "sha256:793838d3eea5f33811a422b5338d8cc47c79cea24ee75b6d240e652630db8205",
+      "graph_database": "sha256:375543de27929855f1f04511a18a8f4f6efe68163ecc662c8dc90d20beb43a8d",
+      "graph_receipt": "sha256:7821e264d0bebcc4d012525da6575cebe2053c3d6e6e1825f55e0fbe12807224",
+      "qa_receipt": "sha256:80edea4fa393d7004d85d09dec2b3432622a6ec97b39efe3dafd44f487e36233",
       "retained_snapshot": "sha256:cf1f1c40f52bf0c43f378c20a31e27a4e8b02d79cf2531c0dde925ccd5e84558"
     },
-    "provenanceJobId": "mercy-working-graph-1958-2026-v1.rebuild-20261021-resumed-qa",
+    "provenanceJobId": "mercy-working-graph-1958-2026-v1.repaired-20261021-v1-qa",
     "sourceSearchState": "source_bundles_materialized",
     "authorityBoundary": "Derived song-and-screen arc only; recording/version, release, and representation authorities remain separate, and no canonical, inventory, media, filesystem, or public-network writes occurred.",
     "nextAction": "Promote typed demo-to-recording-version and recording-to-release edges only after their endpoint identities and any local film/audio representations are independently evidenced."
@@ -1318,12 +1318,12 @@ export const mercyReaderArcs: MercyReaderArc[] =
       "The recording source describes the February session as a retained-source reconstruction and preserves a February 25–28 range; no exact recording day is invented."
     ],
     "inputFingerprints": {
-      "graph_database": "sha256:a58a64bd595ff091637ccd7795fdea601176e1ee9a9b57a0a0ce69adab589b99",
-      "graph_receipt": "sha256:af7f1cc4a9a266f9850217ab22648197430a40357c756e4e2eaa5ae5019c8369",
-      "qa_receipt": "sha256:793838d3eea5f33811a422b5338d8cc47c79cea24ee75b6d240e652630db8205",
+      "graph_database": "sha256:375543de27929855f1f04511a18a8f4f6efe68163ecc662c8dc90d20beb43a8d",
+      "graph_receipt": "sha256:7821e264d0bebcc4d012525da6575cebe2053c3d6e6e1825f55e0fbe12807224",
+      "qa_receipt": "sha256:80edea4fa393d7004d85d09dec2b3432622a6ec97b39efe3dafd44f487e36233",
       "retained_snapshot": "sha256:cf1f1c40f52bf0c43f378c20a31e27a4e8b02d79cf2531c0dde925ccd5e84558"
     },
-    "provenanceJobId": "mercy-working-graph-1958-2026-v1.rebuild-20261021-resumed-qa",
+    "provenanceJobId": "mercy-working-graph-1958-2026-v1.repaired-20261021-v1-qa",
     "sourceSearchState": "source_bundles_and_representation_match_materialized",
     "authorityBoundary": "Derived music-video and representation arc only; source facts, operational inventory, local files, and canonical recording/release authorities remain separate, and no canonical, inventory, media, filesystem, or public-network writes occurred.",
     "nextAction": "The two local files are now receipt-backed read-only observations; consider aired-master, B-roll, tag, or recording-version edges only if additional evidence supports them."
@@ -1471,9 +1471,9 @@ export const mercyReaderArcs: MercyReaderArc[] =
       "No typed setlist-item, broadcast-master, tag, or recording-version edge is asserted from the filename alone."
     ],
     "inputFingerprints": {
-      "graph_database": "sha256:a58a64bd595ff091637ccd7795fdea601176e1ee9a9b57a0a0ce69adab589b99",
-      "graph_receipt": "sha256:af7f1cc4a9a266f9850217ab22648197430a40357c756e4e2eaa5ae5019c8369",
-      "qa_receipt": "sha256:793838d3eea5f33811a422b5338d8cc47c79cea24ee75b6d240e652630db8205",
+      "graph_database": "sha256:375543de27929855f1f04511a18a8f4f6efe68163ecc662c8dc90d20beb43a8d",
+      "graph_receipt": "sha256:7821e264d0bebcc4d012525da6575cebe2053c3d6e6e1825f55e0fbe12807224",
+      "qa_receipt": "sha256:80edea4fa393d7004d85d09dec2b3432622a6ec97b39efe3dafd44f487e36233",
       "retained_snapshot": "sha256:cf1f1c40f52bf0c43f378c20a31e27a4e8b02d79cf2531c0dde925ccd5e84558",
       "virgin_tour_png": "64b44e00cac94bdd56c70802aa1b5f04a7e16f4ff0fc0e9d0d238b2296195a60",
       "virgin_tour_mp4": "8556f055139c26dad4bd6b652f8b31c0d08a1f515fc179dbaf9d016813b5ad39"

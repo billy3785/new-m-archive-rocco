@@ -4,8 +4,8 @@ import { resolve } from "node:path";
 
 const repoDir = resolve(new URL("..", import.meta.url).pathname);
 const workspaceRoot = resolve(repoDir, "..");
-const dbPath = resolve(workspaceRoot, "lmstudio_operating_model/knowledge/mercy-working-canon/mercy-full-span-connected-working-canon-1958-2026-v1.aggregate-v1/mercy-working-graph-1958-2026-v1.rebuild-20261021-resumed.sqlite");
-const workerDir = resolve(workspaceRoot, "lmstudio_operating_model/receipts/mercy-connection-worker-2026-10-21-v1");
+const dbPath = resolve(workspaceRoot, "lmstudio_operating_model/knowledge/mercy-working-canon/mercy-full-span-connected-working-canon-1958-2026-v1.aggregate-v1/mercy-working-graph-1958-2026-v1.repaired-20261021-v1.sqlite");
+const workerDir = resolve(workspaceRoot, "lmstudio_operating_model/receipts/mercy-connection-worker-2026-10-21-v2-repaired-graph");
 const outputPath = resolve(repoDir, "lib/mercy-reader-arcs.ts");
 
 const runSqlite = (sql) => new Promise((resolvePromise, reject) => {
@@ -60,7 +60,7 @@ const sourceRows = await runSqlite(`SELECT fact_id,ordinal,source_item_id,source
 const representationRows = await runSqlite(`SELECT representation_id,year,observation_state,logical_representation_id,unresolved_reason,payload_json,historical_match_json FROM representation WHERE json_extract(historical_match_json,'$.fact_id') IN (${ids}) ORDER BY year,representation_id;`);
 const receipt = await readJson(resolve(workerDir, "worker-receipt.json"));
 const sourceSearch = await readJson(resolve(workerDir, "source-search-receipt.json"));
-const graphQa = await readJson(resolve(workspaceRoot, "lmstudio_operating_model/receipts/mercy-working-graph/mercy-working-graph-1958-2026-v1.rebuild-20261021-resumed-qa/qa-receipt.json"));
+const graphQa = await readJson(resolve(workspaceRoot, "lmstudio_operating_model/receipts/mercy-working-graph/mercy-working-graph-1958-2026-v1.repaired-20261021-v1-qa/qa-receipt.json"));
 const virginTourInspection = await readJson(resolve(workspaceRoot, "lmstudio_operating_model/receipts/mercy-reader-virgin-tour-opening-inspection-2026-10-21-v1/receipt.json"));
 
 const factsById = new Map(facts.map((fact) => [fact.fact_id, fact]));

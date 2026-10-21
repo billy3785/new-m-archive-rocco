@@ -35,7 +35,7 @@ export type MercyResearchQuestion = {
 
 export const mercyResearchMeta = 
 {
-  "jobId": "mercy-connection-worker-2026-10-21-sean-penn-material-girl-v1",
+  "jobId": "mercy-connection-worker-2026-10-21-v2-repaired-graph",
   "status": "completed_connection_discovery_worker",
   "implementationVersion": "mercy-connection-worker/0.1.0",
   "years": [
@@ -56,9 +56,9 @@ export const mercyResearchMeta =
     "qa_passed_working_graph"
   ],
   "inputFingerprints": {
-    "graph_database": "sha256:a58a64bd595ff091637ccd7795fdea601176e1ee9a9b57a0a0ce69adab589b99",
-    "graph_receipt": "sha256:af7f1cc4a9a266f9850217ab22648197430a40357c756e4e2eaa5ae5019c8369",
-    "qa_receipt": "sha256:793838d3eea5f33811a422b5338d8cc47c79cea24ee75b6d240e652630db8205",
+    "graph_database": "sha256:375543de27929855f1f04511a18a8f4f6efe68163ecc662c8dc90d20beb43a8d",
+    "graph_receipt": "sha256:7821e264d0bebcc4d012525da6575cebe2053c3d6e6e1825f55e0fbe12807224",
+    "qa_receipt": "sha256:80edea4fa393d7004d85d09dec2b3432622a6ec97b39efe3dafd44f487e36233",
     "retained_snapshot": "sha256:cf1f1c40f52bf0c43f378c20a31e27a4e8b02d79cf2531c0dde925ccd5e84558"
   },
   "sourceSearch": {
@@ -84,14 +84,14 @@ export const mercyResearchMeta =
     "public_network": 0
   },
   "publicNetwork": 0,
-  "workerReceiptPath": "lmstudio_operating_model/receipts/mercy-connection-worker-2026-10-21-v1/worker-receipt.json",
-  "sourceSearchReceiptPath": "lmstudio_operating_model/receipts/mercy-connection-worker-2026-10-21-v1/source-search-receipt.json"
+  "workerReceiptPath": "lmstudio_operating_model/receipts/mercy-connection-worker-2026-10-21-v2-repaired-graph/worker-receipt.json",
+  "sourceSearchReceiptPath": "lmstudio_operating_model/receipts/mercy-connection-worker-2026-10-21-v2-repaired-graph/source-search-receipt.json"
 } as const;
 
 export const mercyResearchProposals: MercyResearchProposal[] = 
 [
   {
-    "proposalId": "mercy.connection-proposal.a2fddaf52487c1bba910",
+    "proposalId": "mercy.connection-proposal.fdbd24dd5bf2dc3a2ee8",
     "subjectId": "mercy.fact.4c1d21bfa7cbd55361bc",
     "objectId": "mercy.core.fact.9ceca259ef9a89b95413",
     "predicate": "records_marriage_of",
@@ -198,7 +198,7 @@ export const mercyResearchProposals: MercyResearchProposal[] =
     ]
   },
   {
-    "proposalId": "mercy.connection-proposal.ace177a513af48657afa",
+    "proposalId": "mercy.connection-proposal.fb3e655af6d74d3c1a8e",
     "subjectId": "mercy.core.fact.0abb4588909b729687f0",
     "objectId": "mercy.core.fact.9ceca259ef9a89b95413",
     "predicate": "source_contextual_link_through_film",
@@ -305,7 +305,7 @@ export const mercyResearchProposals: MercyResearchProposal[] =
     ]
   },
   {
-    "proposalId": "mercy.connection-proposal.2836f6a651ebce9c4055",
+    "proposalId": "mercy.connection-proposal.77e22d185d954efbade7",
     "subjectId": "mercy.core.fact.9ceca259ef9a89b95413",
     "objectId": "mercy.core.fact.68138748874c401b5817",
     "predicate": "possible_first_meeting_context",
@@ -356,7 +356,7 @@ export const mercyResearchProposals: MercyResearchProposal[] =
 export const mercyResearchQuestions: MercyResearchQuestion[] = 
 [
   {
-    "questionId": "mercy.connection-proposal.70e73cb814f1cad6c2d9",
+    "questionId": "mercy.connection-proposal.2c8c634a1cf8af678a07",
     "question": "Is there a retained article, caption, interview, or curator testimony that records Sean Penn meeting Madonna on the Material Girl video set?",
     "state": "awaiting_curator",
     "priority": "high",
@@ -387,7 +387,7 @@ export const mercyResearchQuestions: MercyResearchQuestion[] =
 export const mercyResearchRepresentationLedger = 
 [
   {
-    "ledger_id": "mercy.connection-proposal.bfcdbea8ba9e58d79b33",
+    "ledger_id": "mercy.connection-proposal.1ae000f9cfc20b7980c3",
     "matched_representation_count": 0,
     "nonclaims": [
       "No archive media was inspected or modified."
@@ -402,7 +402,7 @@ export const mercyResearchRepresentationLedger =
 export const mercyResearchContradictionLedger = 
 [
   {
-    "ledger_id": "mercy.connection-proposal.b48bcfa81cfbcbae45bb",
+    "ledger_id": "mercy.connection-proposal.dd6e247a4743936ad053",
     "nonclaims": [
       "This audit row is not a new historical contradiction claim."
     ],

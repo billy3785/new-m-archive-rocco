@@ -3,7 +3,7 @@ import { resolve } from "node:path";
 
 const repoDir = resolve(new URL("..", import.meta.url).pathname);
 const workspaceRoot = resolve(repoDir, "..");
-const workerDir = resolve(workspaceRoot, "lmstudio_operating_model/receipts/mercy-connection-worker-2026-10-21-v1");
+const workerDir = resolve(workspaceRoot, "lmstudio_operating_model/receipts/mercy-connection-worker-2026-10-21-v2-repaired-graph");
 const generatedPath = resolve(repoDir, "lib/mercy-reader-research.ts");
 
 const readJson = async (path) => JSON.parse(await readFile(path, "utf8"));

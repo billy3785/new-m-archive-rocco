@@ -1,7 +1,7 @@
 // Generated from the read-only aggregate MERCY working graph. Do not hand-edit.
 // Source graph status is qa_pass_working_graph; this index never promotes canonical or inventory claims.
-// Source DB: lmstudio_operating_model/knowledge/mercy-working-canon/mercy-full-span-connected-working-canon-1958-2026-v1.aggregate-v1/mercy-working-graph-1958-2026-v1.rebuild-20261021-resumed.sqlite
-// Source DB fingerprint: sha256:a58a64bd595ff091637ccd7795fdea601176e1ee9a9b57a0a0ce69adab589b99
+// Source DB: lmstudio_operating_model/knowledge/mercy-working-canon/mercy-full-span-connected-working-canon-1958-2026-v1.aggregate-v1/mercy-working-graph-1958-2026-v1.repaired-20261021-v1.sqlite
+// Source DB fingerprint: sha256:375543de27929855f1f04511a18a8f4f6efe68163ecc662c8dc90d20beb43a8d
 
 export type MercyYearSummary = {
   year: number;
@@ -57,7 +57,7 @@ export const mercyReaderYears: MercyYearSummary[] =
     "year": 1958,
     "factCount": 1,
     "dateClaimCount": 2,
-    "connectionCount": 309,
+    "connectionCount": 0,
     "representationCount": 27,
     "sourceBundleCount": 1,
     "status": "completed_visible_working_canon"
@@ -66,7 +66,7 @@ export const mercyReaderYears: MercyYearSummary[] =
     "year": 1959,
     "factCount": 1,
     "dateClaimCount": 2,
-    "connectionCount": 204,
+    "connectionCount": 0,
     "representationCount": 27,
     "sourceBundleCount": 1,
     "status": "completed_visible_working_canon"
@@ -75,7 +75,7 @@ export const mercyReaderYears: MercyYearSummary[] =
     "year": 1960,
     "factCount": 1,
     "dateClaimCount": 2,
-    "connectionCount": 196,
+    "connectionCount": 0,
     "representationCount": 24,
     "sourceBundleCount": 1,
     "status": "completed_visible_working_canon"
@@ -84,7 +84,7 @@ export const mercyReaderYears: MercyYearSummary[] =
     "year": 1961,
     "factCount": 1,
     "dateClaimCount": 2,
-    "connectionCount": 184,
+    "connectionCount": 0,
     "representationCount": 22,
     "sourceBundleCount": 1,
     "status": "completed_visible_working_canon"
@@ -93,7 +93,7 @@ export const mercyReaderYears: MercyYearSummary[] =
     "year": 1962,
     "factCount": 1,
     "dateClaimCount": 2,
-    "connectionCount": 199,
+    "connectionCount": 0,
     "representationCount": 26,
     "sourceBundleCount": 1,
     "status": "completed_visible_working_canon"
@@ -102,7 +102,7 @@ export const mercyReaderYears: MercyYearSummary[] =
     "year": 1963,
     "factCount": 1,
     "dateClaimCount": 2,
-    "connectionCount": 203,
+    "connectionCount": 0,
     "representationCount": 27,
     "sourceBundleCount": 1,
     "status": "completed_visible_working_canon"
@@ -111,7 +111,7 @@ export const mercyReaderYears: MercyYearSummary[] =
     "year": 1964,
     "factCount": 1,
     "dateClaimCount": 2,
-    "connectionCount": 199,
+    "connectionCount": 0,
     "representationCount": 26,
     "sourceBundleCount": 1,
     "status": "completed_visible_working_canon"
@@ -120,7 +120,7 @@ export const mercyReaderYears: MercyYearSummary[] =
     "year": 1965,
     "factCount": 1,
     "dateClaimCount": 2,
-    "connectionCount": 202,
+    "connectionCount": 0,
     "representationCount": 27,
     "sourceBundleCount": 1,
     "status": "completed_visible_working_canon"
@@ -129,7 +129,7 @@ export const mercyReaderYears: MercyYearSummary[] =
     "year": 1966,
     "factCount": 1,
     "dateClaimCount": 2,
-    "connectionCount": 203,
+    "connectionCount": 0,
     "representationCount": 27,
     "sourceBundleCount": 1,
     "status": "completed_visible_working_canon"
@@ -138,7 +138,7 @@ export const mercyReaderYears: MercyYearSummary[] =
     "year": 1967,
     "factCount": 1,
     "dateClaimCount": 2,
-    "connectionCount": 202,
+    "connectionCount": 0,
     "representationCount": 27,
     "sourceBundleCount": 1,
     "status": "completed_visible_working_canon"
@@ -147,7 +147,7 @@ export const mercyReaderYears: MercyYearSummary[] =
     "year": 1968,
     "factCount": 1,
     "dateClaimCount": 2,
-    "connectionCount": 201,
+    "connectionCount": 0,
     "representationCount": 27,
     "sourceBundleCount": 1,
     "status": "completed_visible_working_canon"
@@ -156,7 +156,7 @@ export const mercyReaderYears: MercyYearSummary[] =
     "year": 1969,
     "factCount": 1,
     "dateClaimCount": 2,
-    "connectionCount": 192,
+    "connectionCount": 0,
     "representationCount": 24,
     "sourceBundleCount": 1,
     "status": "completed_visible_working_canon"
@@ -165,7 +165,7 @@ export const mercyReaderYears: MercyYearSummary[] =
     "year": 1970,
     "factCount": 7,
     "dateClaimCount": 14,
-    "connectionCount": 243,
+    "connectionCount": 0,
     "representationCount": 27,
     "sourceBundleCount": 17,
     "status": "completed_visible_working_canon"
@@ -174,7 +174,7 @@ export const mercyReaderYears: MercyYearSummary[] =
     "year": 1971,
     "factCount": 1,
     "dateClaimCount": 2,
-    "connectionCount": 200,
+    "connectionCount": 0,
     "representationCount": 26,
     "sourceBundleCount": 1,
     "status": "completed_visible_working_canon"
@@ -183,7 +183,7 @@ export const mercyReaderYears: MercyYearSummary[] =
     "year": 1972,
     "factCount": 1,
     "dateClaimCount": 2,
-    "connectionCount": 204,
+    "connectionCount": 0,
     "representationCount": 27,
     "sourceBundleCount": 1,
     "status": "completed_visible_working_canon"
@@ -192,7 +192,7 @@ export const mercyReaderYears: MercyYearSummary[] =
     "year": 1973,
     "factCount": 1,
     "dateClaimCount": 2,
-    "connectionCount": 201,
+    "connectionCount": 0,
     "representationCount": 27,
     "sourceBundleCount": 1,
     "status": "completed_visible_working_canon"
@@ -201,7 +201,7 @@ export const mercyReaderYears: MercyYearSummary[] =
     "year": 1974,
     "factCount": 1,
     "dateClaimCount": 2,
-    "connectionCount": 202,
+    "connectionCount": 0,
     "representationCount": 27,
     "sourceBundleCount": 1,
     "status": "completed_visible_working_canon"
@@ -210,7 +210,7 @@ export const mercyReaderYears: MercyYearSummary[] =
     "year": 1975,
     "factCount": 1,
     "dateClaimCount": 2,
-    "connectionCount": 202,
+    "connectionCount": 0,
     "representationCount": 27,
     "sourceBundleCount": 1,
     "status": "completed_visible_working_canon"
@@ -219,7 +219,7 @@ export const mercyReaderYears: MercyYearSummary[] =
     "year": 1976,
     "factCount": 1,
     "dateClaimCount": 2,
-    "connectionCount": 223,
+    "connectionCount": 0,
     "representationCount": 36,
     "sourceBundleCount": 1,
     "status": "completed_visible_working_canon"
@@ -228,7 +228,7 @@ export const mercyReaderYears: MercyYearSummary[] =
     "year": 1977,
     "factCount": 5,
     "dateClaimCount": 10,
-    "connectionCount": 224,
+    "connectionCount": 0,
     "representationCount": 27,
     "sourceBundleCount": 5,
     "status": "completed_visible_working_canon"
@@ -237,7 +237,7 @@ export const mercyReaderYears: MercyYearSummary[] =
     "year": 1978,
     "factCount": 8,
     "dateClaimCount": 16,
-    "connectionCount": 235,
+    "connectionCount": 0,
     "representationCount": 27,
     "sourceBundleCount": 8,
     "status": "completed_visible_working_canon"
@@ -246,7 +246,7 @@ export const mercyReaderYears: MercyYearSummary[] =
     "year": 1979,
     "factCount": 16,
     "dateClaimCount": 32,
-    "connectionCount": 272,
+    "connectionCount": 0,
     "representationCount": 27,
     "sourceBundleCount": 16,
     "status": "completed_visible_working_canon"
@@ -255,7 +255,7 @@ export const mercyReaderYears: MercyYearSummary[] =
     "year": 1980,
     "factCount": 3441,
     "dateClaimCount": 2824,
-    "connectionCount": 37495,
+    "connectionCount": 0,
     "representationCount": 27,
     "sourceBundleCount": 17816,
     "status": "completed_visible_working_canon"
@@ -264,7 +264,7 @@ export const mercyReaderYears: MercyYearSummary[] =
     "year": 1981,
     "factCount": 30,
     "dateClaimCount": 60,
-    "connectionCount": 353,
+    "connectionCount": 0,
     "representationCount": 27,
     "sourceBundleCount": 34,
     "status": "completed_visible_working_canon"
@@ -273,7 +273,7 @@ export const mercyReaderYears: MercyYearSummary[] =
     "year": 1982,
     "factCount": 3802,
     "dateClaimCount": 3520,
-    "connectionCount": 42831,
+    "connectionCount": 0,
     "representationCount": 27,
     "sourceBundleCount": 18186,
     "status": "completed_visible_working_canon"
@@ -282,7 +282,7 @@ export const mercyReaderYears: MercyYearSummary[] =
     "year": 1983,
     "factCount": 4805,
     "dateClaimCount": 5268,
-    "connectionCount": 59337,
+    "connectionCount": 0,
     "representationCount": 25,
     "sourceBundleCount": 20128,
     "status": "completed_visible_working_canon"
@@ -291,7 +291,7 @@ export const mercyReaderYears: MercyYearSummary[] =
     "year": 1984,
     "factCount": 6057,
     "dateClaimCount": 7558,
-    "connectionCount": 64499,
+    "connectionCount": 0,
     "representationCount": 27,
     "sourceBundleCount": 22011,
     "status": "completed_visible_working_canon"
@@ -300,7 +300,7 @@ export const mercyReaderYears: MercyYearSummary[] =
     "year": 1985,
     "factCount": 4419,
     "dateClaimCount": 4544,
-    "connectionCount": 54000,
+    "connectionCount": 0,
     "representationCount": 34,
     "sourceBundleCount": 19193,
     "status": "completed_visible_working_canon"
@@ -309,7 +309,7 @@ export const mercyReaderYears: MercyYearSummary[] =
     "year": 1986,
     "factCount": 3838,
     "dateClaimCount": 3590,
-    "connectionCount": 43816,
+    "connectionCount": 0,
     "representationCount": 27,
     "sourceBundleCount": 18379,
     "status": "completed_visible_working_canon"
@@ -318,7 +318,7 @@ export const mercyReaderYears: MercyYearSummary[] =
     "year": 1987,
     "factCount": 3901,
     "dateClaimCount": 3717,
-    "connectionCount": 44840,
+    "connectionCount": 0,
     "representationCount": 27,
     "sourceBundleCount": 18430,
     "status": "completed_visible_working_canon"
@@ -327,7 +327,7 @@ export const mercyReaderYears: MercyYearSummary[] =
     "year": 1988,
     "factCount": 3851,
     "dateClaimCount": 3618,
-    "connectionCount": 44907,
+    "connectionCount": 0,
     "representationCount": 27,
     "sourceBundleCount": 18315,
     "status": "completed_visible_working_canon"
@@ -336,7 +336,7 @@ export const mercyReaderYears: MercyYearSummary[] =
     "year": 1989,
     "factCount": 3967,
     "dateClaimCount": 3850,
-    "connectionCount": 48808,
+    "connectionCount": 0,
     "representationCount": 27,
     "sourceBundleCount": 18631,
     "status": "completed_visible_working_canon"
@@ -345,7 +345,7 @@ export const mercyReaderYears: MercyYearSummary[] =
     "year": 1990,
     "factCount": 4595,
     "dateClaimCount": 5090,
-    "connectionCount": 58388,
+    "connectionCount": 0,
     "representationCount": 27,
     "sourceBundleCount": 19692,
     "status": "completed_visible_working_canon"
@@ -354,7 +354,7 @@ export const mercyReaderYears: MercyYearSummary[] =
     "year": 1991,
     "factCount": 4252,
     "dateClaimCount": 4406,
-    "connectionCount": 55699,
+    "connectionCount": 0,
     "representationCount": 27,
     "sourceBundleCount": 19221,
     "status": "completed_visible_working_canon"
@@ -363,7 +363,7 @@ export const mercyReaderYears: MercyYearSummary[] =
     "year": 1992,
     "factCount": 4393,
     "dateClaimCount": 4683,
-    "connectionCount": 56616,
+    "connectionCount": 0,
     "representationCount": 27,
     "sourceBundleCount": 19441,
     "status": "completed_visible_working_canon"
@@ -372,7 +372,7 @@ export const mercyReaderYears: MercyYearSummary[] =
     "year": 1993,
     "factCount": 4527,
     "dateClaimCount": 4939,
-    "connectionCount": 57727,
+    "connectionCount": 0,
     "representationCount": 27,
     "sourceBundleCount": 19585,
     "status": "completed_visible_working_canon"
@@ -381,7 +381,7 @@ export const mercyReaderYears: MercyYearSummary[] =
     "year": 1994,
     "factCount": 4437,
     "dateClaimCount": 4770,
-    "connectionCount": 57636,
+    "connectionCount": 0,
     "representationCount": 27,
     "sourceBundleCount": 19464,
     "status": "completed_visible_working_canon"
@@ -390,7 +390,7 @@ export const mercyReaderYears: MercyYearSummary[] =
     "year": 1995,
     "factCount": 4329,
     "dateClaimCount": 4574,
-    "connectionCount": 57322,
+    "connectionCount": 0,
     "representationCount": 27,
     "sourceBundleCount": 19411,
     "status": "completed_visible_working_canon"
@@ -399,7 +399,7 @@ export const mercyReaderYears: MercyYearSummary[] =
     "year": 1996,
     "factCount": 4191,
     "dateClaimCount": 4270,
-    "connectionCount": 52252,
+    "connectionCount": 0,
     "representationCount": 27,
     "sourceBundleCount": 18862,
     "status": "completed_visible_working_canon"
@@ -408,7 +408,7 @@ export const mercyReaderYears: MercyYearSummary[] =
     "year": 1997,
     "factCount": 4056,
     "dateClaimCount": 4026,
-    "connectionCount": 50084,
+    "connectionCount": 0,
     "representationCount": 27,
     "sourceBundleCount": 18820,
     "status": "completed_visible_working_canon"
@@ -417,7 +417,7 @@ export const mercyReaderYears: MercyYearSummary[] =
     "year": 1998,
     "factCount": 4271,
     "dateClaimCount": 4440,
-    "connectionCount": 53147,
+    "connectionCount": 0,
     "representationCount": 27,
     "sourceBundleCount": 19347,
     "status": "completed_visible_working_canon"
@@ -426,7 +426,7 @@ export const mercyReaderYears: MercyYearSummary[] =
     "year": 1999,
     "factCount": 3926,
     "dateClaimCount": 3762,
-    "connectionCount": 48051,
+    "connectionCount": 0,
     "representationCount": 27,
     "sourceBundleCount": 18722,
     "status": "completed_visible_working_canon"
@@ -435,7 +435,7 @@ export const mercyReaderYears: MercyYearSummary[] =
     "year": 2000,
     "factCount": 3748,
     "dateClaimCount": 3412,
-    "connectionCount": 41794,
+    "connectionCount": 0,
     "representationCount": 27,
     "sourceBundleCount": 18143,
     "status": "completed_visible_working_canon"
@@ -444,7 +444,7 @@ export const mercyReaderYears: MercyYearSummary[] =
     "year": 2001,
     "factCount": 3835,
     "dateClaimCount": 3582,
-    "connectionCount": 42644,
+    "connectionCount": 0,
     "representationCount": 27,
     "sourceBundleCount": 18266,
     "status": "completed_visible_working_canon"
@@ -453,7 +453,7 @@ export const mercyReaderYears: MercyYearSummary[] =
     "year": 2002,
     "factCount": 3594,
     "dateClaimCount": 3100,
-    "connectionCount": 39644,
+    "connectionCount": 0,
     "representationCount": 27,
     "sourceBundleCount": 17990,
     "status": "completed_visible_working_canon"
@@ -462,7 +462,7 @@ export const mercyReaderYears: MercyYearSummary[] =
     "year": 2003,
     "factCount": 3809,
     "dateClaimCount": 3534,
-    "connectionCount": 42884,
+    "connectionCount": 0,
     "representationCount": 27,
     "sourceBundleCount": 18216,
     "status": "completed_visible_working_canon"
@@ -471,7 +471,7 @@ export const mercyReaderYears: MercyYearSummary[] =
     "year": 2004,
     "factCount": 3606,
     "dateClaimCount": 3140,
-    "connectionCount": 39137,
+    "connectionCount": 0,
     "representationCount": 27,
     "sourceBundleCount": 18022,
     "status": "completed_visible_working_canon"
@@ -480,7 +480,7 @@ export const mercyReaderYears: MercyYearSummary[] =
     "year": 2005,
     "factCount": 3845,
     "dateClaimCount": 3604,
-    "connectionCount": 42967,
+    "connectionCount": 0,
     "representationCount": 27,
     "sourceBundleCount": 18278,
     "status": "completed_visible_working_canon"
@@ -489,7 +489,7 @@ export const mercyReaderYears: MercyYearSummary[] =
     "year": 2006,
     "factCount": 3910,
     "dateClaimCount": 3736,
-    "connectionCount": 43219,
+    "connectionCount": 0,
     "representationCount": 27,
     "sourceBundleCount": 18407,
     "status": "completed_visible_working_canon"
@@ -498,7 +498,7 @@ export const mercyReaderYears: MercyYearSummary[] =
     "year": 2007,
     "factCount": 3745,
     "dateClaimCount": 3406,
-    "connectionCount": 41433,
+    "connectionCount": 0,
     "representationCount": 27,
     "sourceBundleCount": 18183,
     "status": "completed_visible_working_canon"
@@ -507,7 +507,7 @@ export const mercyReaderYears: MercyYearSummary[] =
     "year": 2008,
     "factCount": 3964,
     "dateClaimCount": 3844,
-    "connectionCount": 42945,
+    "connectionCount": 0,
     "representationCount": 27,
     "sourceBundleCount": 18553,
     "status": "completed_visible_working_canon"
@@ -516,7 +516,7 @@ export const mercyReaderYears: MercyYearSummary[] =
     "year": 2009,
     "factCount": 3924,
     "dateClaimCount": 3764,
-    "connectionCount": 43280,
+    "connectionCount": 0,
     "representationCount": 27,
     "sourceBundleCount": 18471,
     "status": "completed_visible_working_canon"
@@ -525,7 +525,7 @@ export const mercyReaderYears: MercyYearSummary[] =
     "year": 2010,
     "factCount": 3834,
     "dateClaimCount": 3584,
-    "connectionCount": 42876,
+    "connectionCount": 0,
     "representationCount": 27,
     "sourceBundleCount": 18271,
     "status": "completed_visible_working_canon"
@@ -534,7 +534,7 @@ export const mercyReaderYears: MercyYearSummary[] =
     "year": 2011,
     "factCount": 3542,
     "dateClaimCount": 3010,
-    "connectionCount": 38931,
+    "connectionCount": 0,
     "representationCount": 27,
     "sourceBundleCount": 17950,
     "status": "completed_visible_working_canon"
@@ -543,7 +543,7 @@ export const mercyReaderYears: MercyYearSummary[] =
     "year": 2012,
     "factCount": 3892,
     "dateClaimCount": 3699,
-    "connectionCount": 42539,
+    "connectionCount": 0,
     "representationCount": 27,
     "sourceBundleCount": 18417,
     "status": "completed_visible_working_canon"
@@ -552,7 +552,7 @@ export const mercyReaderYears: MercyYearSummary[] =
     "year": 2013,
     "factCount": 3794,
     "dateClaimCount": 3502,
-    "connectionCount": 42682,
+    "connectionCount": 0,
     "representationCount": 27,
     "sourceBundleCount": 18189,
     "status": "completed_visible_working_canon"
@@ -561,7 +561,7 @@ export const mercyReaderYears: MercyYearSummary[] =
     "year": 2014,
     "factCount": 3693,
     "dateClaimCount": 3302,
-    "connectionCount": 41064,
+    "connectionCount": 0,
     "representationCount": 27,
     "sourceBundleCount": 18089,
     "status": "completed_visible_working_canon"
@@ -570,7 +570,7 @@ export const mercyReaderYears: MercyYearSummary[] =
     "year": 2015,
     "factCount": 3740,
     "dateClaimCount": 3396,
-    "connectionCount": 41436,
+    "connectionCount": 0,
     "representationCount": 27,
     "sourceBundleCount": 18167,
     "status": "completed_visible_working_canon"
@@ -579,7 +579,7 @@ export const mercyReaderYears: MercyYearSummary[] =
     "year": 2016,
     "factCount": 3772,
     "dateClaimCount": 3460,
-    "connectionCount": 41947,
+    "connectionCount": 0,
     "representationCount": 27,
     "sourceBundleCount": 18172,
     "status": "completed_visible_working_canon"
@@ -588,7 +588,7 @@ export const mercyReaderYears: MercyYearSummary[] =
     "year": 2017,
     "factCount": 3777,
     "dateClaimCount": 3467,
-    "connectionCount": 42598,
+    "connectionCount": 0,
     "representationCount": 27,
     "sourceBundleCount": 18152,
     "status": "completed_visible_working_canon"
@@ -597,7 +597,7 @@ export const mercyReaderYears: MercyYearSummary[] =
     "year": 2018,
     "factCount": 3783,
     "dateClaimCount": 3482,
-    "connectionCount": 42692,
+    "connectionCount": 0,
     "representationCount": 27,
     "sourceBundleCount": 18158,
     "status": "completed_visible_working_canon"
@@ -606,7 +606,7 @@ export const mercyReaderYears: MercyYearSummary[] =
     "year": 2019,
     "factCount": 3805,
     "dateClaimCount": 3526,
-    "connectionCount": 42060,
+    "connectionCount": 0,
     "representationCount": 27,
     "sourceBundleCount": 18205,
     "status": "completed_visible_working_canon"
@@ -615,7 +615,7 @@ export const mercyReaderYears: MercyYearSummary[] =
     "year": 2020,
     "factCount": 3751,
     "dateClaimCount": 3418,
-    "connectionCount": 41810,
+    "connectionCount": 0,
     "representationCount": 27,
     "sourceBundleCount": 18153,
     "status": "completed_visible_working_canon"
@@ -624,7 +624,7 @@ export const mercyReaderYears: MercyYearSummary[] =
     "year": 2021,
     "factCount": 3703,
     "dateClaimCount": 3322,
-    "connectionCount": 41393,
+    "connectionCount": 0,
     "representationCount": 27,
     "sourceBundleCount": 18078,
     "status": "completed_visible_working_canon"
@@ -633,7 +633,7 @@ export const mercyReaderYears: MercyYearSummary[] =
     "year": 2022,
     "factCount": 3783,
     "dateClaimCount": 3479,
-    "connectionCount": 42444,
+    "connectionCount": 0,
     "representationCount": 27,
     "sourceBundleCount": 18158,
     "status": "completed_visible_working_canon"
@@ -642,7 +642,7 @@ export const mercyReaderYears: MercyYearSummary[] =
     "year": 2023,
     "factCount": 3855,
     "dateClaimCount": 3626,
-    "connectionCount": 43008,
+    "connectionCount": 0,
     "representationCount": 27,
     "sourceBundleCount": 18255,
     "status": "completed_visible_working_canon"
@@ -651,7 +651,7 @@ export const mercyReaderYears: MercyYearSummary[] =
     "year": 2024,
     "factCount": 3859,
     "dateClaimCount": 3634,
-    "connectionCount": 43009,
+    "connectionCount": 0,
     "representationCount": 27,
     "sourceBundleCount": 18277,
     "status": "completed_visible_working_canon"
@@ -660,7 +660,7 @@ export const mercyReaderYears: MercyYearSummary[] =
     "year": 2025,
     "factCount": 3779,
     "dateClaimCount": 3471,
-    "connectionCount": 42669,
+    "connectionCount": 0,
     "representationCount": 27,
     "sourceBundleCount": 18154,
     "status": "completed_visible_working_canon"
@@ -669,7 +669,7 @@ export const mercyReaderYears: MercyYearSummary[] =
     "year": 2026,
     "factCount": 3860,
     "dateClaimCount": 3632,
-    "connectionCount": 42970,
+    "connectionCount": 0,
     "representationCount": 27,
     "sourceBundleCount": 18235,
     "status": "completed_visible_working_canon"
