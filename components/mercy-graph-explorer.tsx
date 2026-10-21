@@ -138,7 +138,7 @@ export function MercyGraphExplorer() {
     setDetail(null);
     setSelectedId("");
     try {
-      const response = await fetch(`/api/mercy-graph?query=${encodeURIComponent(trimmed)}&limit=18`, { cache: "no-store" });
+      const response = await fetch(`/api/mercy-graph?query=${encodeURIComponent(trimmed)}&limit=50`, { cache: "no-store" });
       const payload = (await response.json()) as SearchPayload & { error?: string };
       if (!response.ok) throw new Error(payload.error || "The private graph search is unavailable.");
       setResults(payload.results);
