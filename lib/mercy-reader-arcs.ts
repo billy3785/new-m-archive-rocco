@@ -1040,5 +1040,212 @@ export const mercyReaderArcs: MercyReaderArc[] =
     "sourceSearchState": "source_bundles_materialized",
     "authorityBoundary": "Derived song-and-screen arc only; recording/version, release, and representation authorities remain separate, and no canonical, inventory, media, filesystem, or public-network writes occurred.",
     "nextAction": "Promote typed demo-to-recording-version and recording-to-release edges only after their endpoint identities and any local film/audio representations are independently evidenced."
+  },
+  {
+    "arcId": "mercy.arc.beautiful-stranger-video-to-aired-representations-1999",
+    "title": "Beautiful Stranger · recording, video, broadcast, and local files",
+    "summary": "A source-labelled music-video arc from the February 1999 recording session through the May video shoot and June Top of the Pops introduction, with two preserved local representations attached to the aired-program fact.",
+    "state": "archive_visible_supported_with_explicit_gap",
+    "years": [
+      1999
+    ],
+    "steps": [
+      {
+        "stepId": "mercy.fact.2a8e2d40822241171c21",
+        "year": 1999,
+        "lane": "recording / song",
+        "label": "Recording sessions for Beautiful Stranger and Be Careful",
+        "dateStart": "1999-02-25",
+        "dateEnd": "1999-02-28",
+        "datePrecision": "day",
+        "dateRole": "event_date",
+        "dateBasis": "source-preserved graph fact",
+        "factType": "historical_event",
+        "assertion": "WEBO cluster 4012: Recording sessions for Madonna's 'Beautiful Stranger' and duet with Ricky Martin ('Be Careful') occurred at Guerilla Beach Studios, Los Angeles from February 25th to 28th, 1999.",
+        "confidence": 0.9,
+        "state": "archive_visible_high_confidence",
+        "place": "",
+        "sourceCount": 1,
+        "sourceExcerpt": "Thursday 25th February - Sunday 28th February 1999 Guerilla Beach Studios Los Angeles ———————- RICKY MARTIN DISCUSSES HIS DUET WITH MADONNA - “BE CAREFUL” ———————— As has been stated from various sources that Madonna’s track “Beautiful Stranger” and her duet with Ricky Martin ”Be Careful (Cuidado Con Mi Corazon”) we’re laid down at Guerilla Beach Studios, LA during February ‘99. Following the Grammy Awards all three - Madonna, Ricky Martin and William Orbit were located in LA . This would put a time frame on the recording sessions happening sometime between Feb 25th - 28th. “Be Careful” was thought to of been an earlier unused “ Ray of Light” track - however @williamorbit has confirmed it “was cooked up that week” A demo version containing Madonna on solo vocals also exists (see my later post). Apparently it was Ricky who convinced Madonna to record this as a duet, which featured on his self-entitled 1999 album. It was considered as the second single of the album. However, Madonna was too busy with other projects to shoot a video, so it was never released. Ricky added it also to his 'Best Of' album, released in 2001. “Beautiful Stranger” was recorded especially for the upcoming Aus…",
+        "sourcePointers": [
+          {
+            "sourceItemId": "source_item_f6b033d5ba143a2a3e03877618e98f445e90db8808920eec30df3972731f8dd8",
+            "authority": "WEBO retained local corpus",
+            "sourceType": "retained_webo_caption",
+            "locator": "",
+            "url": "https://www.instagram.com/p/CZ85yZOPaHgI7VHi4YILXI9XUcMIA91K6mPLKM0/",
+            "excerpt": "Thursday 25th February - Sunday 28th February 1999 Guerilla Beach Studios Los Angeles ———————- RICKY MARTIN DISCUSSES HIS DUET WITH MADONNA - “BE CAREFUL” ———————— As has been stated from various sources that Madonna’s track “Beautiful Stranger” and her duet with Ricky Martin ”Be Careful (Cuidado Con Mi Corazon”) we’re laid down at Guerilla Beach Studios, LA during February ‘99. Following the Grammy Awards all three - Madonna, Ricky Martin and William Orbit were located in LA . This would put a time frame on the recording sessions happening sometime between Feb 25th - 28th. “Be Careful” was thought to of been an earlier unused “ Ray of Light” track - however @williamorbit has confirmed it “was cooked up that week” A demo version containing Madonna on solo vocals also exists (see my later post). Apparently it was Ricky who convinced Madonna to record this as a duet, which featured on his self-entitled 1999 album. It was considered as the second single of the album. However, Madonna was too busy with other projects to shoot a video, so it was never released. Ricky added it also to his 'Best Of' album, released in 2001. “Beautiful Stranger” was recorded especially for the upcoming Aus…"
+          }
+        ],
+        "representationIds": [],
+        "representations": [],
+        "uncertainties": []
+      },
+      {
+        "stepId": "mercy.fact.243b770684ecdde69883",
+        "year": 1999,
+        "lane": "music video / shoot",
+        "label": "Beautiful Stranger music video shoot",
+        "dateStart": "1999-05-01",
+        "dateEnd": "1999-05-01",
+        "datePrecision": "day",
+        "dateRole": "event_date",
+        "dateBasis": "source-preserved graph fact",
+        "factType": "historical_event",
+        "assertion": "Madonna films the 'Beautiful Stranger' video at Universal Studios, Los Angeles.",
+        "confidence": 1,
+        "state": "archive_visible_high_confidence",
+        "place": "",
+        "sourceCount": 4,
+        "sourceExcerpt": "Saturday 1st May 1999 Universal Studios 100 Universal City PIz Universal City CA ——————— Styling: Arianne Phillips Make Up : Kevyn Aucoin Hair: Luigi Murenu Black leather jacket : Sold Sequin camisole: Chloé Plaid trousers: Bruns Bazaar Shoes: Diavolina ——————- MADONNA ON SET WITH MIKE MYERS AND DIRECTOR BRETT RATNER —————— During a weekend off from filming “The Next Best Thing” Madonna films the \"Beautiful Stranger\" video at Universal Studios, Los Angeles. Directed by Brett Ratner who’s career started in music video direction for the likes of Run DMC, Public Enemy, Lionel Richie, Mary J Blige and Mariah Carey before directing for Madonna. He also directed the films Rush Hour (in ‘97) and most recently Hercules (in 2014). Madonna had previously shown interest in working with Ratner due to his work on D'Angelo's video for \"Brown Sugar\" (in ‘95). Following the weekend shoot MTV NEWS reported this: MADONNA, MIKE MYERS TEAM UP FOR \"AUSTIN POWERS\" VIDEO “Madonna shot a groovy video this past weekend in Los Angeles for her new soundtrack song, \"Beautiful Stranger,\" which was recorded for the Mike Myers spy spoof \"Austin Powers: The Spy Who Shagged Me.\" Helmed by \"Rush Hour\" director Bre…",
+        "sourcePointers": [
+          {
+            "sourceItemId": "source_item_4c89940996853ac05eef1607007f56b0ae15af300d75ad842ae714f40138533b",
+            "authority": "WEBO retained local corpus",
+            "sourceType": "retained_webo_caption",
+            "locator": "",
+            "url": "https://www.instagram.com/p/CbVvJD3qrr_/",
+            "excerpt": "Saturday 1st May 1999 Universal Studios 100 Universal City PIz Universal City CA ——————— Styling: Arianne Phillips Make Up : Kevyn Aucoin Hair: Luigi Murenu Black leather jacket : Sold Sequin camisole: Chloé Plaid trousers: Bruns Bazaar Shoes: Diavolina ——————- MADONNA ON SET WITH MIKE MYERS AND DIRECTOR BRETT RATNER —————— During a weekend off from filming “The Next Best Thing” Madonna films the \"Beautiful Stranger\" video at Universal Studios, Los Angeles. Directed by Brett Ratner who’s career started in music video direction for the likes of Run DMC, Public Enemy, Lionel Richie, Mary J Blige and Mariah Carey before directing for Madonna. He also directed the films Rush Hour (in ‘97) and most recently Hercules (in 2014). Madonna had previously shown interest in working with Ratner due to his work on D'Angelo's video for \"Brown Sugar\" (in ‘95). Following the weekend shoot MTV NEWS reported this: MADONNA, MIKE MYERS TEAM UP FOR \"AUSTIN POWERS\" VIDEO “Madonna shot a groovy video this past weekend in Los Angeles for her new soundtrack song, \"Beautiful Stranger,\" which was recorded for the Mike Myers spy spoof \"Austin Powers: The Spy Who Shagged Me.\" Helmed by \"Rush Hour\" director Bre…"
+          },
+          {
+            "sourceItemId": "source_item_9071e1b107fcc14197752cce8f6f649806ea14d074ee1dea8e3a1dc974e68872",
+            "authority": "WEBO retained local corpus",
+            "sourceType": "retained_webo_caption",
+            "locator": "",
+            "url": "https://www.instagram.com/p/CbVwn6cqRlX/",
+            "excerpt": "Saturday 1st May 1999 Universal Studios 100 Universal City PIz Universal City CA ——————— Styling: Arianne Phillips Make Up : Kevyn Aucoin Hair: Luigi Murenu Black leather jacket : Sold Sequin camisole: Chloé Plaid trousers: Bruns Bazaar Shoes: Diavolina ——————- MADONNA ON SET WITH MIKE MYERS —————— During a weekend off from filming “The Next Best Thing” Madonna films the \"Beautiful Stranger\" video at Universal Studios, Los Angeles. Directed by Brett Ratner who’s career started in music video direction for the likes of Run DMC, Public Enemy, Lionel Richie, Mary J Blige and Mariah Carey before directing for Madonna. He also directed the films Rush Hour (in ‘97) and most recently Hercules (in 2014). Madonna had previously shown interest in working with Ratner due to his work on D'Angelo's video for \"Brown Sugar\" (in ‘95). Following the weekend shoot MTV NEWS reported this: MADONNA, MIKE MYERS TEAM UP FOR \"AUSTIN POWERS\" VIDEO “Madonna shot a groovy video this past weekend in Los Angeles for her new soundtrack song, \"Beautiful Stranger,\" which was recorded for the Mike Myers spy spoof \"Austin Powers: The Spy Who Shagged Me.\" Helmed by \"Rush Hour\" director Brett Ratner, the clip featur…"
+          },
+          {
+            "sourceItemId": "source_item_8427041106a6e3c0977204570a5c103ba0278e89496ea1ade7e8dafc986dc250",
+            "authority": "WEBO retained local corpus",
+            "sourceType": "retained_webo_caption",
+            "locator": "",
+            "url": "https://www.instagram.com/p/CbVxqq6KRnC/",
+            "excerpt": "Saturday 1st May 1999 Universal Studios 100 Universal City PIz Universal City CA ——————— Styling: Arianne Phillips Make Up : Kevyn Aucoin Hair: Luigi Murenu Black leather jacket : Sold Sequin camisole: Chloé Plaid trousers: Bruns Bazaar Shoes: Diavolina ——————- MADONNA ON SET POLAROID TAKEN BY MAKE UP ARTIST KEVYN AUCOIN —————— During a weekend off from filming “The Next Best Thing” Madonna films the \"Beautiful Stranger\" video at Universal Studios, Los Angeles. Directed by Brett Ratner who’s career started in music video direction for the likes of Run DMC, Public Enemy, Lionel Richie, Mary J Blige and Mariah Carey before directing for Madonna. He also directed the films Rush Hour (in ‘97) and most recently Hercules (in 2014). Madonna had previously shown interest in working with Ratner due to his work on D'Angelo's video for \"Brown Sugar\" (in ‘95). Following the weekend shoot MTV NEWS reported this: MADONNA, MIKE MYERS TEAM UP FOR \"AUSTIN POWERS\" VIDEO “Madonna shot a groovy video this past weekend in Los Angeles for her new soundtrack song, \"Beautiful Stranger,\" which was recorded for the Mike Myers spy spoof \"Austin Powers: The Spy Who Shagged Me.\" Helmed by \"Rush Hour\" director…"
+          },
+          {
+            "sourceItemId": "source_item_1536c0cf3cca88a8bd4fdb5ab1ace734d978a4ba812ca5d5ae05f68459a2ab8a",
+            "authority": "WEBO retained local corpus",
+            "sourceType": "retained_webo_caption",
+            "locator": "",
+            "url": "https://www.instagram.com/p/CbVyBmcKkhf/",
+            "excerpt": "Saturday 1st May 1999 Universal Studios 100 Universal City PIz Universal City CA ——————— Styling: Arianne Phillips Make Up : Kevyn Aucoin Hair: Luigi Murenu Black leather jacket : Sold Sequin camisole: Chloé Plaid trousers: Bruns Bazaar Shoes: Diavolina ——————- MADONNA ON SET WITH MIKE MYERS AND DIRECTOR BRETT RATNER —————— During a weekend off from filming “The Next Best Thing” Madonna films the \"Beautiful Stranger\" video at Universal Studios, Los Angeles. Directed by Brett Ratner who’s career started in music video direction for the likes of Run DMC, Public Enemy, Lionel Richie, Mary J Blige and Mariah Carey before directing for Madonna. He also directed the films Rush Hour (in ‘97) and most recently Hercules (in 2014). Madonna had previously shown interest in working with Ratner due to his work on D'Angelo's video for \"Brown Sugar\" (in ‘95). Following the weekend shoot MTV NEWS reported this: MADONNA, MIKE MYERS TEAM UP FOR \"AUSTIN POWERS\" VIDEO “Madonna shot a groovy video this past weekend in Los Angeles for her new soundtrack song, \"Beautiful Stranger,\" which was recorded for the Mike Myers spy spoof \"Austin Powers: The Spy Who Shagged Me.\" Helmed by \"Rush Hour\" director Bre…"
+          }
+        ],
+        "representationIds": [],
+        "representations": [],
+        "uncertainties": []
+      },
+      {
+        "stepId": "mercy.fact.2394fba0a99f5cb480a3",
+        "year": 1999,
+        "lane": "broadcast / video introduction",
+        "label": "Appearance on Top of the Pops",
+        "dateStart": "1999-06-18",
+        "dateEnd": "1999-06-18",
+        "datePrecision": "day",
+        "dateRole": "event_date",
+        "dateBasis": "source-preserved graph fact",
+        "factType": "historical_event",
+        "assertion": "Madonna appeared on BBC Top of the Pops to introduce her new video ‘Beautiful Stranger’.",
+        "confidence": 0.95,
+        "state": "archive_visible_high_confidence",
+        "place": "",
+        "sourceCount": 1,
+        "sourceExcerpt": "Aired: Friday 18th June 1999 Top of the Pops BBC UK ——————— Make up: Sarah Monzani Hair: Lyndell Quiyou ——————— Madonna introduces her new video “Beautiful Stranger” on the UK’s BBC ONE TV show “Top of the Pops”. The introduction looks likely to of been filmed sometime in early June whilst on set of “The Next Best Thing”. #madonna #losangeles #1999 #beautifulstranger @madonna #sarahmonzan @topofthepops90s #itsgroovybaby #madonna90s #icon #90smadonna #madonnastyle #queen #musicicon #BoyToy #musicroyalty #madonnamusic #madonnafans #Madonna #iconic #madonnaqueen #bitchimmadonna #allhailthequeen #madonnaphotos #rebel #madonnapictures #mlvc #madonnalove #whenmadonnaruledtheworld #supportmadonna #MadonnaStory",
+        "sourcePointers": [
+          {
+            "sourceItemId": "source_item_3af398e2d3a1602545e8ec84a7bd9adb0f4eef2f2df6b207794635bf514f0125",
+            "authority": "WEBO retained local corpus",
+            "sourceType": "retained_webo_caption",
+            "locator": "",
+            "url": "https://www.instagram.com/p/Cbp-jXJKrC5/",
+            "excerpt": "Aired: Friday 18th June 1999 Top of the Pops BBC UK ——————— Make up: Sarah Monzani Hair: Lyndell Quiyou ——————— Madonna introduces her new video “Beautiful Stranger” on the UK’s BBC ONE TV show “Top of the Pops”. The introduction looks likely to of been filmed sometime in early June whilst on set of “The Next Best Thing”. #madonna #losangeles #1999 #beautifulstranger @madonna #sarahmonzan @topofthepops90s #itsgroovybaby #madonna90s #icon #90smadonna #madonnastyle #queen #musicicon #BoyToy #musicroyalty #madonnamusic #madonnafans #Madonna #iconic #madonnaqueen #bitchimmadonna #allhailthequeen #madonnaphotos #rebel #madonnapictures #mlvc #madonnalove #whenmadonnaruledtheworld #supportmadonna #MadonnaStory"
+          }
+        ],
+        "representationIds": [
+          "representation.inventory.asset:10187",
+          "representation.inventory.asset:10351"
+        ],
+        "representations": [
+          {
+            "representationId": "representation.inventory.asset:10187",
+            "label": "Madonna introduces BEAUTIFUL STRANGER video on TOP OF THE POPS UK 1999.png",
+            "relativePath": "UNFILED/2011-2023/Madonna introduces BEAUTIFUL STRANGER video on TOP OF THE POPS UK 1999.png",
+            "dateToken": "1999",
+            "observationState": "logical_archive_file",
+            "provenanceState": "source_observed",
+            "logicalRepresentationId": "",
+            "matchState": "visible_inferred_filename_match",
+            "unresolvedReason": "",
+            "caution": "Filename/context association is evidence-labelled and does not prove the file is the original shoot, an outtake, or the canonical publication object."
+          },
+          {
+            "representationId": "representation.inventory.asset:10351",
+            "label": "Madonna introduces BEAUTIFUL STRANGER video on TOP OF THE POPS UK 1999.mp4",
+            "relativePath": "UNFILED/2011-2023/Madonna introduces BEAUTIFUL STRANGER video on TOP OF THE POPS UK 1999.mp4",
+            "dateToken": "1999",
+            "observationState": "logical_archive_file",
+            "provenanceState": "source_observed",
+            "logicalRepresentationId": "",
+            "matchState": "visible_inferred_filename_match",
+            "unresolvedReason": "",
+            "caution": "Filename/context association is evidence-labelled and does not prove the file is the original shoot, an outtake, or the canonical publication object."
+          }
+        ],
+        "uncertainties": []
+      },
+      {
+        "stepId": "mercy.fact.0e55cb3d1452da6d0c15",
+        "year": 1999,
+        "lane": "publication / remix",
+        "label": "Billboard review of Beautiful Stranger remix",
+        "dateStart": "1999-06-19",
+        "dateEnd": "1999-06-19",
+        "datePrecision": "day",
+        "dateRole": "event_date",
+        "dateBasis": "source-preserved graph fact",
+        "factType": "historical_event",
+        "assertion": "Billboard magazine reviewed the DJ promo remix of Madonna's song 'Beautiful Stranger' on June 19th, 1999.",
+        "confidence": 0.9,
+        "state": "archive_visible_high_confidence",
+        "place": "",
+        "sourceCount": 1,
+        "sourceExcerpt": "Saturday 19th June 1999 Billboard magazine ———————— In the Dance Trax section of Billboard magazine Michael Paoletta, reviews the forthcoming DJ promo remixes of “Beautiful Stranger” Calderone Opens Club Doors For \"Stranger” POPSICLE DAYS: It's been nearly two months since we first heard Madonna's \"Beautiful Stranger\" culled from the soundtrack to \"Austin Powers: The Spy Who Shagged Me\". and in that time we kept wishin' and hopin' for a wildly wonderful club restructuring. No disrespect to the singer and William Orbit, who collectively penned and produced this effervescent blast of psychedelic electronica, but we knew that no fierce-ruling club D.J in 1999 would dare play the original jangly rock-etched version of the song. Diversity on the dancefloor tends to be a losing battle with the approaching new millennium. Perhaps this will change in 2000. In the meantime, we have remixer/producer Victor Calderone to thank for taking \"Beautiful Stranger\" on a clubby musical trip that every fierce-ruling club DJ should gladly embrace. And we've got to hand it to Calderone, who wickedly keeps the integrity of the song while infusing the mix with much tribal drama. Unlike many of his recent r…",
+        "sourcePointers": [
+          {
+            "sourceItemId": "source_item_c97fe06af12fe218d0a3851639a044ec22ad552500c79a44e714e842658b656f",
+            "authority": "WEBO retained local corpus",
+            "sourceType": "retained_webo_caption",
+            "locator": "",
+            "url": "https://www.instagram.com/p/CbqXQwjKDKn/",
+            "excerpt": "Saturday 19th June 1999 Billboard magazine ———————— In the Dance Trax section of Billboard magazine Michael Paoletta, reviews the forthcoming DJ promo remixes of “Beautiful Stranger” Calderone Opens Club Doors For \"Stranger” POPSICLE DAYS: It's been nearly two months since we first heard Madonna's \"Beautiful Stranger\" culled from the soundtrack to \"Austin Powers: The Spy Who Shagged Me\". and in that time we kept wishin' and hopin' for a wildly wonderful club restructuring. No disrespect to the singer and William Orbit, who collectively penned and produced this effervescent blast of psychedelic electronica, but we knew that no fierce-ruling club D.J in 1999 would dare play the original jangly rock-etched version of the song. Diversity on the dancefloor tends to be a losing battle with the approaching new millennium. Perhaps this will change in 2000. In the meantime, we have remixer/producer Victor Calderone to thank for taking \"Beautiful Stranger\" on a clubby musical trip that every fierce-ruling club DJ should gladly embrace. And we've got to hand it to Calderone, who wickedly keeps the integrity of the song while infusing the mix with much tribal drama. Unlike many of his recent r…"
+          }
+        ],
+        "representationIds": [],
+        "representations": [],
+        "uncertainties": [
+          {
+            "detail": "No event place is asserted by this retained event record.",
+            "kind": "place"
+          }
+        ]
+      }
+    ],
+    "gaps": [
+      "The two local files are evidence-labelled filename/context matches to the Top of the Pops fact; they are not promoted as the aired master, a canonical broadcast capture, or the original production file.",
+      "No separately typed B-roll, tag, or technical-master relation is present in this pinned projection; the reader keeps that endpoint unresolved rather than inferring it from the filenames.",
+      "The recording source describes the February session as a retained-source reconstruction and preserves a February 25–28 range; no exact recording day is invented."
+    ],
+    "inputFingerprints": {
+      "graph_database": "sha256:a58a64bd595ff091637ccd7795fdea601176e1ee9a9b57a0a0ce69adab589b99",
+      "graph_receipt": "sha256:af7f1cc4a9a266f9850217ab22648197430a40357c756e4e2eaa5ae5019c8369",
+      "qa_receipt": "sha256:793838d3eea5f33811a422b5338d8cc47c79cea24ee75b6d240e652630db8205",
+      "retained_snapshot": "sha256:cf1f1c40f52bf0c43f378c20a31e27a4e8b02d79cf2531c0dde925ccd5e84558"
+    },
+    "provenanceJobId": "mercy-working-graph-1958-2026-v1.rebuild-20261021-resumed-qa",
+    "sourceSearchState": "source_bundles_and_representation_match_materialized",
+    "authorityBoundary": "Derived music-video and representation arc only; source facts, operational inventory, local files, and canonical recording/release authorities remain separate, and no canonical, inventory, media, filesystem, or public-network writes occurred.",
+    "nextAction": "Inspect the two local files and retained source context through an allowlisted read-only representation lane before considering any aired-master, B-roll, tag, or recording-version edge."
   }
 ];

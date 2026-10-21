@@ -32,6 +32,7 @@ import {
 import { MercyCandidateQueue } from "@/components/mercy-candidate-queue";
 import { MercyArcExplorer } from "@/components/mercy-arc-explorer";
 import { MercyResearchDesk } from "@/components/mercy-research-desk";
+import { mercyReaderArcs } from "@/lib/mercy-reader-arcs";
 
 type CorrectionType = "connect" | "separate_identity" | "hold_relationship";
 type SearchScope = "year" | "all";
@@ -202,7 +203,7 @@ export function MercyReader() {
         <button type="button" role="tab" aria-selected={readerMode === "calendar"} className={readerMode === "calendar" ? "selected" : ""} onClick={() => setReaderMode("calendar")}><CalendarDays size={14} /> Calendar and timeline</button>
         <button type="button" role="tab" aria-selected={readerMode === "candidates"} className={readerMode === "candidates" ? "selected" : ""} onClick={() => setReaderMode("candidates")}><Network size={14} /> Review candidates <span>21</span></button>
         <button type="button" role="tab" aria-selected={readerMode === "research"} className={readerMode === "research" ? "selected" : ""} onClick={() => setReaderMode("research")}><Sparkles size={14} /> Research worker <span>3</span></button>
-        <button type="button" role="tab" aria-selected={readerMode === "arcs"} className={readerMode === "arcs" ? "selected" : ""} onClick={() => setReaderMode("arcs")}><GitBranch size={14} /> Cross-year arc <span>1</span></button>
+        <button type="button" role="tab" aria-selected={readerMode === "arcs"} className={readerMode === "arcs" ? "selected" : ""} onClick={() => setReaderMode("arcs")}><GitBranch size={14} /> Cross-year arcs <span>{mercyReaderArcs.length}</span></button>
       </div>
 
       {readerMode === "arcs" ? <MercyArcExplorer /> : readerMode === "research" ? <MercyResearchDesk /> : readerMode === "candidates" ? <MercyCandidateQueue /> : <>

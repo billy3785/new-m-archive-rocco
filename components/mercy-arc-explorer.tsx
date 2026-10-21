@@ -40,7 +40,7 @@ export function MercyArcExplorer() {
         {mercyReaderArcs.map((candidate) => <button key={candidate.arcId} type="button" role="tab" aria-selected={candidate.arcId === arc.arcId} className={candidate.arcId === arc.arcId ? "selected" : ""} onClick={() => chooseArc(candidate.arcId)}>{candidate.title}</button>)}
       </div>
       <header className="mercy-arc-heading">
-        <div><p className="eyebrow">CROSS-YEAR ARC EXPLORER</p><h2>Follow a relationship without inventing the missing years</h2><p>{arc.summary}</p></div>
+        <div><p className="eyebrow">CROSS-YEAR ARC EXPLORER</p><h2>Follow a connection without inventing the missing years</h2><p>{arc.summary}</p></div>
         <span className="mercy-arc-status"><ShieldCheck size={14} /> {stateLabel(arc.state)}</span>
       </header>
 

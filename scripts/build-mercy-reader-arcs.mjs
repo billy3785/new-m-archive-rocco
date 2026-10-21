@@ -48,6 +48,10 @@ const selectedFactIds = [
   "mercy.fact.389970d368ac6928d0f9",
   "mercy.fact.c2d96da96f215d541033",
   "mercy.fact.a83fba68e1573a885e2b",
+  "mercy.fact.2a8e2d40822241171c21",
+  "mercy.fact.243b770684ecdde69883",
+  "mercy.fact.2394fba0a99f5cb480a3",
+  "mercy.fact.0e55cb3d1452da6d0c15",
 ];
 const ids = selectedFactIds.map((id) => `'${id}'`).join(",");
 const facts = await runSqlite(`SELECT fact_id,year,fact_type,title,assertion,date_start,date_end,date_precision,confidence,visibility_state,source_lanes_json,uncertainties_json FROM fact WHERE fact_id IN (${ids}) ORDER BY year,date_start,fact_id;`);
@@ -272,7 +276,31 @@ const crazyForYouArc = {
   nextAction: "Promote typed demo-to-recording-version and recording-to-release edges only after their endpoint identities and any local film/audio representations are independently evidenced.",
 };
 
-const arcs = [arc, likeAVirginArc, photoRepresentationArc, crazyForYouArc];
+const beautifulStrangerArc = {
+  arcId: "mercy.arc.beautiful-stranger-video-to-aired-representations-1999",
+  title: "Beautiful Stranger · recording, video, broadcast, and local files",
+  summary: "A source-labelled music-video arc from the February 1999 recording session through the May video shoot and June Top of the Pops introduction, with two preserved local representations attached to the aired-program fact.",
+  state: "archive_visible_supported_with_explicit_gap",
+  years: [1999],
+  steps: [
+    factStep("mercy.fact.2a8e2d40822241171c21", "recording / song"),
+    factStep("mercy.fact.243b770684ecdde69883", "music video / shoot"),
+    factStep("mercy.fact.2394fba0a99f5cb480a3", "broadcast / video introduction"),
+    factStep("mercy.fact.0e55cb3d1452da6d0c15", "publication / remix"),
+  ],
+  gaps: [
+    "The two local files are evidence-labelled filename/context matches to the Top of the Pops fact; they are not promoted as the aired master, a canonical broadcast capture, or the original production file.",
+    "No separately typed B-roll, tag, or technical-master relation is present in this pinned projection; the reader keeps that endpoint unresolved rather than inferring it from the filenames.",
+    "The recording source describes the February session as a retained-source reconstruction and preserves a February 25–28 range; no exact recording day is invented.",
+  ],
+  inputFingerprints: Object.fromEntries(Object.entries(receipt.input_files).map(([key, value]) => [key, value.fingerprint])),
+  provenanceJobId: graphQa.qa_id,
+  sourceSearchState: "source_bundles_and_representation_match_materialized",
+  authorityBoundary: "Derived music-video and representation arc only; source facts, operational inventory, local files, and canonical recording/release authorities remain separate, and no canonical, inventory, media, filesystem, or public-network writes occurred.",
+  nextAction: "Inspect the two local files and retained source context through an allowlisted read-only representation lane before considering any aired-master, B-roll, tag, or recording-version edge.",
+};
+
+const arcs = [arc, likeAVirginArc, photoRepresentationArc, crazyForYouArc, beautifulStrangerArc];
 
 const lines = [
   "// Generated from the QA-passed resumed MERCY working graph and the bounded connection-worker receipt. Do not hand-edit.",
