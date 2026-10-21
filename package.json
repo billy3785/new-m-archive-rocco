@@ -13,6 +13,7 @@
     "lint": "eslint . --ignore-pattern dist --ignore-pattern .next",
     "verify:mercy-reader": "node scripts/verify-mercy-reader-snapshot.mjs",
     "build:mercy-reader-years": "node scripts/build-mercy-reader-years.mjs",
+    "build:mercy-reader-candidates": "node scripts/build-mercy-reader-candidates.mjs",
     "db:generate": "drizzle-kit generate"
   },
   "dependencies": {
