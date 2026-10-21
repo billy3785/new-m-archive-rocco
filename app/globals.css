@@ -40,6 +40,16 @@ button:focus-visible,input:focus-visible,textarea:focus-visible { outline:2px so
 .mercy-proof-strip span { color:#9d93a9; font-size:9px; line-height:1.25; text-transform:uppercase; letter-spacing:.06em; }
 .mercy-reader-note { display:flex; align-items:flex-start; gap:8px; margin:0 0 15px; padding:11px 12px; border:1px solid #3c3548; border-radius:13px; background:#17141f; color:#aaa1b5; font-size:11px; line-height:1.45; }
 .mercy-reader-note svg { flex:none; margin-top:1px; color:#b9a1e8; }
+.mercy-year-overview { margin:0 0 12px; padding:14px 15px; border:1px solid #3b304b; border-radius:16px; background:#181520; }
+.mercy-year-picker { display:flex; align-items:flex-end; justify-content:space-between; gap:14px; }
+.mercy-year-picker h2 { margin:0; color:#f5effb; font-size:18px; letter-spacing:-.035em; }
+.mercy-year-picker p:not(.eyebrow) { max-width:620px; margin:6px 0 0; color:#9f97aa; font-size:11px; line-height:1.45; }
+.mercy-year-picker label { flex:none; }
+.mercy-year-picker select { min-width:110px; padding:10px 12px; border:1px solid #6c5591; border-radius:11px; outline:0; background:#271d36; color:#f4eaff; font-size:14px; font-weight:800; }
+.mercy-year-metrics { display:grid; grid-template-columns:repeat(4,1fr); gap:7px; margin-top:13px; padding-top:12px; border-top:1px solid #30283d; }
+.mercy-year-metrics div { display:grid; gap:3px; min-width:0; }
+.mercy-year-metrics strong { color:#eaddfb; font-size:15px; letter-spacing:-.035em; }
+.mercy-year-metrics span { color:#8f879d; font-size:9px; text-transform:uppercase; letter-spacing:.05em; }
 .mercy-reader-layout { display:grid; grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr); gap:11px; align-items:start; }
 .mercy-timeline-panel,.mercy-detail-panel { min-width:0; padding:17px; border:1px solid #302b3c; border-radius:19px; background:#17141e; }
 .mercy-section-heading,.mercy-block-heading { display:flex; align-items:flex-end; justify-content:space-between; gap:10px; }
@@ -58,6 +68,13 @@ button:focus-visible,input:focus-visible,textarea:focus-visible { outline:2px so
 .mercy-event-copy small,.mercy-event-copy em { overflow-wrap:anywhere; color:#9d94a9; font-size:10px; line-height:1.3; font-style:normal; }
 .mercy-event-copy em { color:#bfa8df; }
 .mercy-event-row > svg { color:#84719e; }
+.mercy-highlight-row { grid-template-columns:83px minmax(0,1fr) 16px; }
+.mercy-highlight-row .mercy-event-copy em { display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
+.mercy-year-highlight-detail { display:grid; gap:6px; padding:12px; border:1px solid #3b3248; border-radius:13px; background:#211b2a; }
+.mercy-year-highlight-detail strong { color:#f3edf8; font-size:14px; line-height:1.3; }
+.mercy-year-highlight-detail span { color:#d3b5f0; font-size:10px; }
+.mercy-year-highlight-detail p { margin:2px 0 0; color:#b7adbf; font-size:11px; line-height:1.45; }
+.mercy-year-highlight-detail small { color:#8f859a; font:9px/1.35 ui-monospace,SFMono-Regular,Menlo,monospace; overflow-wrap:anywhere; }
 .mercy-empty-state,.mercy-muted { color:#9d95a5; font-size:12px; line-height:1.5; }
 .mercy-cohort-footnote { margin:12px 2px 0; color:#827a8d; font-size:9px; line-height:1.4; }
 .mercy-detail-kicker { display:flex; align-items:center; gap:6px; margin-bottom:9px; color:#c5a9ee; font-size:10px; font-weight:800; text-transform:uppercase; letter-spacing:.08em; }
@@ -95,4 +112,4 @@ button:focus-visible,input:focus-visible,textarea:focus-visible { outline:2px so
 .mercy-correction-box .mercy-block-heading { align-items:flex-start; }.mercy-close-button { width:27px; height:27px; border:1px solid #4b3b61; border-radius:50%; background:#2c2240; color:#ddd0ed; font-size:19px; line-height:1; cursor:pointer; }
 .mercy-choice-list { display:grid; gap:6px; margin:11px 0; }.mercy-choice-list button { display:flex; align-items:center; justify-content:space-between; gap:8px; padding:9px 10px; border:1px solid #463958; border-radius:10px; background:#261d35; color:#d9cde5; text-align:left; cursor:pointer; }.mercy-choice-list button.selected { border-color:#c3a0f2; background:#3b2b54; }.mercy-choice-list span { display:grid; gap:3px; }.mercy-choice-list strong { font-size:11px; }.mercy-choice-list small { color:#a89caf; font-size:9px; line-height:1.3; }.mercy-choice-list svg { color:#d6bafa; flex:none; }
 .mercy-correction-box textarea { display:block; width:100%; min-height:70px; box-sizing:border-box; padding:10px; border:1px solid #493b58; border-radius:10px; outline:0; resize:vertical; background:#120e18; color:#fff; font:11px/1.45 inherit; }.mercy-save-button { width:100%; margin-top:8px; padding:10px; border:0; border-radius:10px; background:#d3b5ff; color:#291936; font-size:11px; font-weight:850; cursor:pointer; }.mercy-save-button:disabled { cursor:wait; opacity:.65; }
-@media (max-width:760px) { .mercy-reader-hero { display:block; }.mercy-qa-badge { display:inline-flex; margin-top:13px; }.mercy-reader-layout { grid-template-columns:1fr; }.mercy-timeline-list { max-height:none; }.mercy-proof-strip { grid-template-columns:repeat(2,1fr); }.mercy-proof-strip div:nth-child(2) { border-right:0; }.mercy-proof-strip div:nth-child(-n+2) { padding-bottom:8px; border-bottom:1px solid #33283f; }.mercy-proof-strip div:nth-child(3),.mercy-proof-strip div:nth-child(4) { padding-top:2px; }.mercy-search-row { display:grid; grid-template-columns:minmax(0,1fr) auto; }.mercy-filter select { max-width:none; padding:0 7px; }.mercy-fact-grid { grid-template-columns:1fr 1fr; }.mercy-fact-grid div:last-child { grid-column:1/-1; }.mercy-source-row { display:grid; }.mercy-source-row a { justify-self:start; } }
+@media (max-width:760px) { .mercy-reader-hero { display:block; }.mercy-qa-badge { display:inline-flex; margin-top:13px; }.mercy-reader-layout { grid-template-columns:1fr; }.mercy-timeline-list { max-height:none; }.mercy-proof-strip { grid-template-columns:repeat(2,1fr); }.mercy-proof-strip div:nth-child(2) { border-right:0; }.mercy-proof-strip div:nth-child(-n+2) { padding-bottom:8px; border-bottom:1px solid #33283f; }.mercy-proof-strip div:nth-child(3),.mercy-proof-strip div:nth-child(4) { padding-top:2px; }.mercy-search-row { display:grid; grid-template-columns:minmax(0,1fr) auto; }.mercy-filter select { max-width:none; padding:0 7px; }.mercy-fact-grid { grid-template-columns:1fr 1fr; }.mercy-fact-grid div:last-child { grid-column:1/-1; }.mercy-source-row { display:grid; }.mercy-source-row a { justify-self:start; }.mercy-year-picker { align-items:stretch; flex-direction:column; }.mercy-year-picker select { width:100%; }.mercy-year-metrics { grid-template-columns:repeat(2,1fr); row-gap:11px; } }

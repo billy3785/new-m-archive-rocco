@@ -55,6 +55,23 @@ export const mercyReaderMeta = {
     databaseFingerprint: "sha256:ca698530958990b273f20c2be0e6ed7be945710f765fbbe10e9c9036d68f1b14",
     readMode: "sqlite_read_only_query_only",
   },
+  aggregateContract: {
+    sourcePath: "lmstudio_operating_model/knowledge/mercy-working-canon/mercy-full-span-connected-working-canon-1958-2026-v1.aggregate-v1/mercy-working-graph-1958-2026-v1.rebuild-20261021-indexed.sqlite",
+    sourceDbSha256: "sha256:5fdd7b4e671dd46337afa72293ff85ba28e131a666a629f5560e04b9b3f0b828",
+    projectionSha256: "sha256:c673bbf98efc23de4634000b15f9ce240fb3ed373d8505cdc2aeaadfb8766c77",
+    inputManifestSha256: "sha256:c40cc3f87bccd3f639c09eb09dd13046d5fe60210915276b1fa8dfb46708ea0d",
+    readMode: "sqlite_read_only_query_only",
+    qaState: "qa_pending",
+  },
+  fullSpanMetrics: {
+    years: 69,
+    visibleFacts: 183344,
+    dateClaims: 177749,
+    typedConnections: 2128583,
+    representations: 1863,
+    sourceBundleItems: 855361,
+    learningQuestions: 17,
+  },
   nextAction: "Run independent working-canon QA, then expand the same pinned cohort contract to the remaining years.",
   authorityBoundary: "Visible first-draft working canon with source-labelled evidence. No canonical, inventory, archive-media, or filesystem mutation.",
   metrics: {

@@ -4,7 +4,9 @@ import { dirname, resolve } from "node:path";
 
 const scriptDir = dirname(fileURLToPath(import.meta.url));
 const dataPath = resolve(scriptDir, "../lib/mercy-reader-data.ts");
+const yearsPath = resolve(scriptDir, "../lib/mercy-reader-years.ts");
 const source = await readFile(dataPath, "utf8");
+const yearsSource = await readFile(yearsPath, "utf8");
 
 const requiredLiterals = [
   ["source snapshot hash", 'sourceSha256: "sha256:de33369ab4d58986ec0131f62989fe1b6399523b6d7321f31220f7bc74b696b9"'],
@@ -15,11 +17,27 @@ const requiredLiterals = [
   ["representations", "representations: 12"],
   ["uncertainties", "uncertaintyCount: 70"],
   ["authority boundary", "No canonical, inventory, archive-media, or filesystem mutation."],
+  ["aggregate graph fingerprint", "sourceDbSha256: \"sha256:5fdd7b4e671dd46337afa72293ff85ba28e131a666a629f5560e04b9b3f0b828\""],
+  ["full-span year count", "years: 69"],
+  ["full-span fact count", "visibleFacts: 183344"],
+  ["full-span connection count", "typedConnections: 2128583"],
 ];
 
 const failures = [];
 for (const [label, literal] of requiredLiterals) {
   if (!source.includes(literal)) failures.push(`missing ${label}: ${literal}`);
+}
+
+const generatedCounts = [
+  ["year summaries", /\"factCount\":/g, 69],
+  ["year highlights", /\"factId\": \"mercy\.fact\./g, 113],
+];
+for (const [label, pattern, expected] of generatedCounts) {
+  const actual = yearsSource.match(pattern)?.length ?? 0;
+  if (actual !== expected) failures.push(`${label}: expected ${expected}, found ${actual}`);
+}
+if (!yearsSource.includes("sha256:5fdd7b4e671dd46337afa72293ff85ba28e131a666a629f5560e04b9b3f0b828")) {
+  failures.push("generated year index is missing the aggregate graph fingerprint");
 }
 
 const expectedCounts = [
