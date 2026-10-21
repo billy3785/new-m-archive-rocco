@@ -1,4 +1,5 @@
 import { desc, eq } from "drizzle-orm";
+import { createHash } from "node:crypto";
 import { getChatGPTUser } from "@/app/chatgpt-auth";
 import { getDb } from "@/db";
 import { curatorDecisions } from "@/db/schema";
@@ -32,7 +33,61 @@ function awardFor(decisionType: string, scope: string, note: string, impactItems
   return base + scopeBonus + contextBonus + Math.min(Math.max(impactItems - 1, 0), 8);
 }
 
+function buildDecisionReceipt(decision: {
+  id: string;
+  actorId: string;
+  decisionType: string;
+  domain: string;
+  subjectLabel: string;
+  targetLabel: string;
+  scope: string;
+  evidenceBasis: string;
+  sourceContext: string;
+  relationship: string | null;
+  createdAt: string;
+}) {
+  const receiptBasis = JSON.stringify({
+    decision_id: decision.id,
+    actor_id: decision.actorId,
+    decision_type: decision.decisionType,
+    domain: decision.domain,
+    subject_label: decision.subjectLabel,
+    target_label: decision.targetLabel,
+    scope: decision.scope,
+    evidence_basis: decision.evidenceBasis,
+    source_context: decision.sourceContext,
+    relationship: decision.relationship,
+    created_at: decision.createdAt,
+  });
+  return {
+    schema: "mercy-private-curator-decision/v1",
+    receipt_id: `mercy.decision.receipt.${decision.id}`,
+    decision_id: decision.id,
+    recorded_at: decision.createdAt,
+    state: "recorded_pending_qa",
+    promotion_state: "not_attempted",
+    actor_id: decision.actorId,
+    input_fingerprint: `sha256:${createHash("sha256").update(receiptBasis).digest("hex")}`,
+    authority_boundary: "Private curator ledger only; no canonical, inventory, archive-media, filesystem, or public-network mutation.",
+    writes: {
+      private_decision_ledger: 1,
+      canonical_authority: 0,
+      inventory_authority: 0,
+      archive_media: 0,
+      archive_filesystem: 0,
+      public_network: 0,
+    },
+    next_action: "Route the preserved curator assertion through QA before any promotion or reusable learning rule is considered.",
+  };
+}
+
 function toDecision(row: typeof curatorDecisions.$inferSelect) {
+  let receiptState = "legacy_unreceipted";
+  try {
+    receiptState = JSON.parse(row.promotionReceipt || "{}").state || receiptState;
+  } catch {
+    receiptState = "legacy_unreceipted";
+  }
   return {
     id: row.id,
     decisionType: row.decisionType,
@@ -44,6 +99,7 @@ function toDecision(row: typeof curatorDecisions.$inferSelect) {
     evidenceBasis: row.evidenceBasis,
     pointAward: row.pointAward,
     promotionStatus: row.promotionStatus,
+    receiptState,
     createdAt: row.createdAt,
   };
 }
@@ -79,11 +135,21 @@ export async function POST(request: Request) {
     if (!decisionTypes.has(decisionType) || !domains.has(domain) || !scopes.has(scope) || !evidenceBases.has(evidenceBasis)) return Response.json({ error: "That decision uses an unsupported controlled value." }, { status: 400 });
     if (!subjectLabel || !targetLabel) return Response.json({ error: "A subject and a canonical target are required." }, { status: 400 });
     if (scope === "precedent" && note.length < 12) return Response.json({ error: "A reusable precedent needs a short explanation of its boundary." }, { status: 400 });
+    const decisionId = crypto.randomUUID();
+    const createdAt = new Date().toISOString();
+    const decisionDraft = { id: decisionId, actorId: user.userId, decisionType, domain, subjectLabel, targetLabel, scope, evidenceBasis, sourceContext, relationship: relationship || null, createdAt };
+    const decisionReceipt = buildDecisionReceipt(decisionDraft);
     const decision = {
-      id: crypto.randomUUID(), actorId: user.userId, actorName: user.displayName, decisionType, domain, subjectLabel, targetLabel, note, scope, evidenceBasis, sourceContext, relationship: relationship || null, impactItems, pointAward: awardFor(decisionType, scope, note, impactItems), promotionStatus: "ready_for_promotion", promotionReceipt: null, createdAt: new Date().toISOString(),
+      ...decisionDraft,
+      actorName: user.displayName,
+      note,
+      impactItems,
+      pointAward: awardFor(decisionType, scope, note, impactItems),
+      promotionStatus: "recorded",
+      promotionReceipt: JSON.stringify(decisionReceipt),
     };
     const [saved] = await getDb().insert(curatorDecisions).values(decision).returning();
-    return Response.json({ decision: toDecision(saved) }, { status: 201 });
+    return Response.json({ decision: toDecision(saved), receipt: decisionReceipt }, { status: 201 });
   } catch (error) {
     const message = error instanceof Error ? error.message : "The decision could not be recorded.";
     return Response.json({ error: message }, { status: 500 });

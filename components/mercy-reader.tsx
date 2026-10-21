@@ -169,7 +169,7 @@ export function MercyReader() {
       });
       const payload = (await response.json()) as { decision?: { pointAward: number }; error?: string };
       if (!response.ok || !payload.decision) throw new Error(payload.error ?? "The private correction could not be saved.");
-      setCorrectionStatus(`Saved to your private curator ledger · +${payload.decision.pointAward} points.`);
+      setCorrectionStatus(`Saved to your private curator ledger · recorded pending QA · +${payload.decision.pointAward} points.`);
       setCorrection(null);
       setCorrectionNote("");
     } catch (error) {

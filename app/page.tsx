@@ -49,7 +49,7 @@ const tabItems: Array<{ label: string; icon: Icon }> = [
   { label: "Desk", icon: Sparkles }, { label: "Reader", icon: CalendarDays }, { label: "Media", icon: Images }, { label: "Connections", icon: Network }, { label: "Progress", icon: Trophy }, { label: "My calls", icon: BookOpen },
 ];
 
-const statusCopy: Record<DecisionRecord["promotionStatus"], string> = { recorded: "Saved", ready_for_promotion: "Saved · waiting for the protected check", promoted: "Promotion receipt returned", held: "Needs more context" };
+const statusCopy: Record<DecisionRecord["promotionStatus"], string> = { recorded: "Saved · private receipt recorded · pending QA", ready_for_promotion: "Saved · waiting for the protected check", promoted: "Promotion receipt returned", held: "Needs more context" };
 
 function formatDate(value: string) {
   try { return new Intl.DateTimeFormat("en", { month: "short", day: "numeric" }).format(new Date(value)); } catch { return "Today"; }
