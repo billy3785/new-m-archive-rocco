@@ -3,7 +3,7 @@ import { getChatGPTUser } from "@/app/chatgpt-auth";
 import { getDb } from "@/db";
 import { curatorDecisions } from "@/db/schema";
 
-const decisionTypes = new Set(["confirm_identity", "separate_identity", "connect", "new_canonical"]);
+const decisionTypes = new Set(["confirm_identity", "separate_identity", "connect", "new_canonical", "hold_relationship"]);
 const domains = new Set(["Person", "Place", "Thing", "Relationship"]);
 const scopes = new Set(["this_case", "matching_claims", "source_family", "precedent"]);
 const evidenceBases = new Set(["curator_assertion", "retained_source", "combined"]);
@@ -26,7 +26,7 @@ function normalizedText(value: unknown, maximum: number) {
 }
 
 function awardFor(decisionType: string, scope: string, note: string, impactItems: number) {
-  const base = { confirm_identity: 18, separate_identity: 16, connect: 22, new_canonical: 24 }[decisionType] ?? 0;
+  const base = { confirm_identity: 18, separate_identity: 16, connect: 22, new_canonical: 24, hold_relationship: 12 }[decisionType] ?? 0;
   const scopeBonus = { this_case: 0, matching_claims: 5, source_family: 10, precedent: 15 }[scope] ?? 0;
   const contextBonus = note.length >= 24 ? 5 : 0;
   return base + scopeBonus + contextBonus + Math.min(Math.max(impactItems - 1, 0), 8);

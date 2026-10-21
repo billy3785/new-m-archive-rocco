@@ -2,13 +2,14 @@
 
 import { useEffect, useMemo, useState, type ComponentType } from "react";
 import {
-  ArrowRight, Award, BadgeCheck, BookOpen, Check, ChevronRight, CircleDot,
-  Clock3, Eye, HeartHandshake, ImageIcon, Images, Link2, LockKeyhole, MapPin,
+  ArrowRight, Award, BadgeCheck, BookOpen, CalendarDays, Check, ChevronRight, CircleAlert,
+  CircleDot, Clock3, Eye, HeartHandshake, ImageIcon, Images, Link2, LockKeyhole, MapPin,
   Maximize2, Network, Plus, Search, Sparkles, Trophy, Unlink, Users, X,
 } from "lucide-react";
+import { MercyReader } from "@/components/mercy-reader";
 
 type Domain = "Person" | "Place" | "Thing" | "Relationship";
-type DecisionType = "confirm_identity" | "separate_identity" | "connect" | "new_canonical";
+type DecisionType = "confirm_identity" | "separate_identity" | "connect" | "new_canonical" | "hold_relationship";
 type Scope = "this_case" | "matching_claims" | "source_family" | "precedent";
 type EvidenceBasis = "curator_assertion" | "retained_source" | "combined";
 type Icon = ComponentType<{ size?: number; className?: string }>;
@@ -34,6 +35,7 @@ const decisionCopy: Record<DecisionType, { label: string; title: string; copy: s
   separate_identity: { label: "No — keep apart", title: "Tell the archive these are different", copy: "Save a clear ‘do not merge’ call so this unsafe suggestion does not keep coming back.", icon: Unlink },
   connect: { label: "Link them", title: "Save a link between them", copy: "Add a connection for this photo, event, work, or source. It stays tied to this context instead of becoming a blanket label.", icon: Link2 },
   new_canonical: { label: "Make a new record", title: "Start a new archive record", copy: "Use this when the right person, place, or thing simply does not have its own record yet.", icon: Plus },
+  hold_relationship: { label: "Hold for research", title: "Keep this relationship unresolved", copy: "Preserve the evidence and record that this connection needs more research before it is settled.", icon: CircleAlert },
 };
 
 const scopeCopy: Record<Scope, { label: string; copy: string; bonus: string }> = {
@@ -44,7 +46,7 @@ const scopeCopy: Record<Scope, { label: string; copy: string; bonus: string }> =
 };
 
 const tabItems: Array<{ label: string; icon: Icon }> = [
-  { label: "Desk", icon: Sparkles }, { label: "Media", icon: Images }, { label: "Connections", icon: Network }, { label: "Progress", icon: Trophy }, { label: "My calls", icon: BookOpen },
+  { label: "Desk", icon: Sparkles }, { label: "Reader", icon: CalendarDays }, { label: "Media", icon: Images }, { label: "Connections", icon: Network }, { label: "Progress", icon: Trophy }, { label: "My calls", icon: BookOpen },
 ];
 
 const statusCopy: Record<DecisionRecord["promotionStatus"], string> = { recorded: "Saved", ready_for_promotion: "Saved · waiting for the protected check", promoted: "Promotion receipt returned", held: "Needs more context" };
@@ -125,6 +127,8 @@ export default function Home() {
         <section className="impact-strip"><div><HeartHandshake size={18} /><span><b>“Because I said so” counts.</b></span></div><p>Choose “I know this,” write what you want to remember, and the app will label it honestly as your call—not as a made-up source.</p></section>
         <section className="achievement-panel"><div className="section-heading"><div><p className="eyebrow">YOUR COLLECTION</p><h2>Knowledge you have made reusable</h2></div><Award size={21} /></div><div className="achievement-row"><span className="achievement-icon"><Users size={18} /></span><div><b>Alias Detective</b><small>Save identity calls without throwing away the source’s original words.</small></div><em>{Math.min(decisions.filter((item) => item.decisionType === "confirm_identity").length, 12)}/12</em></div><div className="achievement-row"><span className="achievement-icon gold"><Link2 size={18} /></span><div><b>Connection Maker</b><small>Link people, places, works, and pictures in a way you can explain later.</small></div><em>{Math.min(decisions.filter((item) => item.decisionType === "connect").length, 10)}/10</em></div></section>
       </>}
+
+      {activeTab === "Reader" && <MercyReader />}
 
       {activeTab === "Media" && <section className="media-view"><p className="eyebrow">PRIVATE VISUAL SHELF</p><h1>See the evidence before you make the call.</h1><p className="media-intro">These are three small preview copies from your archive. They are here to help you decide; they do not change the original files or turn a folder name into a fact.</p><div className="media-grid">{mediaPreviews.map((media) => <button className="media-card" key={media.id} type="button" onClick={() => setActiveMediaId(media.id)}><span className="media-card-image"><img src={media.src} alt={media.title} /><i><Maximize2 size={16} /></i></span><span><b>{media.title}</b><small>{media.sourceLabel}</small><em>Open and inspect</em></span></button>)}</div><div className="media-rule"><ImageIcon size={18} /><p><b>What you see is evidence.</b> The picture, its printed words, and its folder label can each support a different claim. You choose what to connect.</p></div></section>}
       {activeTab === "Connections" && <section className="graph-view"><p className="eyebrow">CONNECTED, NOT MUSHED TOGETHER</p><h1>Your calls create clear links instead of vague guesses.</h1><div className="graph-orbit"><div className="orbit-node madonna">Madonna</div><div className="orbit-node left">People</div><div className="orbit-node right">Places</div><div className="orbit-node bottom">Works & pictures</div><i className="link one" /><i className="link two" /><i className="link three" /></div><p>When you connect something, the archive remembers the exact relationship, where the idea came from, and the moment it applies to. A photographer credit on one image does not become someone’s permanent label everywhere.</p></section>}
