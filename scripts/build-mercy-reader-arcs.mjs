@@ -1,4 +1,4 @@
-import { writeFile } from "node:fs/promises";
+import { readFile, writeFile } from "node:fs/promises";
 import { spawn } from "node:child_process";
 import { resolve } from "node:path";
 
@@ -21,7 +21,7 @@ const runSqlite = (sql) => new Promise((resolvePromise, reject) => {
   });
 });
 
-const readJson = async (path) => JSON.parse(await (await import("node:fs/promises")).readFile(path, "utf8"));
+const readJson = async (path) => JSON.parse(await readFile(path, "utf8"));
 const json = (value) => JSON.stringify(value, null, 2);
 const parse = (value) => {
   try { return JSON.parse(value || "{}"); } catch { return {}; }
@@ -34,12 +34,19 @@ const selectedFactIds = [
   "mercy.core.fact.54fdcb9f29343bda0aeb",
   "mercy.fact.af5d1e120a9c84210f69",
   "mercy.core.fact.5f318d009c8aa8572698",
+  "mercy.fact.c696daa25e5b53c1e885",
+  "mercy.fact.2ad254019efa5d28d3df",
+  "mercy.fact.0e0d4ab0ea7a39b05998",
+  "mercy.fact.e2eba626f586a88ad991",
+  "mercy.fact.a2b3bda5b8d8c0f44219",
+  "mercy.fact.85b3cfc5c4eab92474d9",
 ];
 const ids = selectedFactIds.map((id) => `'${id}'`).join(",");
 const facts = await runSqlite(`SELECT fact_id,year,fact_type,title,assertion,date_start,date_end,date_precision,confidence,visibility_state,source_lanes_json,uncertainties_json FROM fact WHERE fact_id IN (${ids}) ORDER BY year,date_start,fact_id;`);
 const sourceRows = await runSqlite(`SELECT fact_id,ordinal,source_item_id,source_authority,source_type,source_locator,source_url,payload_json FROM source_bundle WHERE fact_id IN (${ids}) ORDER BY fact_id,ordinal;`);
 const receipt = await readJson(resolve(workerDir, "worker-receipt.json"));
 const sourceSearch = await readJson(resolve(workerDir, "source-search-receipt.json"));
+const graphQa = await readJson(resolve(workspaceRoot, "lmstudio_operating_model/receipts/mercy-working-graph/mercy-working-graph-1958-2026-v1.rebuild-20261021-resumed-qa/qa-receipt.json"));
 
 const factsById = new Map(facts.map((fact) => [fact.fact_id, fact]));
 const sourcesByFact = new Map();
@@ -75,7 +82,7 @@ const pointersFor = (factId, limit = 4) => (sourcesByFact.get(factId) ?? []).sli
   };
 });
 
-const factStep = (factId) => {
+const factStep = (factId, lane) => {
   const fact = factsById.get(factId);
   if (!fact) throw new Error(`missing arc fact: ${factId}`);
   const sources = sourcesByFact.get(factId) ?? [];
@@ -83,6 +90,7 @@ const factStep = (factId) => {
   return {
     stepId: fact.fact_id,
     year: fact.year,
+    lane,
     label: fact.title,
     dateStart: fact.date_start || "",
     dateEnd: fact.date_end || "",
@@ -108,6 +116,7 @@ const endClaim = endSource?.excerpt || endFact?.assertion || "";
 const endStep = {
   stepId: "mercy.arc.sean-penn.relationship-end-1989",
   year: 1989,
+  lane: "relationship",
   label: "Relationship-end claim",
   dateStart: "1989",
   dateEnd: "1989",
@@ -132,11 +141,11 @@ const arc = {
   state: "archive_visible_supported_with_explicit_gap",
   years: [1985, 1986, 1987, 1988, 1989],
   steps: [
-    factStep("mercy.fact.4c1d21bfa7cbd55361bc"),
-    factStep("mercy.fact.ea26511de50d033f7e3f"),
-    factStep("mercy.fact.caf970534db4f661c9f6"),
-    factStep("mercy.core.fact.54fdcb9f29343bda0aeb"),
-    factStep("mercy.fact.af5d1e120a9c84210f69"),
+    factStep("mercy.fact.4c1d21bfa7cbd55361bc", "relationship"),
+    factStep("mercy.fact.ea26511de50d033f7e3f", "shared film context"),
+    factStep("mercy.fact.caf970534db4f661c9f6", "shared theatre context"),
+    factStep("mercy.core.fact.54fdcb9f29343bda0aeb", "relationship"),
+    factStep("mercy.fact.af5d1e120a9c84210f69", "shared performance context"),
     endStep,
   ],
   gaps: [
@@ -144,11 +153,38 @@ const arc = {
     "The 1989 endpoint is supported as a year claim in a later source, not as a separately dated 1989 event record.",
   ],
   inputFingerprints: Object.fromEntries(Object.entries(receipt.input_files).map(([key, value]) => [key, value.fingerprint])),
-  workerJobId: receipt.job_id,
+  provenanceJobId: receipt.job_id,
   sourceSearchState: sourceSearch.explicit_miss?.state || "unresolved",
   authorityBoundary: "Derived arc projection only; source facts remain separately labelled and no canonical, inventory, media, filesystem, or public-network writes occurred.",
   nextAction: "Resolve or preserve the first-meeting candidate through a new retained-source lane or curator testimony; do not infer it from the arc sequence.",
 };
+
+const likeAVirginArc = {
+  arcId: "mercy.arc.like-a-virgin-1984-1985",
+  title: "Like a Virgin · from recording room to Virgin Tour",
+  summary: "A source-labelled cross-medium arc through the 1984 recording sessions, album-cover and video work, publication context, launch event, and the 1985 Virgin Tour opening.",
+  state: "archive_visible_supported_with_explicit_gap",
+  years: [1984, 1985],
+  steps: [
+    factStep("mercy.fact.c696daa25e5b53c1e885", "recording / song and album"),
+    factStep("mercy.fact.2ad254019efa5d28d3df", "album / cover"),
+    factStep("mercy.fact.0e0d4ab0ea7a39b05998", "music video / visual"),
+    factStep("mercy.fact.e2eba626f586a88ad991", "publication"),
+    factStep("mercy.fact.a2b3bda5b8d8c0f44219", "album / launch event"),
+    factStep("mercy.fact.85b3cfc5c4eab92474d9", "tour / performance"),
+  ],
+  gaps: [
+    "The recording, album, video, publication, launch, and tour steps are separately sourced contexts; the arc does not claim that every named representation or performance is the same object.",
+    "The video and album-cover records retain month-level or source-qualified timing; no exact shoot day is invented.",
+  ],
+  inputFingerprints: Object.fromEntries(Object.entries(receipt.input_files).map(([key, value]) => [key, value.fingerprint])),
+  provenanceJobId: graphQa.qa_id,
+  sourceSearchState: "source_bundles_materialized",
+  authorityBoundary: "Derived arc projection only; source facts remain separately labelled and no canonical, inventory, media, filesystem, or public-network writes occurred.",
+  nextAction: "Extend the arc with typed song-to-release, video-to-broadcast, and representation edges only when their source bundles and endpoint identities are independently visible.",
+};
+
+const arcs = [arc, likeAVirginArc];
 
 const lines = [
   "// Generated from the QA-passed resumed MERCY working graph and the bounded connection-worker receipt. Do not hand-edit.",
@@ -164,17 +200,17 @@ const lines = [
   "};",
   "",
   "export type MercyArcStep = {",
-  "  stepId: string; year: number; label: string; dateStart: string; dateEnd: string; datePrecision: string; dateRole: string; dateBasis: string; factType: string; assertion: string; confidence: number; state: string; place: string; sourceCount: number; sourceExcerpt: string; sourcePointers: MercyArcSourcePointer[]; uncertainties: Array<{ detail?: string; kind?: string } | string>;",
+  "  stepId: string; year: number; lane: string; label: string; dateStart: string; dateEnd: string; datePrecision: string; dateRole: string; dateBasis: string; factType: string; assertion: string; confidence: number; state: string; place: string; sourceCount: number; sourceExcerpt: string; sourcePointers: MercyArcSourcePointer[]; uncertainties: Array<{ detail?: string; kind?: string } | string>;",
   "};",
   "",
   "export type MercyReaderArc = {",
-  "  arcId: string; title: string; summary: string; state: string; years: number[]; steps: MercyArcStep[]; gaps: string[]; inputFingerprints: Record<string, string>; workerJobId: string; sourceSearchState: string; authorityBoundary: string; nextAction: string;",
+  "  arcId: string; title: string; summary: string; state: string; years: number[]; steps: MercyArcStep[]; gaps: string[]; inputFingerprints: Record<string, string>; provenanceJobId: string; sourceSearchState: string; authorityBoundary: string; nextAction: string;",
   "};",
   "",
   "export const mercyReaderArcs: MercyReaderArc[] = ",
-  `${json([arc])};`,
+  `${json(arcs)};`,
   "",
 ];
 
 await writeFile(outputPath, lines.join("\n"));
-console.log(`Generated ${arc.steps.length} steps across ${arc.years.length} years for ${arc.arcId}.`);
+console.log(`Generated ${arcs.length} arcs and ${arcs.reduce((total, item) => total + item.steps.length, 0)} steps across ${new Set(arcs.flatMap((item) => item.years)).size} years.`);
