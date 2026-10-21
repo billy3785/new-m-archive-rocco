@@ -20,6 +20,8 @@ const learning = await readJson(resolve(workerDir, "learning-ledger.json"));
 const proposals = await readJsonl(resolve(workerDir, "connection-proposals.jsonl"));
 const representationLedger = await readJsonl(resolve(workerDir, "representation-match-ledger.jsonl"));
 const contradictionLedger = await readJsonl(resolve(workerDir, "contradiction-ledger.jsonl"));
+const auxiliaryAudit = await readJson(resolve(workerDir, "auxiliary-source-lane-audit.json"));
+const auxiliaryQa = await readJson(resolve(workerDir, "auxiliary-source-lane-audit-qa-receipt.json"));
 
 const compactPointer = (pointer) => ({
   family: pointer.family ?? null,
@@ -64,14 +66,24 @@ const readerMeta = {
   aliasProposalCount: receipt.metrics.alias_proposal_count,
   contradictionLedgerCount: receipt.metrics.contradiction_ledger_count,
   representationLedgerCount: receipt.metrics.representation_ledger_count,
-  searchedLanes: receipt.searched_lanes,
+  searchedLanes: [...receipt.searched_lanes, "retained_mad_eyes_html", "local_master_case_projections"],
   inputFingerprints: Object.fromEntries(Object.entries(receipt.input_files).map(([key, value]) => [key, value.fingerprint])),
   sourceSearch: {
     state: sourceSearch.explicit_miss?.state ?? "unresolved",
     reason: sourceSearch.explicit_miss?.reason ?? "The retained-source search did not produce a conclusion.",
     queryFamilies: Object.fromEntries(Object.entries(sourceSearch.query_families ?? {}).map(([family, value]) => [family, value.unique_record_count ?? 0])),
   },
-  nextBoundedBatch: receipt.next_packet?.next_bounded_batch ?? "No next bounded batch recorded.",
+  nextBoundedBatch: auxiliaryAudit.conclusion?.next_safe_action ?? receipt.next_packet?.next_bounded_batch ?? "No next bounded batch recorded.",
+  auxiliarySourceLaneAudit: {
+    status: auxiliaryAudit.status,
+    qaStatus: auxiliaryQa.status,
+    directFirstMeetingHit: auxiliaryAudit.conclusion?.direct_first_meeting_hit ?? null,
+    madEyesFileCount: auxiliaryAudit.source_lanes?.mad_eyes_retained_html?.files?.length ?? 0,
+    masterCaseFileCount: auxiliaryAudit.source_lanes?.local_master_case_projections?.current_file_count ?? 0,
+    masterCaseMatchingFileCount: auxiliaryAudit.source_lanes?.local_master_case_projections?.current_matching_file_count ?? 0,
+    sourceAuditPath: "lmstudio_operating_model/receipts/mercy-connection-worker-2026-10-21-v2-repaired-graph/auxiliary-source-lane-audit.json",
+    qaReceiptPath: "lmstudio_operating_model/receipts/mercy-connection-worker-2026-10-21-v2-repaired-graph/auxiliary-source-lane-audit-qa-receipt.json",
+  },
   authorityBoundary: receipt.authority_boundary,
   writes: receipt.writes,
   publicNetwork: receipt.inference?.public_network ?? 0,

@@ -53,7 +53,9 @@ export const mercyResearchMeta =
   "representationLedgerCount": 1,
   "searchedLanes": [
     "retained_webo_snapshot",
-    "qa_passed_working_graph"
+    "qa_passed_working_graph",
+    "retained_mad_eyes_html",
+    "local_master_case_projections"
   ],
   "inputFingerprints": {
     "graph_database": "sha256:375543de27929855f1f04511a18a8f4f6efe68163ecc662c8dc90d20beb43a8d",
@@ -73,7 +75,17 @@ export const mercyResearchMeta =
       "sean_penn_set_context": 81
     }
   },
-  "nextBoundedBatch": "Search retained Mad-Eyes and local master-case source bundles for an explicit Sean Penn/Material Girl-set meeting account, then review the unresolved representation gap.",
+  "nextBoundedBatch": "Hold the source-scoped candidate and route the one high-leverage curator question; do not repeat the completed auxiliary search unless source fingerprints change.",
+  "auxiliarySourceLaneAudit": {
+    "status": "completed_read_only_auxiliary_audit_revalidated",
+    "qaStatus": "qa_pass_auxiliary_revalidation",
+    "directFirstMeetingHit": false,
+    "madEyesFileCount": 5,
+    "masterCaseFileCount": 472,
+    "masterCaseMatchingFileCount": 5,
+    "sourceAuditPath": "lmstudio_operating_model/receipts/mercy-connection-worker-2026-10-21-v2-repaired-graph/auxiliary-source-lane-audit.json",
+    "qaReceiptPath": "lmstudio_operating_model/receipts/mercy-connection-worker-2026-10-21-v2-repaired-graph/auxiliary-source-lane-audit-qa-receipt.json"
+  },
   "authorityBoundary": "Derived source-labelled proposals and ledgers only; canonical SQLite, NAS PostgreSQL, archive media, archive filesystem, and public network remain untouched.",
   "writes": {
     "archive_filesystem": 0,

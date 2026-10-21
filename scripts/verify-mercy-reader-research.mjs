@@ -22,6 +22,8 @@ const learning = await readJson(resolve(workerDir, "learning-ledger.json"));
 const proposals = await readJsonl(resolve(workerDir, "connection-proposals.jsonl"));
 const representationLedger = await readJsonl(resolve(workerDir, "representation-match-ledger.jsonl"));
 const contradictionLedger = await readJsonl(resolve(workerDir, "contradiction-ledger.jsonl"));
+const auxiliaryAudit = await readJson(resolve(workerDir, "auxiliary-source-lane-audit.json"));
+const auxiliaryQa = await readJson(resolve(workerDir, "auxiliary-source-lane-audit-qa-receipt.json"));
 const generated = await readFile(generatedPath, "utf8");
 
 assert(receipt.status === "completed_connection_discovery_worker", "worker receipt is not terminal");
@@ -38,5 +40,10 @@ for (const field of ["archive_filesystem", "archive_media", "canonical_authority
 }
 assert(generated.includes("source_scoped_candidate_connection"), "unresolved candidate state is not visible");
 assert(generated.includes("awaiting_curator"), "curator question state is not visible");
+assert(generated.includes(`\"status\": \"${auxiliaryAudit.status}\"`), "auxiliary source-lane audit state is missing");
+assert(generated.includes(`\"qaStatus\": \"${auxiliaryQa.status}\"`), "auxiliary source-lane QA state is missing");
+assert(generated.includes(`\"madEyesFileCount\": ${auxiliaryAudit.source_lanes.mad_eyes_retained_html.files.length}`), "Mad-Eyes revalidation count drift");
+assert(generated.includes(`\"masterCaseFileCount\": ${auxiliaryAudit.source_lanes.local_master_case_projections.current_file_count}`), "master-case revalidation count drift");
+assert(generated.includes('"directFirstMeetingHit": false'), "auxiliary evidence gap is not exposed");
 
 console.log(`MERCY research surface verified: ${proposals.length} proposals, ${learning.eligible_question_count} curator question, ${representationLedger.length + contradictionLedger.length} ledger rows, pinned fingerprints, and zero prohibited writes agree.`);
