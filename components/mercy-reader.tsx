@@ -29,6 +29,7 @@ import {
   type MercyYearHighlight,
 } from "@/lib/mercy-reader-years";
 import { MercyCandidateQueue } from "@/components/mercy-candidate-queue";
+import { MercyResearchDesk } from "@/components/mercy-research-desk";
 
 type CorrectionType = "connect" | "separate_identity" | "hold_relationship";
 type SearchScope = "year" | "all";
@@ -72,7 +73,7 @@ export function MercyReader() {
   const [query, setQuery] = useState("");
   const [eventType, setEventType] = useState("all");
   const [searchScope, setSearchScope] = useState<SearchScope>("year");
-  const [readerMode, setReaderMode] = useState<"calendar" | "candidates">("calendar");
+  const [readerMode, setReaderMode] = useState<"calendar" | "candidates" | "research">("calendar");
   const [selectedYear, setSelectedYear] = useState(mercyReaderMeta.year);
   const [selectedFactId, setSelectedFactId] = useState(mercyTimeline[0].factId);
   const [selectedHighlightId, setSelectedHighlightId] = useState("");
@@ -198,9 +199,10 @@ export function MercyReader() {
       <div className="mercy-reader-mode-tabs" role="tablist" aria-label="Reader surfaces">
         <button type="button" role="tab" aria-selected={readerMode === "calendar"} className={readerMode === "calendar" ? "selected" : ""} onClick={() => setReaderMode("calendar")}><CalendarDays size={14} /> Calendar and timeline</button>
         <button type="button" role="tab" aria-selected={readerMode === "candidates"} className={readerMode === "candidates" ? "selected" : ""} onClick={() => setReaderMode("candidates")}><Network size={14} /> Review candidates <span>21</span></button>
+        <button type="button" role="tab" aria-selected={readerMode === "research"} className={readerMode === "research" ? "selected" : ""} onClick={() => setReaderMode("research")}><Sparkles size={14} /> Research worker <span>3</span></button>
       </div>
 
-      {readerMode === "candidates" ? <MercyCandidateQueue /> : <>
+      {readerMode === "research" ? <MercyResearchDesk /> : readerMode === "candidates" ? <MercyCandidateQueue /> : <>
       <div className="mercy-year-overview">
         <div className="mercy-year-picker">
           <div><p className="eyebrow">CALENDAR SPINE</p><h2>Choose a year to explore</h2><p>Every year is visible as a bounded working-canon surface. 1985 has the first connected event room; other years open their date-bearing highlights and graph counts.</p></div>
