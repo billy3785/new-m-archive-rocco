@@ -32,6 +32,7 @@ import {
 import { MercyCandidateQueue } from "@/components/mercy-candidate-queue";
 import { MercyArcExplorer } from "@/components/mercy-arc-explorer";
 import { MercyResearchDesk } from "@/components/mercy-research-desk";
+import { MercyGraphExplorer } from "@/components/mercy-graph-explorer";
 import { mercyReaderArcs } from "@/lib/mercy-reader-arcs";
 
 type CorrectionType = "connect" | "separate_identity" | "hold_relationship";
@@ -76,7 +77,7 @@ export function MercyReader() {
   const [query, setQuery] = useState("");
   const [eventType, setEventType] = useState("all");
   const [searchScope, setSearchScope] = useState<SearchScope>("year");
-  const [readerMode, setReaderMode] = useState<"calendar" | "candidates" | "research" | "arcs">("calendar");
+  const [readerMode, setReaderMode] = useState<"calendar" | "candidates" | "research" | "arcs" | "graph">("calendar");
   const [selectedYear, setSelectedYear] = useState(mercyReaderMeta.year);
   const [selectedFactId, setSelectedFactId] = useState(mercyTimeline[0].factId);
   const [selectedHighlightId, setSelectedHighlightId] = useState("");
@@ -204,9 +205,10 @@ export function MercyReader() {
         <button type="button" role="tab" aria-selected={readerMode === "candidates"} className={readerMode === "candidates" ? "selected" : ""} onClick={() => setReaderMode("candidates")}><Network size={14} /> Review candidates <span>21</span></button>
         <button type="button" role="tab" aria-selected={readerMode === "research"} className={readerMode === "research" ? "selected" : ""} onClick={() => setReaderMode("research")}><Sparkles size={14} /> Research worker <span>3</span></button>
         <button type="button" role="tab" aria-selected={readerMode === "arcs"} className={readerMode === "arcs" ? "selected" : ""} onClick={() => setReaderMode("arcs")}><GitBranch size={14} /> Cross-year arcs <span>{mercyReaderArcs.length}</span></button>
+        <button type="button" role="tab" aria-selected={readerMode === "graph"} className={readerMode === "graph" ? "selected" : ""} onClick={() => setReaderMode("graph")}><Network size={14} /> Graph explorer</button>
       </div>
 
-      {readerMode === "arcs" ? <MercyArcExplorer /> : readerMode === "research" ? <MercyResearchDesk /> : readerMode === "candidates" ? <MercyCandidateQueue /> : <>
+      {readerMode === "graph" ? <MercyGraphExplorer /> : readerMode === "arcs" ? <MercyArcExplorer /> : readerMode === "research" ? <MercyResearchDesk /> : readerMode === "candidates" ? <MercyCandidateQueue /> : <>
       <div className="mercy-year-overview">
         <div className="mercy-year-picker">
           <div><p className="eyebrow">CALENDAR SPINE</p><h2>Choose a year to explore</h2><p>Every year is visible as a bounded working-canon surface. 1985 has the first connected event room; other years open their date-bearing highlights and graph counts.</p></div>
