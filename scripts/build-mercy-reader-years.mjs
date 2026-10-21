@@ -75,7 +75,52 @@ const highlights = await runSqlite(`
   ORDER BY year, date_start, confidence DESC, fact_id;
 `);
 
+const representations = await runSqlite(`
+  WITH ranked AS (
+    SELECT
+      year,
+      representation_id,
+      observation_state,
+      unresolved_reason,
+      logical_representation_id,
+      payload_json,
+      ROW_NUMBER() OVER (
+        PARTITION BY year
+        ORDER BY CASE WHEN observation_state = 'logical_archive_file' THEN 0 ELSE 1 END,
+                 representation_id
+      ) AS rank_in_year
+    FROM representation
+  )
+  SELECT year, representation_id, observation_state, unresolved_reason,
+         logical_representation_id, payload_json
+  FROM ranked
+  WHERE rank_in_year <= 6
+  ORDER BY year, rank_in_year, representation_id;
+`);
+
 const json = (value) => JSON.stringify(value, null, 2);
+const parse = (value) => {
+  try { return JSON.parse(value || "{}"); } catch { return {}; }
+};
+const readerRepresentations = representations.map((row) => {
+  const payload = parse(row.payload_json);
+  const label = payload.preferred_label || payload.label || row.representation_id;
+  return {
+    year: row.year,
+    representationId: row.representation_id,
+    label,
+    relativePath: payload.relative_path || [payload.parent_path, label].filter(Boolean).join("/") || "(path not supplied)",
+    dateToken: payload.date_token || "",
+    observationState: row.observation_state || "",
+    provenanceState: payload.provenance_state || "",
+    logicalRepresentationId: row.logical_representation_id || payload.logical_representation_id || "",
+    unresolvedReason: row.unresolved_reason || payload.unresolved_reason || "",
+    sourceSenses: Array.isArray(payload.source_senses) ? payload.source_senses : [],
+    caution: row.observation_state === "technical_sidecar"
+      ? "Technical sidecar observation retained separately; it is not proof of a second historical copy."
+      : row.unresolved_reason || "Year-scoped archive representation observation; its presence does not prove assignment to a specific event.",
+  };
+});
 const lines = [
   "// Generated from the read-only aggregate MERCY working graph. Do not hand-edit.",
   "// Source graph status is qa_pass_working_graph; this index never promotes canonical or inventory claims.",
@@ -116,6 +161,20 @@ const lines = [
   "  excerpt: string;",
   "};",
   "",
+  "export type MercyYearRepresentation = {",
+  "  year: number;",
+  "  representationId: string;",
+  "  label: string;",
+  "  relativePath: string;",
+  "  dateToken: string;",
+  "  observationState: string;",
+  "  provenanceState: string;",
+  "  logicalRepresentationId: string;",
+  "  unresolvedReason: string;",
+  "  sourceSenses: string[];",
+  "  caution: string;",
+  "};",
+  "",
   "export const mercyReaderYears: MercyYearSummary[] = ",
   json(years.map((row) => ({
     year: row.year,
@@ -153,6 +212,10 @@ const lines = [
       };
     })() : null,
   }))),
+  ";",
+  "",
+  "export const mercyReaderYearRepresentations: MercyYearRepresentation[] =",
+  json(readerRepresentations),
   ";",
   "",
 ];

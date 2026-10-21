@@ -37,6 +37,20 @@ export type MercyYearSourceEvidence = {
   excerpt: string;
 };
 
+export type MercyYearRepresentation = {
+  year: number;
+  representationId: string;
+  label: string;
+  relativePath: string;
+  dateToken: string;
+  observationState: string;
+  provenanceState: string;
+  logicalRepresentationId: string;
+  unresolvedReason: string;
+  sourceSenses: string[];
+  caution: string;
+};
+
 export const mercyReaderYears: MercyYearSummary[] = 
 [
   {
@@ -3263,6 +3277,4991 @@ export const mercyReaderYearHighlights: MercyYearHighlight[] =
       "url": "https://www.instagram.com/p/DODM3HtiCte/",
       "excerpt": "Monday 15th to Friday 19th October 1984 3rd Floor Danceteria 30 West 21st Street New York NY ————————— Susan Seidelman discusses the Danceteria sequence during a Q&A in Cardiff that took place in July 2025. The Q&A was held to celebrate the films 40th anniversary and brand new 4K release. @madonna @desperately_seeking @maestrobray #markblum #danceteria #newyork #1984 #intothegroove #desperatelyseekingsusan"
     }
+  }
+]
+;
+
+export const mercyReaderYearRepresentations: MercyYearRepresentation[] =
+[
+  {
+    "year": 1958,
+    "representationId": "representation.inventory.asset:20444",
+    "label": "webo1958",
+    "relativePath": "Instagram/webo1958",
+    "dateToken": "1958",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 1958,
+    "representationId": "representation.inventory.asset:20445",
+    "label": "webo_1958",
+    "relativePath": "Instagram/webo_1958",
+    "dateToken": "1958",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 1958,
+    "representationId": "representation.inventory.asset:20551",
+    "label": "webo1958",
+    "relativePath": "Instagram/_Legacy SSD Imports/instaloader-ssd/webo1958",
+    "dateToken": "1958",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 1958,
+    "representationId": "representation.inventory.asset:20552",
+    "label": "webo_1958",
+    "relativePath": "Instagram/_Legacy SSD Imports/instaloader-ssd/webo_1958",
+    "dateToken": "1958",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 1958,
+    "representationId": "representation.inventory.asset:26842",
+    "label": "webo1958@SynoEAStream",
+    "relativePath": "Instagram/_Legacy SSD Imports/instaloader-ssd/@eaDir/webo1958@SynoEAStream",
+    "dateToken": "1958",
+    "observationState": "technical_sidecar",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "representation.inventory.asset:20551",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Technical sidecar observation retained separately; it is not proof of a second historical copy."
+  },
+  {
+    "year": 1959,
+    "representationId": "representation.inventory.asset:1936041",
+    "label": "IMG_1959.jpg",
+    "relativePath": "Pictures/Kristin's Madonna Pictures/2008/2008 - Hard Candy/Promo Tours/Roseland 043008/Roseland Fan Pix/IMG_1959.jpg",
+    "dateToken": "1959",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 1959,
+    "representationId": "representation.inventory.asset:3330109",
+    "label": "IMG_1959.jpg",
+    "relativePath": "Archives and Backups and Dupes Oh My/Pics from Google Drive/2008/2008 - Hard Candy/Promo Tours/Roseland 043008/Roseland Fan Pix/IMG_1959.jpg",
+    "dateToken": "1959",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 1959,
+    "representationId": "representation.inventory.asset:1936970",
+    "label": "IMG_1959.jpg@SynoResource",
+    "relativePath": "Pictures/Kristin's Madonna Pictures/2008/2008 - Hard Candy/Promo Tours/Roseland 043008/Roseland Fan Pix/@eaDir/IMG_1959.jpg@SynoResource",
+    "dateToken": "1959",
+    "observationState": "technical_sidecar",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "representation.inventory.asset:3330109",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Technical sidecar observation retained separately; it is not proof of a second historical copy."
+  },
+  {
+    "year": 1959,
+    "representationId": "representation.inventory.asset:1936971",
+    "label": "IMG_1959.jpg@SynoEAStream",
+    "relativePath": "Pictures/Kristin's Madonna Pictures/2008/2008 - Hard Candy/Promo Tours/Roseland 043008/Roseland Fan Pix/@eaDir/IMG_1959.jpg@SynoEAStream",
+    "dateToken": "1959",
+    "observationState": "technical_sidecar",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "representation.inventory.asset:3330109",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Technical sidecar observation retained separately; it is not proof of a second historical copy."
+  },
+  {
+    "year": 1959,
+    "representationId": "representation.inventory.asset:1936972",
+    "label": "IMG_1959.jpg",
+    "relativePath": "Pictures/Kristin's Madonna Pictures/2008/2008 - Hard Candy/Promo Tours/Roseland 043008/Roseland Fan Pix/@eaDir/IMG_1959.jpg",
+    "dateToken": "1959",
+    "observationState": "technical_sidecar",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "representation.inventory.asset:3330109",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Technical sidecar observation retained separately; it is not proof of a second historical copy."
+  },
+  {
+    "year": 1960,
+    "representationId": "representation.inventory.asset:2846205",
+    "label": "b3e1960c4bb1e8f68f8c817d237d81c1808850",
+    "relativePath": "Archives and Backups and Dupes Oh My/Instagram/.git/objects/5f/b3e1960c4bb1e8f68f8c817d237d81c1808850",
+    "dateToken": "1960",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 1960,
+    "representationId": "representation.inventory.asset:656551",
+    "label": "b3e1960c4bb1e8f68f8c817d237d81c1808850",
+    "relativePath": "Instagram/.git/objects/5f/b3e1960c4bb1e8f68f8c817d237d81c1808850",
+    "dateToken": "1960",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 1962,
+    "representationId": "representation.inventory.asset:2839596",
+    "label": "c5942fa2be6def864d1bb3f83b3c1962f70db3",
+    "relativePath": "Archives and Backups and Dupes Oh My/Instagram/.git/objects/b0/c5942fa2be6def864d1bb3f83b3c1962f70db3",
+    "dateToken": "1962",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 1962,
+    "representationId": "representation.inventory.asset:2844834",
+    "label": "29dd5f6ffa75cea1962c6a4fc3f91c97c2c786",
+    "relativePath": "Archives and Backups and Dupes Oh My/Instagram/.git/objects/6f/29dd5f6ffa75cea1962c6a4fc3f91c97c2c786",
+    "dateToken": "1962",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 1962,
+    "representationId": "representation.inventory.asset:649942",
+    "label": "c5942fa2be6def864d1bb3f83b3c1962f70db3",
+    "relativePath": "Instagram/.git/objects/b0/c5942fa2be6def864d1bb3f83b3c1962f70db3",
+    "dateToken": "1962",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 1962,
+    "representationId": "representation.inventory.asset:655180",
+    "label": "29dd5f6ffa75cea1962c6a4fc3f91c97c2c786",
+    "relativePath": "Instagram/.git/objects/6f/29dd5f6ffa75cea1962c6a4fc3f91c97c2c786",
+    "dateToken": "1962",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 1963,
+    "representationId": "representation.inventory.asset:1628223",
+    "label": "IMG_1963.MOV",
+    "relativePath": "Tours/2015 - The Rebel Heart Tour/2015.10.03 - Atlantic City/Billy Unapologetic Bitch/Billy Madonna/IMG_1963.MOV",
+    "dateToken": "1963",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 1963,
+    "representationId": "representation.inventory.asset:655010",
+    "label": "1963ceaa3dd838c99f9125ba638c02736f56f5",
+    "relativePath": "Instagram/.git/objects/71/1963ceaa3dd838c99f9125ba638c02736f56f5",
+    "dateToken": "1963",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 1963,
+    "representationId": "representation.inventory.asset:1628254",
+    "label": "IMG_1963.MOV@SynoResource",
+    "relativePath": "Tours/2015 - The Rebel Heart Tour/2015.10.03 - Atlantic City/Billy Unapologetic Bitch/Billy Madonna/@eaDir/IMG_1963.MOV@SynoResource",
+    "dateToken": "1963",
+    "observationState": "technical_sidecar",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "representation.inventory.asset:1628223",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Technical sidecar observation retained separately; it is not proof of a second historical copy."
+  },
+  {
+    "year": 1963,
+    "representationId": "representation.inventory.asset:1628255",
+    "label": "IMG_1963.MOV@SynoEAStream",
+    "relativePath": "Tours/2015 - The Rebel Heart Tour/2015.10.03 - Atlantic City/Billy Unapologetic Bitch/Billy Madonna/@eaDir/IMG_1963.MOV@SynoEAStream",
+    "dateToken": "1963",
+    "observationState": "technical_sidecar",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "representation.inventory.asset:1628223",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Technical sidecar observation retained separately; it is not proof of a second historical copy."
+  },
+  {
+    "year": 1963,
+    "representationId": "representation.inventory.asset:1628256",
+    "label": "IMG_1963.MOV",
+    "relativePath": "Tours/2015 - The Rebel Heart Tour/2015.10.03 - Atlantic City/Billy Unapologetic Bitch/Billy Madonna/@eaDir/IMG_1963.MOV",
+    "dateToken": "1963",
+    "observationState": "technical_sidecar",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "representation.inventory.asset:1628223",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Technical sidecar observation retained separately; it is not proof of a second historical copy."
+  },
+  {
+    "year": 1964,
+    "representationId": "representation.inventory.asset:2845017",
+    "label": "84658b70297f4e81bb7e75881edc2e3b1964fa",
+    "relativePath": "Archives and Backups and Dupes Oh My/Instagram/.git/objects/6d/84658b70297f4e81bb7e75881edc2e3b1964fa",
+    "dateToken": "1964",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 1964,
+    "representationId": "representation.inventory.asset:2846511",
+    "label": "85bb73237d98a847b1964cfb887245db96fa33",
+    "relativePath": "Archives and Backups and Dupes Oh My/Instagram/.git/objects/5b/85bb73237d98a847b1964cfb887245db96fa33",
+    "dateToken": "1964",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 1964,
+    "representationId": "representation.inventory.asset:655363",
+    "label": "84658b70297f4e81bb7e75881edc2e3b1964fa",
+    "relativePath": "Instagram/.git/objects/6d/84658b70297f4e81bb7e75881edc2e3b1964fa",
+    "dateToken": "1964",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 1964,
+    "representationId": "representation.inventory.asset:656857",
+    "label": "85bb73237d98a847b1964cfb887245db96fa33",
+    "relativePath": "Instagram/.git/objects/5b/85bb73237d98a847b1964cfb887245db96fa33",
+    "dateToken": "1964",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 1965,
+    "representationId": "representation.inventory.asset:2126420",
+    "label": "tim1965.livejournal.com",
+    "relativePath": "Miscellaneous/boyculturemadonna/tim1965.livejournal.com",
+    "dateToken": "1965",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 1965,
+    "representationId": "representation.inventory.asset:2843558",
+    "label": "42c7067b842a6e9c40dc60f47e1965f56481a2",
+    "relativePath": "Archives and Backups and Dupes Oh My/Instagram/.git/objects/7f/42c7067b842a6e9c40dc60f47e1965f56481a2",
+    "dateToken": "1965",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 1965,
+    "representationId": "representation.inventory.asset:653904",
+    "label": "42c7067b842a6e9c40dc60f47e1965f56481a2",
+    "relativePath": "Instagram/.git/objects/7f/42c7067b842a6e9c40dc60f47e1965f56481a2",
+    "dateToken": "1965",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 1965,
+    "representationId": "representation.inventory.asset:655374",
+    "label": "b1965f8424c6cc0be8154ff55694dee5f27f4e",
+    "relativePath": "Instagram/.git/objects/6d/b1965f8424c6cc0be8154ff55694dee5f27f4e",
+    "dateToken": "1965",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 1965,
+    "representationId": "representation.inventory.asset:2127830",
+    "label": "tim1965.livejournal.com@SynoEAStream",
+    "relativePath": "Miscellaneous/boyculturemadonna/@eaDir/tim1965.livejournal.com@SynoEAStream",
+    "dateToken": "1965",
+    "observationState": "technical_sidecar",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "representation.inventory.asset:2126420",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Technical sidecar observation retained separately; it is not proof of a second historical copy."
+  },
+  {
+    "year": 1966,
+    "representationId": "representation.inventory.asset:2851904",
+    "label": "2bddfba361691c1e2c83bf2eea1966b52f2de5",
+    "relativePath": "Archives and Backups and Dupes Oh My/Instagram/.git/objects/18/2bddfba361691c1e2c83bf2eea1966b52f2de5",
+    "dateToken": "1966",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 1966,
+    "representationId": "representation.inventory.asset:2893766",
+    "label": "2853118901_db1966efdd_b.jpg",
+    "relativePath": "Archives and Backups and Dupes Oh My/MADONNA CHRONOLOGY/2008 - The Sticky and Sweet Tour/2008.09.11 - Wembley/2853118901_db1966efdd_b.jpg",
+    "dateToken": "1966",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 1966,
+    "representationId": "representation.inventory.asset:662250",
+    "label": "2bddfba361691c1e2c83bf2eea1966b52f2de5",
+    "relativePath": "Instagram/.git/objects/18/2bddfba361691c1e2c83bf2eea1966b52f2de5",
+    "dateToken": "1966",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 1966,
+    "representationId": "representation.inventory.asset:2894176",
+    "label": "2853118901_db1966efdd_b.jpg@SynoResource",
+    "relativePath": "Archives and Backups and Dupes Oh My/MADONNA CHRONOLOGY/2008 - The Sticky and Sweet Tour/2008.09.11 - Wembley/@eaDir/2853118901_db1966efdd_b.jpg@SynoResource",
+    "dateToken": "1966",
+    "observationState": "technical_sidecar",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "representation.inventory.asset:2893766",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Technical sidecar observation retained separately; it is not proof of a second historical copy."
+  },
+  {
+    "year": 1966,
+    "representationId": "representation.inventory.asset:2894177",
+    "label": "2853118901_db1966efdd_b.jpg@SynoEAStream",
+    "relativePath": "Archives and Backups and Dupes Oh My/MADONNA CHRONOLOGY/2008 - The Sticky and Sweet Tour/2008.09.11 - Wembley/@eaDir/2853118901_db1966efdd_b.jpg@SynoEAStream",
+    "dateToken": "1966",
+    "observationState": "technical_sidecar",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "representation.inventory.asset:2893766",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Technical sidecar observation retained separately; it is not proof of a second historical copy."
+  },
+  {
+    "year": 1967,
+    "representationId": "representation.inventory.asset:2140589",
+    "label": "cg1967.php.html",
+    "relativePath": "Miscellaneous/Siterip- Madeyes.net/www.robertchristgau.com/xg/rock/cg1967.php.html",
+    "dateToken": "1967",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 1967,
+    "representationId": "representation.inventory.asset:2838532",
+    "label": "c5091ff3c6fd09184c39b6a69f184064cd1967",
+    "relativePath": "Archives and Backups and Dupes Oh My/Instagram/.git/objects/bd/c5091ff3c6fd09184c39b6a69f184064cd1967",
+    "dateToken": "1967",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 1967,
+    "representationId": "representation.inventory.asset:2847912",
+    "label": "773857d4c1bc380ed06c3458fae441326d1967",
+    "relativePath": "Archives and Backups and Dupes Oh My/Instagram/.git/objects/4a/773857d4c1bc380ed06c3458fae441326d1967",
+    "dateToken": "1967",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 1967,
+    "representationId": "representation.inventory.asset:648878",
+    "label": "c5091ff3c6fd09184c39b6a69f184064cd1967",
+    "relativePath": "Instagram/.git/objects/bd/c5091ff3c6fd09184c39b6a69f184064cd1967",
+    "dateToken": "1967",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 1967,
+    "representationId": "representation.inventory.asset:658258",
+    "label": "773857d4c1bc380ed06c3458fae441326d1967",
+    "relativePath": "Instagram/.git/objects/4a/773857d4c1bc380ed06c3458fae441326d1967",
+    "dateToken": "1967",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 1968,
+    "representationId": "representation.inventory.asset:1938562",
+    "label": "img_1968.jpg",
+    "relativePath": "Pictures/Kristin's Madonna Pictures/2008/2008 - NYC/0208 NYC/Gucci Raising Malawi and UNICEF Benefit/img_1968.jpg",
+    "dateToken": "1968",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 1968,
+    "representationId": "representation.inventory.asset:644385",
+    "label": "cc6f942ed32df01d089b1968b282810069f968",
+    "relativePath": "Instagram/.git/objects/f4/cc6f942ed32df01d089b1968b282810069f968",
+    "dateToken": "1968",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 1968,
+    "representationId": "representation.inventory.asset:650702",
+    "label": "6aebd2e6080d8ce22294c80ac1968ae93c516d",
+    "relativePath": "Instagram/.git/objects/a6/6aebd2e6080d8ce22294c80ac1968ae93c516d",
+    "dateToken": "1968",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 1968,
+    "representationId": "representation.inventory.asset:661923",
+    "label": "6c25667b89470352c07c8866f1968d15257879",
+    "relativePath": "Instagram/.git/objects/1c/6c25667b89470352c07c8866f1968d15257879",
+    "dateToken": "1968",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 1968,
+    "representationId": "representation.inventory.asset:1938587",
+    "label": "img_1968.jpg@SynoResource",
+    "relativePath": "Pictures/Kristin's Madonna Pictures/2008/2008 - NYC/0208 NYC/Gucci Raising Malawi and UNICEF Benefit/@eaDir/img_1968.jpg@SynoResource",
+    "dateToken": "1968",
+    "observationState": "technical_sidecar",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "representation.inventory.asset:1938562",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Technical sidecar observation retained separately; it is not proof of a second historical copy."
+  },
+  {
+    "year": 1969,
+    "representationId": "representation.inventory.asset:2840871",
+    "label": "c1c51a1969aff6297227c5230ef7cba9946abd",
+    "relativePath": "Archives and Backups and Dupes Oh My/Instagram/.git/objects/a0/c1c51a1969aff6297227c5230ef7cba9946abd",
+    "dateToken": "1969",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 1969,
+    "representationId": "representation.inventory.asset:651217",
+    "label": "c1c51a1969aff6297227c5230ef7cba9946abd",
+    "relativePath": "Instagram/.git/objects/a0/c1c51a1969aff6297227c5230ef7cba9946abd",
+    "dateToken": "1969",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 1970,
+    "representationId": "representation.inventory.asset:1",
+    "label": "1970",
+    "relativePath": ".",
+    "dateToken": "1970",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 1970,
+    "representationId": "representation.inventory.asset:1714662",
+    "label": "1970",
+    "relativePath": "Pictures/by year/1970",
+    "dateToken": "1970",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 1970,
+    "representationId": "representation.inventory.asset:664063",
+    "label": "1970bf0c719c175daa37fc56ba5a13e3e50f12",
+    "relativePath": "Instagram/.git/objects/02/1970bf0c719c175daa37fc56ba5a13e3e50f12",
+    "dateToken": "1970",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 1970,
+    "representationId": "representation.inventory.asset:664725",
+    "label": "1970s",
+    "relativePath": "Videos/year/1970s",
+    "dateToken": "1970",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 1970,
+    "representationId": "representation.inventory.asset:692176",
+    "label": "1970s@SynoResource",
+    "relativePath": "Videos/year/@eaDir/1970s@SynoResource",
+    "dateToken": "1970",
+    "observationState": "technical_sidecar",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "representation.inventory.asset:664725",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Technical sidecar observation retained separately; it is not proof of a second historical copy."
+  },
+  {
+    "year": 1971,
+    "representationId": "representation.inventory.asset:1938571",
+    "label": "img_1971.jpg",
+    "relativePath": "Pictures/Kristin's Madonna Pictures/2008/2008 - NYC/0208 NYC/Gucci Raising Malawi and UNICEF Benefit/img_1971.jpg",
+    "dateToken": "1971",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 1971,
+    "representationId": "representation.inventory.asset:3338213",
+    "label": "img_1971.jpg",
+    "relativePath": "Archives and Backups and Dupes Oh My/Pics from Google Drive/2008/2008 - NYC/0208 NYC/Gucci Raising Malawi and UNICEF Benefit/img_1971.jpg",
+    "dateToken": "1971",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 1971,
+    "representationId": "representation.inventory.asset:3338246",
+    "label": "img_1971.jpg@SynoResource",
+    "relativePath": "Archives and Backups and Dupes Oh My/Pics from Google Drive/2008/2008 - NYC/0208 NYC/Gucci Raising Malawi and UNICEF Benefit/@eaDir/img_1971.jpg@SynoResource",
+    "dateToken": "1971",
+    "observationState": "technical_sidecar",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "representation.inventory.asset:3338213",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Technical sidecar observation retained separately; it is not proof of a second historical copy."
+  },
+  {
+    "year": 1971,
+    "representationId": "representation.inventory.asset:3338247",
+    "label": "img_1971.jpg",
+    "relativePath": "Archives and Backups and Dupes Oh My/Pics from Google Drive/2008/2008 - NYC/0208 NYC/Gucci Raising Malawi and UNICEF Benefit/@eaDir/img_1971.jpg",
+    "dateToken": "1971",
+    "observationState": "technical_sidecar",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "representation.inventory.asset:3338213",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Technical sidecar observation retained separately; it is not proof of a second historical copy."
+  },
+  {
+    "year": 1972,
+    "representationId": "representation.inventory.asset:11",
+    "label": "1972 - Michael Ochs Archives",
+    "relativePath": "1972 - Michael Ochs Archives",
+    "dateToken": "1972",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 1972,
+    "representationId": "representation.inventory.asset:1847193",
+    "label": "1972 - Michael Ochs Archives",
+    "relativePath": "Pictures/by year/1970/1972 - Michael Ochs Archives",
+    "dateToken": "1972",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 1972,
+    "representationId": "representation.inventory.asset:2885330",
+    "label": "1972 - Michael Ochs Archives",
+    "relativePath": "Archives and Backups and Dupes Oh My/MADONNA CHRONOLOGY/1972 - Michael Ochs Archives",
+    "dateToken": "1972",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 1972,
+    "representationId": "representation.inventory.asset:3217113",
+    "label": "1972 - Michael Ochs Archives@SynoResource",
+    "relativePath": "Archives and Backups and Dupes Oh My/MADONNA CHRONOLOGY/@eaDir/1972 - Michael Ochs Archives@SynoResource",
+    "dateToken": "1972",
+    "observationState": "technical_sidecar",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "representation.inventory.asset:2885330",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Technical sidecar observation retained separately; it is not proof of a second historical copy."
+  },
+  {
+    "year": 1972,
+    "representationId": "representation.inventory.asset:3217114",
+    "label": "1972 - Michael Ochs Archives@SynoEAStream",
+    "relativePath": "Archives and Backups and Dupes Oh My/MADONNA CHRONOLOGY/@eaDir/1972 - Michael Ochs Archives@SynoEAStream",
+    "dateToken": "1972",
+    "observationState": "technical_sidecar",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "representation.inventory.asset:2885330",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Technical sidecar observation retained separately; it is not proof of a second historical copy."
+  },
+  {
+    "year": 1973,
+    "representationId": "representation.inventory.asset:2839622",
+    "label": "3021161b0e1973a38e2797cb5191a94eaac925",
+    "relativePath": "Archives and Backups and Dupes Oh My/Instagram/.git/objects/af/3021161b0e1973a38e2797cb5191a94eaac925",
+    "dateToken": "1973",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 1973,
+    "representationId": "representation.inventory.asset:649968",
+    "label": "3021161b0e1973a38e2797cb5191a94eaac925",
+    "relativePath": "Instagram/.git/objects/af/3021161b0e1973a38e2797cb5191a94eaac925",
+    "dateToken": "1973",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 1973,
+    "representationId": "representation.inventory.asset:655526",
+    "label": "a7df80d31db1973e18d5a3c7912dbb30dffc48",
+    "relativePath": "Instagram/.git/objects/6b/a7df80d31db1973e18d5a3c7912dbb30dffc48",
+    "dateToken": "1973",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 1973,
+    "representationId": "representation.inventory.asset:659010",
+    "label": "3f6e1973b72717c7474eae8b8feb5243edfa2e",
+    "relativePath": "Instagram/.git/objects/41/3f6e1973b72717c7474eae8b8feb5243edfa2e",
+    "dateToken": "1973",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 1973,
+    "representationId": "representation.inventory.asset:663215",
+    "label": "1973f291cd5aea0db982620cffa9e74c3dc90b",
+    "relativePath": "Instagram/.git/objects/0c/1973f291cd5aea0db982620cffa9e74c3dc90b",
+    "dateToken": "1973",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 1974,
+    "representationId": "representation.inventory.asset:184791",
+    "label": "._1974 + B4",
+    "relativePath": "Instagram/webo_1958/._1974 + B4",
+    "dateToken": "1974",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 1974,
+    "representationId": "representation.inventory.asset:184820",
+    "label": "1974 + B4",
+    "relativePath": "Instagram/webo_1958/1974 + B4",
+    "dateToken": "1974",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 1974,
+    "representationId": "representation.inventory.asset:692181",
+    "label": "1974 - The Egg.asf",
+    "relativePath": "Videos/year/1970s/1974 - The Egg.asf",
+    "dateToken": "1974",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 1974,
+    "representationId": "representation.inventory.asset:238349",
+    "label": "._1974 + B4@SynoEAStream",
+    "relativePath": "Instagram/webo_1958/@eaDir/._1974 + B4@SynoEAStream",
+    "dateToken": "1974",
+    "observationState": "technical_sidecar",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "representation.inventory.asset:184791",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Technical sidecar observation retained separately; it is not proof of a second historical copy."
+  },
+  {
+    "year": 1974,
+    "representationId": "representation.inventory.asset:238373",
+    "label": "1974 + B4@SynoEAStream",
+    "relativePath": "Instagram/webo_1958/@eaDir/1974 + B4@SynoEAStream",
+    "dateToken": "1974",
+    "observationState": "technical_sidecar",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "representation.inventory.asset:184820",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Technical sidecar observation retained separately; it is not proof of a second historical copy."
+  },
+  {
+    "year": 1975,
+    "representationId": "representation.inventory.asset:184792",
+    "label": "._1975",
+    "relativePath": "Instagram/webo_1958/._1975",
+    "dateToken": "1975",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 1975,
+    "representationId": "representation.inventory.asset:184821",
+    "label": "1975",
+    "relativePath": "Instagram/webo_1958/1975",
+    "dateToken": "1975",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 1975,
+    "representationId": "representation.inventory.asset:660285",
+    "label": "ed34aaeea1975f7056f94e62da3991410d50eb",
+    "relativePath": "Instagram/.git/objects/31/ed34aaeea1975f7056f94e62da3991410d50eb",
+    "dateToken": "1975",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 1975,
+    "representationId": "representation.inventory.asset:238350",
+    "label": "._1975@SynoEAStream",
+    "relativePath": "Instagram/webo_1958/@eaDir/._1975@SynoEAStream",
+    "dateToken": "1975",
+    "observationState": "technical_sidecar",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "representation.inventory.asset:184792",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Technical sidecar observation retained separately; it is not proof of a second historical copy."
+  },
+  {
+    "year": 1975,
+    "representationId": "representation.inventory.asset:238374",
+    "label": "1975@SynoEAStream",
+    "relativePath": "Instagram/webo_1958/@eaDir/1975@SynoEAStream",
+    "dateToken": "1975",
+    "observationState": "technical_sidecar",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "representation.inventory.asset:184821",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Technical sidecar observation retained separately; it is not proof of a second historical copy."
+  },
+  {
+    "year": 1976,
+    "representationId": "representation.inventory.asset:200",
+    "label": "@eaDir",
+    "relativePath": "1976 - Peter Kentes/@eaDir",
+    "dateToken": "",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 1976,
+    "representationId": "representation.inventory.asset:201",
+    "label": "kentes_78_07.jpg",
+    "relativePath": "1976 - Peter Kentes/kentes_78_07.jpg",
+    "dateToken": "",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 1976,
+    "representationId": "representation.inventory.asset:203",
+    "label": "pose1.jpg",
+    "relativePath": "1976 - Peter Kentes/pose1.jpg",
+    "dateToken": "",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 1976,
+    "representationId": "representation.inventory.asset:204",
+    "label": "kentes_78_01.jpg",
+    "relativePath": "1976 - Peter Kentes/kentes_78_01.jpg",
+    "dateToken": "",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 1976,
+    "representationId": "representation.inventory.asset:205",
+    "label": "pose6.jpg",
+    "relativePath": "1976 - Peter Kentes/pose6.jpg",
+    "dateToken": "",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 1976,
+    "representationId": "representation.inventory.asset:206",
+    "label": "kentes_78_09.jpg",
+    "relativePath": "1976 - Peter Kentes/kentes_78_09.jpg",
+    "dateToken": "",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 1977,
+    "representationId": "representation.inventory.asset:13",
+    "label": "1977 - Herman Kulkens",
+    "relativePath": "1977 - Herman Kulkens",
+    "dateToken": "1977",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 1977,
+    "representationId": "representation.inventory.asset:184795",
+    "label": "._1977",
+    "relativePath": "Instagram/webo_1958/._1977",
+    "dateToken": "1977",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 1977,
+    "representationId": "representation.inventory.asset:184823",
+    "label": "1977",
+    "relativePath": "Instagram/webo_1958/1977",
+    "dateToken": "1977",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 1977,
+    "representationId": "representation.inventory.asset:238352",
+    "label": "._1977@SynoEAStream",
+    "relativePath": "Instagram/webo_1958/@eaDir/._1977@SynoEAStream",
+    "dateToken": "1977",
+    "observationState": "technical_sidecar",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "representation.inventory.asset:184795",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Technical sidecar observation retained separately; it is not proof of a second historical copy."
+  },
+  {
+    "year": 1977,
+    "representationId": "representation.inventory.asset:238376",
+    "label": "1977@SynoEAStream",
+    "relativePath": "Instagram/webo_1958/@eaDir/1977@SynoEAStream",
+    "dateToken": "1977",
+    "observationState": "technical_sidecar",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "representation.inventory.asset:184823",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Technical sidecar observation retained separately; it is not proof of a second historical copy."
+  },
+  {
+    "year": 1978,
+    "representationId": "representation.inventory.asset:184796",
+    "label": "._1978",
+    "relativePath": "Instagram/webo_1958/._1978",
+    "dateToken": "1978",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 1978,
+    "representationId": "representation.inventory.asset:184825",
+    "label": "1978",
+    "relativePath": "Instagram/webo_1958/1978",
+    "dateToken": "1978",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 1978,
+    "representationId": "representation.inventory.asset:6",
+    "label": "1978 - Michael McDonnell",
+    "relativePath": "1978 - Michael McDonnell",
+    "dateToken": "1978",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 1978,
+    "representationId": "representation.inventory.asset:238353",
+    "label": "._1978@SynoEAStream",
+    "relativePath": "Instagram/webo_1958/@eaDir/._1978@SynoEAStream",
+    "dateToken": "1978",
+    "observationState": "technical_sidecar",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "representation.inventory.asset:184796",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Technical sidecar observation retained separately; it is not proof of a second historical copy."
+  },
+  {
+    "year": 1978,
+    "representationId": "representation.inventory.asset:238377",
+    "label": "1978@SynoEAStream",
+    "relativePath": "Instagram/webo_1958/@eaDir/1978@SynoEAStream",
+    "dateToken": "1978",
+    "observationState": "technical_sidecar",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "representation.inventory.asset:184825",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Technical sidecar observation retained separately; it is not proof of a second historical copy."
+  },
+  {
+    "year": 1979,
+    "representationId": "representation.inventory.asset:10",
+    "label": "1979 - Michael McDonnell",
+    "relativePath": "1979 - Michael McDonnell",
+    "dateToken": "1979",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 1979,
+    "representationId": "representation.inventory.asset:12",
+    "label": "1979 - Patrick Hernandez",
+    "relativePath": "1979 - Patrick Hernandez",
+    "dateToken": "1979",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 1979,
+    "representationId": "representation.inventory.asset:184826",
+    "label": "1979",
+    "relativePath": "Instagram/webo_1958/1979",
+    "dateToken": "1979",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 1979,
+    "representationId": "representation.inventory.asset:2",
+    "label": "1979 - Bob's Space",
+    "relativePath": "1979 - Bob's Space",
+    "dateToken": "1979",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 1979,
+    "representationId": "representation.inventory.asset:9",
+    "label": "1979 - Martin Schreiber",
+    "relativePath": "1979 - Martin Schreiber",
+    "dateToken": "1979",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 1980,
+    "representationId": "representation.inventory.asset:184797",
+    "label": "._1980",
+    "relativePath": "Instagram/webo_1958/._1980",
+    "dateToken": "1980",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 1980,
+    "representationId": "representation.inventory.asset:184827",
+    "label": "1980",
+    "relativePath": "Instagram/webo_1958/1980",
+    "dateToken": "1980",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 1980,
+    "representationId": "representation.inventory.asset:288040",
+    "label": "1980",
+    "relativePath": "Instagram/webo1958/Story Highlights/1980",
+    "dateToken": "1980",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 1980,
+    "representationId": "representation.inventory.asset:238354",
+    "label": "._1980@SynoEAStream",
+    "relativePath": "Instagram/webo_1958/@eaDir/._1980@SynoEAStream",
+    "dateToken": "1980",
+    "observationState": "technical_sidecar",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "representation.inventory.asset:184797",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Technical sidecar observation retained separately; it is not proof of a second historical copy."
+  },
+  {
+    "year": 1980,
+    "representationId": "representation.inventory.asset:238379",
+    "label": "1980@SynoEAStream",
+    "relativePath": "Instagram/webo_1958/@eaDir/1980@SynoEAStream",
+    "dateToken": "1980",
+    "observationState": "technical_sidecar",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "representation.inventory.asset:288040",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Technical sidecar observation retained separately; it is not proof of a second historical copy."
+  },
+  {
+    "year": 1981,
+    "representationId": "representation.inventory.asset:184798",
+    "label": "._1981",
+    "relativePath": "Instagram/webo_1958/._1981",
+    "dateToken": "1981",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 1981,
+    "representationId": "representation.inventory.asset:184828",
+    "label": "1981",
+    "relativePath": "Instagram/webo_1958/1981",
+    "dateToken": "1981",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 1981,
+    "representationId": "representation.inventory.asset:288041",
+    "label": "1981",
+    "relativePath": "Instagram/webo1958/Story Highlights/1981",
+    "dateToken": "1981",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 1981,
+    "representationId": "representation.inventory.asset:238355",
+    "label": "._1981@SynoEAStream",
+    "relativePath": "Instagram/webo_1958/@eaDir/._1981@SynoEAStream",
+    "dateToken": "1981",
+    "observationState": "technical_sidecar",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "representation.inventory.asset:184798",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Technical sidecar observation retained separately; it is not proof of a second historical copy."
+  },
+  {
+    "year": 1981,
+    "representationId": "representation.inventory.asset:238380",
+    "label": "1981@SynoEAStream",
+    "relativePath": "Instagram/webo_1958/@eaDir/1981@SynoEAStream",
+    "dateToken": "1981",
+    "observationState": "technical_sidecar",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "representation.inventory.asset:288041",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Technical sidecar observation retained separately; it is not proof of a second historical copy."
+  },
+  {
+    "year": 1982,
+    "representationId": "representation.inventory.asset:184800",
+    "label": "._1982",
+    "relativePath": "Instagram/webo_1958/._1982",
+    "dateToken": "1982",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 1982,
+    "representationId": "representation.inventory.asset:184829",
+    "label": "1982",
+    "relativePath": "Instagram/webo_1958/1982",
+    "dateToken": "1982",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 1982,
+    "representationId": "representation.inventory.asset:288042",
+    "label": "1982",
+    "relativePath": "Instagram/webo1958/Story Highlights/1982",
+    "dateToken": "1982",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 1982,
+    "representationId": "representation.inventory.asset:238356",
+    "label": "._1982@SynoEAStream",
+    "relativePath": "Instagram/webo_1958/@eaDir/._1982@SynoEAStream",
+    "dateToken": "1982",
+    "observationState": "technical_sidecar",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "representation.inventory.asset:184800",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Technical sidecar observation retained separately; it is not proof of a second historical copy."
+  },
+  {
+    "year": 1982,
+    "representationId": "representation.inventory.asset:238381",
+    "label": "1982@SynoEAStream",
+    "relativePath": "Instagram/webo_1958/@eaDir/1982@SynoEAStream",
+    "dateToken": "1982",
+    "observationState": "technical_sidecar",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "representation.inventory.asset:288042",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Technical sidecar observation retained separately; it is not proof of a second historical copy."
+  },
+  {
+    "year": 1983,
+    "representationId": "representation.inventory.asset:20114",
+    "label": "1983.10.25 - Discoring - Holiday [TV Performance] @ Rai Uno, IT # 576p, Digital.mp4",
+    "relativePath": "UNFILED/2024/Madonna RAI Digital Files (fixed)/Madonna RAI Digital Files (fixed)/1983.10.25 - Discoring - Holiday [TV Performance] @ Rai Uno, IT # 576p, Digital.mp4",
+    "dateToken": "1983-10-25",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.inventory.search_projection"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 1983,
+    "representationId": "representation.inventory.asset:216397",
+    "label": "@eaDir",
+    "relativePath": "Instagram/webo_1958/1983/@eaDir",
+    "dateToken": "",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.inventory.search_projection"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 1983,
+    "representationId": "representation.inventory.asset:216398",
+    "label": "2022-03-08_22-12-57_UTC.jpg",
+    "relativePath": "Instagram/webo_1958/1983/2022-03-08_22-12-57_UTC.jpg",
+    "dateToken": "2022-03-08",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.inventory.search_projection"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 1984,
+    "representationId": "representation.inventory.asset:184832",
+    "label": "1984",
+    "relativePath": "Instagram/webo_1958/1984",
+    "dateToken": "1984",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 1984,
+    "representationId": "representation.inventory.asset:251642",
+    "label": "1984-84.txt",
+    "relativePath": "Instagram/webo1958/1984-84.txt",
+    "dateToken": "1984",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 1984,
+    "representationId": "representation.inventory.asset:288044",
+    "label": "1984",
+    "relativePath": "Instagram/webo1958/Story Highlights/1984",
+    "dateToken": "1984",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 1984,
+    "representationId": "representation.inventory.asset:238383",
+    "label": "1984@SynoEAStream",
+    "relativePath": "Instagram/webo_1958/@eaDir/1984@SynoEAStream",
+    "dateToken": "1984",
+    "observationState": "technical_sidecar",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "representation.inventory.asset:288044",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Technical sidecar observation retained separately; it is not proof of a second historical copy."
+  },
+  {
+    "year": 1984,
+    "representationId": "representation.inventory.asset:288072",
+    "label": "1984@SynoEAStream",
+    "relativePath": "Instagram/webo1958/Story Highlights/@eaDir/1984@SynoEAStream",
+    "dateToken": "1984",
+    "observationState": "technical_sidecar",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "representation.inventory.asset:288044",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Technical sidecar observation retained separately; it is not proof of a second historical copy."
+  },
+  {
+    "year": 1985,
+    "representationId": "representation.inventory.asset:10167",
+    "label": "Madonna  ET News 1985 (Madonna Mania).png",
+    "relativePath": "UNFILED/2011-2023/Madonna  ET News 1985 (Madonna Mania).png",
+    "dateToken": "1985",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 1985,
+    "representationId": "representation.inventory.asset:10227",
+    "label": "Madonna first ever Dutch TV Interview with Adam Curry in 1985 Countdown special.mp4",
+    "relativePath": "UNFILED/2011-2023/Madonna first ever Dutch TV Interview with Adam Curry in 1985 Countdown special.mp4",
+    "dateToken": "1985",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 1985,
+    "representationId": "representation.inventory.asset:10259",
+    "label": "Madonna The Virgin Tour opens in Seattle USA 1985 TV news report.png",
+    "relativePath": "UNFILED/2011-2023/Madonna The Virgin Tour opens in Seattle USA 1985 TV news report.png",
+    "dateToken": "1985",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 1985,
+    "representationId": "representation.inventory.asset:10371",
+    "label": "Madonna first ever Dutch TV Interview with Adam Curry in 1985 Countdown special.png",
+    "relativePath": "UNFILED/2011-2023/Madonna first ever Dutch TV Interview with Adam Curry in 1985 Countdown special.png",
+    "dateToken": "1985",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 1985,
+    "representationId": "representation.inventory.asset:10690",
+    "label": "Madonna The Virgin Tour opens in Seattle USA 1985 TV news report.mp4",
+    "relativePath": "UNFILED/2011-2023/Madonna The Virgin Tour opens in Seattle USA 1985 TV news report.mp4",
+    "dateToken": "1985",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 1985,
+    "representationId": "representation.inventory.asset:10820",
+    "label": "Madonna  ET News 1985 (Madonna Mania).mp4",
+    "relativePath": "UNFILED/2011-2023/Madonna  ET News 1985 (Madonna Mania).mp4",
+    "dateToken": "1985",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 1986,
+    "representationId": "representation.inventory.asset:10077",
+    "label": "Madonna accepting MTV award 1986.mp4",
+    "relativePath": "UNFILED/2011-2023/Madonna accepting MTV award 1986.mp4",
+    "dateToken": "1986",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 1986,
+    "representationId": "representation.inventory.asset:10286",
+    "label": "Madonna - MTV Year In Madonna 1986.mp4",
+    "relativePath": "UNFILED/2011-2023/Madonna - MTV Year In Madonna 1986.mp4",
+    "dateToken": "1986",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 1986,
+    "representationId": "representation.inventory.asset:10338",
+    "label": "Madonna accepting MTV award 1986(1).png",
+    "relativePath": "UNFILED/2011-2023/Madonna accepting MTV award 1986(1).png",
+    "dateToken": "1986",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 1986,
+    "representationId": "representation.inventory.asset:10417",
+    "label": "Madonna accepting MTV award 1986.png",
+    "relativePath": "UNFILED/2011-2023/Madonna accepting MTV award 1986.png",
+    "dateToken": "1986",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 1986,
+    "representationId": "representation.inventory.asset:10530",
+    "label": "Madonna - MTV Year In Madonna 1986.png",
+    "relativePath": "UNFILED/2011-2023/Madonna - MTV Year In Madonna 1986.png",
+    "dateToken": "1986",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 1987,
+    "representationId": "representation.inventory.asset:10086",
+    "label": "WANTED_ MADONNA LIVE IN FLORENCE 1987!.mp4",
+    "relativePath": "UNFILED/2011-2023/WANTED_ MADONNA LIVE IN FLORENCE 1987!.mp4",
+    "dateToken": "1987",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 1987,
+    "representationId": "representation.inventory.asset:10093",
+    "label": "Madonna tour 1987 - Paris reports.png",
+    "relativePath": "UNFILED/2011-2023/Madonna tour 1987 - Paris reports.png",
+    "dateToken": "1987",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 1987,
+    "representationId": "representation.inventory.asset:10264",
+    "label": "WANTED_ MADONNA LIVE IN FLORENCE 1987!.png",
+    "relativePath": "UNFILED/2011-2023/WANTED_ MADONNA LIVE IN FLORENCE 1987!.png",
+    "dateToken": "1987",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 1987,
+    "representationId": "representation.inventory.asset:10265",
+    "label": "MADONNA 1987 Who.png",
+    "relativePath": "UNFILED/2011-2023/MADONNA 1987 Who.png",
+    "dateToken": "1987",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 1987,
+    "representationId": "representation.inventory.asset:10272",
+    "label": "Madonna tour 1987 - New York reports.mp4",
+    "relativePath": "UNFILED/2011-2023/Madonna tour 1987 - New York reports.mp4",
+    "dateToken": "1987",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 1988,
+    "representationId": "representation.inventory.asset:10108",
+    "label": "SPEED-THE-PLOW 1988 Full Scene from TONY AWARDS.png",
+    "relativePath": "UNFILED/2011-2023/SPEED-THE-PLOW 1988 Full Scene from TONY AWARDS.png",
+    "dateToken": "1988",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 1988,
+    "representationId": "representation.inventory.asset:10170",
+    "label": "Madonna SPEED-THE-PLOW Opening Night UK TV Report 1988.png",
+    "relativePath": "UNFILED/2011-2023/Madonna SPEED-THE-PLOW Opening Night UK TV Report 1988.png",
+    "dateToken": "1988",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 1988,
+    "representationId": "representation.inventory.asset:10375",
+    "label": "Madonna Cover Story USA TV special 1988 including premiere of Speed The Plow.png",
+    "relativePath": "UNFILED/2011-2023/Madonna Cover Story USA TV special 1988 including premiere of Speed The Plow.png",
+    "dateToken": "1988",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 1988,
+    "representationId": "representation.inventory.asset:10429",
+    "label": "Madonna IRISH TV AWARDS Acceptance Speech 1988 RTE.png",
+    "relativePath": "UNFILED/2011-2023/Madonna IRISH TV AWARDS Acceptance Speech 1988 RTE.png",
+    "dateToken": "1988",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 1988,
+    "representationId": "representation.inventory.asset:10556",
+    "label": "SPEED-THE-PLOW 1988 Full Scene from TONY AWARDS.mp4",
+    "relativePath": "UNFILED/2011-2023/SPEED-THE-PLOW 1988 Full Scene from TONY AWARDS.mp4",
+    "dateToken": "1988",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 1989,
+    "representationId": "representation.inventory.asset:10491",
+    "label": "Madonna USA TV report on Pepsi _ Like a Prayer controversy 1989.png",
+    "relativePath": "UNFILED/2011-2023/Madonna USA TV report on Pepsi _ Like a Prayer controversy 1989.png",
+    "dateToken": "1989",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 1989,
+    "representationId": "representation.inventory.asset:184807",
+    "label": "._1989",
+    "relativePath": "Instagram/webo_1958/._1989",
+    "dateToken": "1989",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 1989,
+    "representationId": "representation.inventory.asset:184838",
+    "label": "1989",
+    "relativePath": "Instagram/webo_1958/1989",
+    "dateToken": "1989",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 1989,
+    "representationId": "representation.inventory.asset:238362",
+    "label": "._1989@SynoEAStream",
+    "relativePath": "Instagram/webo_1958/@eaDir/._1989@SynoEAStream",
+    "dateToken": "1989",
+    "observationState": "technical_sidecar",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "representation.inventory.asset:184807",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Technical sidecar observation retained separately; it is not proof of a second historical copy."
+  },
+  {
+    "year": 1989,
+    "representationId": "representation.inventory.asset:238388",
+    "label": "1989@SynoEAStream",
+    "relativePath": "Instagram/webo_1958/@eaDir/1989@SynoEAStream",
+    "dateToken": "1989",
+    "observationState": "technical_sidecar",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "representation.inventory.asset:184838",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Technical sidecar observation retained separately; it is not proof of a second historical copy."
+  },
+  {
+    "year": 1990,
+    "representationId": "representation.inventory.asset:10091",
+    "label": "Madonna Blond Ambition Tour Paris Bercy original TV ad 1990.png",
+    "relativePath": "UNFILED/2011-2023/Madonna Blond Ambition Tour Paris Bercy original TV ad 1990.png",
+    "dateToken": "1990",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 1990,
+    "representationId": "representation.inventory.asset:10099",
+    "label": "Madonna arrives in France for Blond Ambition Tour in Paris 1990, fans, jogging, hotel & more.png",
+    "relativePath": "UNFILED/2011-2023/Madonna arrives in France for Blond Ambition Tour in Paris 1990, fans, jogging, hotel & more.png",
+    "dateToken": "1990",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 1990,
+    "representationId": "representation.inventory.asset:10101",
+    "label": "Madonna Blond Ambition Tour in Nice France 1990 TV news report, rehearsal, fans, stage.mp4",
+    "relativePath": "UNFILED/2011-2023/Madonna Blond Ambition Tour in Nice France 1990 TV news report, rehearsal, fans, stage.mp4",
+    "dateToken": "1990",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 1990,
+    "representationId": "representation.inventory.asset:10121",
+    "label": "Madonna Jogging HYDE PARK LONDON 1990 on SKY NEWS-1.png",
+    "relativePath": "UNFILED/2011-2023/Madonna Jogging HYDE PARK LONDON 1990 on SKY NEWS-1.png",
+    "dateToken": "1990",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 1990,
+    "representationId": "representation.inventory.asset:10175",
+    "label": "MADONNA BLOND AMBITION LONDON 1990.png",
+    "relativePath": "UNFILED/2011-2023/MADONNA BLOND AMBITION LONDON 1990.png",
+    "dateToken": "1990",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 1991,
+    "representationId": "representation.inventory.asset:10109",
+    "label": "The Queen of Pop Madonna RockCaffe Cannes News Report 1991.mp4",
+    "relativePath": "UNFILED/2011-2023/The Queen of Pop Madonna RockCaffe Cannes News Report 1991.mp4",
+    "dateToken": "1991",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 1991,
+    "representationId": "representation.inventory.asset:10160",
+    "label": "Unseen Madonna jogging footage from 1991-1992.mp4",
+    "relativePath": "UNFILED/2011-2023/Unseen Madonna jogging footage from 1991-1992.mp4",
+    "dateToken": "1991",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 1991,
+    "representationId": "representation.inventory.asset:10188",
+    "label": "The Queen of Pop _ Madonna Truth Or Dare MTV Contest 1991.mp4",
+    "relativePath": "UNFILED/2011-2023/The Queen of Pop _ Madonna Truth Or Dare MTV Contest 1991.mp4",
+    "dateToken": "1991",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 1991,
+    "representationId": "representation.inventory.asset:10273",
+    "label": "The Queen of Pop Madonna RockCaffe Cannes News Report 1991.png",
+    "relativePath": "UNFILED/2011-2023/The Queen of Pop Madonna RockCaffe Cannes News Report 1991.png",
+    "dateToken": "1991",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 1991,
+    "representationId": "representation.inventory.asset:10282",
+    "label": "IN BED WITH MADONNA London Premiere JULY 1991.mp4",
+    "relativePath": "UNFILED/2011-2023/IN BED WITH MADONNA London Premiere JULY 1991.mp4",
+    "dateToken": "1991",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 1992,
+    "representationId": "representation.inventory.asset:10126",
+    "label": "MADONNA on VANITY FAIR COVER 1992 - ET Report.png",
+    "relativePath": "UNFILED/2011-2023/MADONNA on VANITY FAIR COVER 1992 - ET Report.png",
+    "dateToken": "1992",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 1992,
+    "representationId": "representation.inventory.asset:10140",
+    "label": "Madonna in Milan to promote Erotica in 1992, fans, fashion show, TV news report.mp4",
+    "relativePath": "UNFILED/2011-2023/Madonna in Milan to promote Erotica in 1992, fans, fashion show, TV news report.mp4",
+    "dateToken": "1992",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 1992,
+    "representationId": "representation.inventory.asset:10222",
+    "label": "MADONNA Portland, Oregon PRESS CONFERENCE Body of Evidence 1992.png",
+    "relativePath": "UNFILED/2011-2023/MADONNA Portland, Oregon PRESS CONFERENCE Body of Evidence 1992.png",
+    "dateToken": "1992",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 1992,
+    "representationId": "representation.inventory.asset:10239",
+    "label": "MADONNA on VANITY FAIR COVER 1992 - ET Report.mp4",
+    "relativePath": "UNFILED/2011-2023/MADONNA on VANITY FAIR COVER 1992 - ET Report.mp4",
+    "dateToken": "1992",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 1992,
+    "representationId": "representation.inventory.asset:10278",
+    "label": "MADONNA Bares Breasts at GAULTIER AIDS SHOW 1992 CNN.png",
+    "relativePath": "UNFILED/2011-2023/MADONNA Bares Breasts at GAULTIER AIDS SHOW 1992 CNN.png",
+    "dateToken": "1992",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 1993,
+    "representationId": "representation.inventory.asset:10197",
+    "label": "Madonna The Girlie Show Australia Melbourne TV news Report 1993.png",
+    "relativePath": "UNFILED/2011-2023/Madonna The Girlie Show Australia Melbourne TV news Report 1993.png",
+    "dateToken": "1993",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 1993,
+    "representationId": "representation.inventory.asset:10242",
+    "label": "MADONNA Fever - LIVE with BIG BAND - MAY 1993.mp4",
+    "relativePath": "UNFILED/2011-2023/MADONNA Fever - LIVE with BIG BAND - MAY 1993.mp4",
+    "dateToken": "1993",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 1993,
+    "representationId": "representation.inventory.asset:10243",
+    "label": "Madonna Interview 1993 & Girlie Show.png",
+    "relativePath": "UNFILED/2011-2023/Madonna Interview 1993 & Girlie Show.png",
+    "dateToken": "1993",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 1993,
+    "representationId": "representation.inventory.asset:10275",
+    "label": "Madonna Expo 1993.mp4",
+    "relativePath": "UNFILED/2011-2023/Madonna Expo 1993.mp4",
+    "dateToken": "1993",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 1993,
+    "representationId": "representation.inventory.asset:10316",
+    "label": "Madonna Expo 1993(1).png",
+    "relativePath": "UNFILED/2011-2023/Madonna Expo 1993(1).png",
+    "dateToken": "1993",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 1994,
+    "representationId": "representation.inventory.asset:184810",
+    "label": "._1994",
+    "relativePath": "Instagram/webo_1958/._1994",
+    "dateToken": "1994",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 1994,
+    "representationId": "representation.inventory.asset:184844",
+    "label": "1994",
+    "relativePath": "Instagram/webo_1958/1994",
+    "dateToken": "1994",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 1994,
+    "representationId": "representation.inventory.asset:251651",
+    "label": "1994.txt",
+    "relativePath": "Instagram/webo1958/1994.txt",
+    "dateToken": "1994",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 1994,
+    "representationId": "representation.inventory.asset:238365",
+    "label": "._1994@SynoEAStream",
+    "relativePath": "Instagram/webo_1958/@eaDir/._1994@SynoEAStream",
+    "dateToken": "1994",
+    "observationState": "technical_sidecar",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "representation.inventory.asset:184810",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Technical sidecar observation retained separately; it is not proof of a second historical copy."
+  },
+  {
+    "year": 1994,
+    "representationId": "representation.inventory.asset:238393",
+    "label": "1994@SynoEAStream",
+    "relativePath": "Instagram/webo_1958/@eaDir/1994@SynoEAStream",
+    "dateToken": "1994",
+    "observationState": "technical_sidecar",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "representation.inventory.asset:184844",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Technical sidecar observation retained separately; it is not proof of a second historical copy."
+  },
+  {
+    "year": 1995,
+    "representationId": "representation.inventory.asset:10152",
+    "label": "Madonna & Babyface, Sanremo festival 1995 Press conference footage(1).png",
+    "relativePath": "UNFILED/2011-2023/Madonna & Babyface, Sanremo festival 1995 Press conference footage(1).png",
+    "dateToken": "1995",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 1995,
+    "representationId": "representation.inventory.asset:10327",
+    "label": "Madonna photoshoot for Versace - 1995(1).png",
+    "relativePath": "UNFILED/2011-2023/Madonna photoshoot for Versace - 1995(1).png",
+    "dateToken": "1995",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 1995,
+    "representationId": "representation.inventory.asset:10329",
+    "label": "Madonna photoshoot for Versace - 1995.png",
+    "relativePath": "UNFILED/2011-2023/Madonna photoshoot for Versace - 1995.png",
+    "dateToken": "1995",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 1995,
+    "representationId": "representation.inventory.asset:10482",
+    "label": "Madonna & Babyface, Sanremo festival 1995 Press conference footage.png",
+    "relativePath": "UNFILED/2011-2023/Madonna & Babyface, Sanremo festival 1995 Press conference footage.png",
+    "dateToken": "1995",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 1995,
+    "representationId": "representation.inventory.asset:10583",
+    "label": "Madonna & Babyface, Sanremo festival 1995 Press conference footage.mp4",
+    "relativePath": "UNFILED/2011-2023/Madonna & Babyface, Sanremo festival 1995 Press conference footage.mp4",
+    "dateToken": "1995",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 1996,
+    "representationId": "representation.inventory.asset:14899",
+    "label": "Posts - 1996",
+    "relativePath": "UNFILED/2024/Posts - 1996",
+    "dateToken": "1996",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 1996,
+    "representationId": "representation.inventory.asset:184813",
+    "label": "._1996",
+    "relativePath": "Instagram/webo_1958/._1996",
+    "dateToken": "1996",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 1996,
+    "representationId": "representation.inventory.asset:184846",
+    "label": "1996",
+    "relativePath": "Instagram/webo_1958/1996",
+    "dateToken": "1996",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 1996,
+    "representationId": "representation.inventory.asset:20409",
+    "label": "Posts - 1996@SynoEAStream",
+    "relativePath": "UNFILED/2024/@eaDir/Posts - 1996@SynoEAStream",
+    "dateToken": "1996",
+    "observationState": "technical_sidecar",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "representation.inventory.asset:14899",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Technical sidecar observation retained separately; it is not proof of a second historical copy."
+  },
+  {
+    "year": 1996,
+    "representationId": "representation.inventory.asset:238367",
+    "label": "._1996@SynoEAStream",
+    "relativePath": "Instagram/webo_1958/@eaDir/._1996@SynoEAStream",
+    "dateToken": "1996",
+    "observationState": "technical_sidecar",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "representation.inventory.asset:184813",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Technical sidecar observation retained separately; it is not proof of a second historical copy."
+  },
+  {
+    "year": 1997,
+    "representationId": "representation.inventory.asset:10219",
+    "label": "Madonna accepting award from Tony Bennet 1997.png",
+    "relativePath": "UNFILED/2011-2023/Madonna accepting award from Tony Bennet 1997.png",
+    "dateToken": "1997",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 1997,
+    "representationId": "representation.inventory.asset:10990",
+    "label": "Madonna accepting award from Tony Bennet 1997.mpg",
+    "relativePath": "UNFILED/2011-2023/Madonna accepting award from Tony Bennet 1997.mpg",
+    "dateToken": "1997",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 1997,
+    "representationId": "representation.inventory.asset:13150",
+    "label": "Madonna accepting award from Tony Bennet 1997.mpg@SynoResource",
+    "relativePath": "UNFILED/2011-2023/@eaDir/Madonna accepting award from Tony Bennet 1997.mpg@SynoResource",
+    "dateToken": "1997",
+    "observationState": "technical_sidecar",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "representation.inventory.asset:10990",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Technical sidecar observation retained separately; it is not proof of a second historical copy."
+  },
+  {
+    "year": 1997,
+    "representationId": "representation.inventory.asset:13151",
+    "label": "Madonna accepting award from Tony Bennet 1997.mpg@SynoEAStream",
+    "relativePath": "UNFILED/2011-2023/@eaDir/Madonna accepting award from Tony Bennet 1997.mpg@SynoEAStream",
+    "dateToken": "1997",
+    "observationState": "technical_sidecar",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "representation.inventory.asset:10990",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Technical sidecar observation retained separately; it is not proof of a second historical copy."
+  },
+  {
+    "year": 1997,
+    "representationId": "representation.inventory.asset:13152",
+    "label": "Madonna accepting award from Tony Bennet 1997.mpg",
+    "relativePath": "UNFILED/2011-2023/@eaDir/Madonna accepting award from Tony Bennet 1997.mpg",
+    "dateToken": "1997",
+    "observationState": "technical_sidecar",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "representation.inventory.asset:10990",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Technical sidecar observation retained separately; it is not proof of a second historical copy."
+  },
+  {
+    "year": 1998,
+    "representationId": "representation.inventory.asset:10158",
+    "label": "Madonna - Winner Best Female MTV VMA 1998(1).png",
+    "relativePath": "UNFILED/2011-2023/Madonna - Winner Best Female MTV VMA 1998(1).png",
+    "dateToken": "1998",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 1998,
+    "representationId": "representation.inventory.asset:8715",
+    "label": "SHANTI & ROL @REHEARSALS MTV VMAS 1998 (DAN·K HD EDIT 1080P).MP4",
+    "relativePath": "#recycle/2026/SHANTI & ROL @REHEARSALS MTV VMAS 1998 (DAN·K HD EDIT 1080P).MP4",
+    "dateToken": "1998",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 1998,
+    "representationId": "representation.inventory.asset:8806",
+    "label": "SHANTI & ROL @REHEARSALS MTV VMAS 1998 (DAN·K HD EDIT 1080P).MP4",
+    "relativePath": "2026/SHANTI & ROL @REHEARSALS MTV VMAS 1998 (DAN·K HD EDIT 1080P).MP4",
+    "dateToken": "1998",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 1998,
+    "representationId": "representation.inventory.asset:10051",
+    "label": "SHANTI & ROL @REHEARSALS MTV VMAS 1998 (DAN·K HD EDIT 1080P).MP4@SynoResource",
+    "relativePath": "2026/@eaDir/SHANTI & ROL @REHEARSALS MTV VMAS 1998 (DAN·K HD EDIT 1080P).MP4@SynoResource",
+    "dateToken": "1998",
+    "observationState": "technical_sidecar",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "representation.inventory.asset:8806",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Technical sidecar observation retained separately; it is not proof of a second historical copy."
+  },
+  {
+    "year": 1998,
+    "representationId": "representation.inventory.asset:8730",
+    "label": "SHANTI & ROL @REHEARSALS MTV VMAS 1998 (DAN·K HD EDIT 1080P).MP4@SynoResource",
+    "relativePath": "#recycle/2026/@eaDir/SHANTI & ROL @REHEARSALS MTV VMAS 1998 (DAN·K HD EDIT 1080P).MP4@SynoResource",
+    "dateToken": "1998",
+    "observationState": "technical_sidecar",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "representation.inventory.asset:8806",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Technical sidecar observation retained separately; it is not proof of a second historical copy."
+  },
+  {
+    "year": 1999,
+    "representationId": "representation.inventory.asset:10187",
+    "label": "Madonna introduces BEAUTIFUL STRANGER video on TOP OF THE POPS UK 1999.png",
+    "relativePath": "UNFILED/2011-2023/Madonna introduces BEAUTIFUL STRANGER video on TOP OF THE POPS UK 1999.png",
+    "dateToken": "1999",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 1999,
+    "representationId": "representation.inventory.asset:10289",
+    "label": "Madonna accepting Best video from a film 1999.mp4",
+    "relativePath": "UNFILED/2011-2023/Madonna accepting Best video from a film 1999.mp4",
+    "dateToken": "1999",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 1999,
+    "representationId": "representation.inventory.asset:10332",
+    "label": "Madonna accepting Best video from a film 1999(1).png",
+    "relativePath": "UNFILED/2011-2023/Madonna accepting Best video from a film 1999(1).png",
+    "dateToken": "1999",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 1999,
+    "representationId": "representation.inventory.asset:10351",
+    "label": "Madonna introduces BEAUTIFUL STRANGER video on TOP OF THE POPS UK 1999.mp4",
+    "relativePath": "UNFILED/2011-2023/Madonna introduces BEAUTIFUL STRANGER video on TOP OF THE POPS UK 1999.mp4",
+    "dateToken": "1999",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 1999,
+    "representationId": "representation.inventory.asset:10941",
+    "label": "Madonna accepting Best video from a film 1999.png",
+    "relativePath": "UNFILED/2011-2023/Madonna accepting Best video from a film 1999.png",
+    "dateToken": "1999",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 2000,
+    "representationId": "representation.inventory.asset:10728",
+    "label": "2000 - Mark Steines Interview - ET.png",
+    "relativePath": "UNFILED/2011-2023/2000 - Mark Steines Interview - ET.png",
+    "dateToken": "2000",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 2000,
+    "representationId": "representation.inventory.asset:184817",
+    "label": "._2000+",
+    "relativePath": "Instagram/webo_1958/._2000+",
+    "dateToken": "2000",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 2000,
+    "representationId": "representation.inventory.asset:184851",
+    "label": "2000+",
+    "relativePath": "Instagram/webo_1958/2000+",
+    "dateToken": "2000",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 2000,
+    "representationId": "representation.inventory.asset:238371",
+    "label": "._2000+@SynoEAStream",
+    "relativePath": "Instagram/webo_1958/@eaDir/._2000+@SynoEAStream",
+    "dateToken": "2000",
+    "observationState": "technical_sidecar",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "representation.inventory.asset:184817",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Technical sidecar observation retained separately; it is not proof of a second historical copy."
+  },
+  {
+    "year": 2000,
+    "representationId": "representation.inventory.asset:238399",
+    "label": "2000+@SynoEAStream",
+    "relativePath": "Instagram/webo_1958/@eaDir/2000+@SynoEAStream",
+    "dateToken": "2000",
+    "observationState": "technical_sidecar",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "representation.inventory.asset:184851",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Technical sidecar observation retained separately; it is not proof of a second historical copy."
+  },
+  {
+    "year": 2001,
+    "representationId": "representation.inventory.asset:10082",
+    "label": "Madonna Drowned World Tour 2001 Berlin German TV News report.mp4",
+    "relativePath": "UNFILED/2011-2023/Madonna Drowned World Tour 2001 Berlin German TV News report.mp4",
+    "dateToken": "2001",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 2001,
+    "representationId": "representation.inventory.asset:10094",
+    "label": "Madonna Drowned World Tour Berlin 2001 TV News report ticket sales.png",
+    "relativePath": "UNFILED/2011-2023/Madonna Drowned World Tour Berlin 2001 TV News report ticket sales.png",
+    "dateToken": "2001",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 2001,
+    "representationId": "representation.inventory.asset:10110",
+    "label": "Madonna Drowned World Tour Barcelona 2001 TV News Report.mp4",
+    "relativePath": "UNFILED/2011-2023/Madonna Drowned World Tour Barcelona 2001 TV News Report.mp4",
+    "dateToken": "2001",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 2001,
+    "representationId": "representation.inventory.asset:10176",
+    "label": "Madonna Drowned World Tour Barcelona 2001 Spanish TV News Report.png",
+    "relativePath": "UNFILED/2011-2023/Madonna Drowned World Tour Barcelona 2001 Spanish TV News Report.png",
+    "dateToken": "2001",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 2001,
+    "representationId": "representation.inventory.asset:10177",
+    "label": "Madonna Drowned World Tour London Sky News TV report 2001 Earls Court.mp4",
+    "relativePath": "UNFILED/2011-2023/Madonna Drowned World Tour London Sky News TV report 2001 Earls Court.mp4",
+    "dateToken": "2001",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 2002,
+    "representationId": "representation.inventory.asset:10253",
+    "label": "Madonna attending UK premiere of Die Another Day in London 2002 TV news report.png",
+    "relativePath": "UNFILED/2011-2023/Madonna attending UK premiere of Die Another Day in London 2002 TV news report.png",
+    "dateToken": "2002",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 2002,
+    "representationId": "representation.inventory.asset:10434",
+    "label": "Madonna rare footage filmed during Up For Grabs play London July 2002.png",
+    "relativePath": "UNFILED/2011-2023/Madonna rare footage filmed during Up For Grabs play London July 2002.png",
+    "dateToken": "2002",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 2002,
+    "representationId": "representation.inventory.asset:10594",
+    "label": "Madonna attending UK premiere of Die Another Day in London 2002 TV news report.mp4",
+    "relativePath": "UNFILED/2011-2023/Madonna attending UK premiere of Die Another Day in London 2002 TV news report.mp4",
+    "dateToken": "2002",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 2002,
+    "representationId": "representation.inventory.asset:12606",
+    "label": "Madonna attending UK premiere of Die Another Day in London 2002 TV news report.mp4@SynoResource",
+    "relativePath": "UNFILED/2011-2023/@eaDir/Madonna attending UK premiere of Die Another Day in London 2002 TV news report.mp4@SynoResource",
+    "dateToken": "2002",
+    "observationState": "technical_sidecar",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "representation.inventory.asset:10594",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Technical sidecar observation retained separately; it is not proof of a second historical copy."
+  },
+  {
+    "year": 2002,
+    "representationId": "representation.inventory.asset:12607",
+    "label": "Madonna attending UK premiere of Die Another Day in London 2002 TV news report.mp4@SynoEAStream",
+    "relativePath": "UNFILED/2011-2023/@eaDir/Madonna attending UK premiere of Die Another Day in London 2002 TV news report.mp4@SynoEAStream",
+    "dateToken": "2002",
+    "observationState": "technical_sidecar",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "representation.inventory.asset:10594",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Technical sidecar observation retained separately; it is not proof of a second historical copy."
+  },
+  {
+    "year": 2003,
+    "representationId": "representation.inventory.asset:10092",
+    "label": "Madonna American Life HMV London promo gig TV news report 2003.mp4",
+    "relativePath": "UNFILED/2011-2023/Madonna American Life HMV London promo gig TV news report 2003.mp4",
+    "dateToken": "2003",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 2003,
+    "representationId": "representation.inventory.asset:10183",
+    "label": "MADONNA - NUMBER ONE VIDEO STAR! (2003).mp4",
+    "relativePath": "UNFILED/2011-2023/MADONNA - NUMBER ONE VIDEO STAR! (2003).mp4",
+    "dateToken": "2003",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 2003,
+    "representationId": "representation.inventory.asset:10191",
+    "label": "Madonna American Life HMV London promo gig TV news report 2003.png",
+    "relativePath": "UNFILED/2011-2023/Madonna American Life HMV London promo gig TV news report 2003.png",
+    "dateToken": "2003",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 2003,
+    "representationId": "representation.inventory.asset:10210",
+    "label": "Madonna American Life UK TV Special _ interview CD_UK London 2003.mp4",
+    "relativePath": "UNFILED/2011-2023/Madonna American Life UK TV Special _ interview CD_UK London 2003.mp4",
+    "dateToken": "2003",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 2003,
+    "representationId": "representation.inventory.asset:10220",
+    "label": "Madonna American Life HMV promo gig TV news report 2003 SKY NEWS.mp4",
+    "relativePath": "UNFILED/2011-2023/Madonna American Life HMV promo gig TV news report 2003 SKY NEWS.mp4",
+    "dateToken": "2003",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 2004,
+    "representationId": "representation.inventory.asset:10129",
+    "label": "Madonna arrives at Bercy in Paris in 2004.mp4",
+    "relativePath": "UNFILED/2011-2023/Madonna arrives at Bercy in Paris in 2004.mp4",
+    "dateToken": "2004",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 2004,
+    "representationId": "representation.inventory.asset:10132",
+    "label": "Madonna Re-Invention Tour News Report 2004.png",
+    "relativePath": "UNFILED/2011-2023/Madonna Re-Invention Tour News Report 2004.png",
+    "dateToken": "2004",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 2004,
+    "representationId": "representation.inventory.asset:10180",
+    "label": "Madonna French Plus Vite que La Musique Report of the Re-Invention tour 2004.png",
+    "relativePath": "UNFILED/2011-2023/Madonna French Plus Vite que La Musique Report of the Re-Invention tour 2004.png",
+    "dateToken": "2004",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 2004,
+    "representationId": "representation.inventory.asset:10212",
+    "label": "Madonna Re-Invention Tour Arnhem SBS6 TV News report live 2004.png",
+    "relativePath": "UNFILED/2011-2023/Madonna Re-Invention Tour Arnhem SBS6 TV News report live 2004.png",
+    "dateToken": "2004",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 2004,
+    "representationId": "representation.inventory.asset:10263",
+    "label": "Madonna Re-Invention Tour 2004 interview SBS6 Shownieuws Dutch TV report.png",
+    "relativePath": "UNFILED/2011-2023/Madonna Re-Invention Tour 2004 interview SBS6 Shownieuws Dutch TV report.png",
+    "dateToken": "2004",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 2005,
+    "representationId": "representation.inventory.asset:10076",
+    "label": "Madonna Confessions On A Dance Floor promo tour KOKO album launch London 2005 SBS6 TV news report.mp4",
+    "relativePath": "UNFILED/2011-2023/Madonna Confessions On A Dance Floor promo tour KOKO album launch London 2005 SBS6 TV news report.mp4",
+    "dateToken": "2005",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 2005,
+    "representationId": "representation.inventory.asset:10131",
+    "label": "Madonna Confessions On A Dance Floor promo interview Germany Leute Heute 2005.mp4",
+    "relativePath": "UNFILED/2011-2023/Madonna Confessions On A Dance Floor promo interview Germany Leute Heute 2005.mp4",
+    "dateToken": "2005",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 2005,
+    "representationId": "representation.inventory.asset:10377",
+    "label": "MADONNA UNCUT - Rare Un-broadcast 2005 UK TV Intervew.mp4",
+    "relativePath": "UNFILED/2011-2023/MADONNA UNCUT - Rare Un-broadcast 2005 UK TV Intervew.mp4",
+    "dateToken": "2005",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 2005,
+    "representationId": "representation.inventory.asset:10416",
+    "label": "Madonna Confessions On A Dance Floor promo interview Germany Leute Heute 2005.png",
+    "relativePath": "UNFILED/2011-2023/Madonna Confessions On A Dance Floor promo interview Germany Leute Heute 2005.png",
+    "dateToken": "2005",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 2005,
+    "representationId": "representation.inventory.asset:10601",
+    "label": "MADONNA UNCUT - Rare Un-broadcast 2005 UK TV Intervew-1.png",
+    "relativePath": "UNFILED/2011-2023/MADONNA UNCUT - Rare Un-broadcast 2005 UK TV Intervew-1.png",
+    "dateToken": "2005",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 2006,
+    "representationId": "representation.inventory.asset:10293",
+    "label": "Madonna fans Amsterdam Arena Confessions tour 2006.png",
+    "relativePath": "UNFILED/2011-2023/Madonna fans Amsterdam Arena Confessions tour 2006.png",
+    "dateToken": "2006",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 2006,
+    "representationId": "representation.inventory.asset:10373",
+    "label": "Madonna arrives @ Moscow 11_9_2006 Confessions Tour TV REPORT.png",
+    "relativePath": "UNFILED/2011-2023/Madonna arrives @ Moscow 11_9_2006 Confessions Tour TV REPORT.png",
+    "dateToken": "2006",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 2006,
+    "representationId": "representation.inventory.asset:10475",
+    "label": "Madonna   Confessions Tour 2006   Professional Recordings Hannover, L A  and Horsens.png",
+    "relativePath": "UNFILED/2011-2023/Madonna   Confessions Tour 2006   Professional Recordings Hannover, L A  and Horsens.png",
+    "dateToken": "2006",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 2006,
+    "representationId": "representation.inventory.asset:10476",
+    "label": "WGN NEWS 9 LIVE COVERAGE FROM CHICAGO AT THE CONFESSIONS TOUR 2006 SEE IF YOU CAN FIND ME..png",
+    "relativePath": "UNFILED/2011-2023/WGN NEWS 9 LIVE COVERAGE FROM CHICAGO AT THE CONFESSIONS TOUR 2006 SEE IF YOU CAN FIND ME..png",
+    "dateToken": "2006",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 2006,
+    "representationId": "representation.inventory.asset:10516",
+    "label": "Madonna fans Amsterdam Arena Confessions tour 2006.mp4",
+    "relativePath": "UNFILED/2011-2023/Madonna fans Amsterdam Arena Confessions tour 2006.mp4",
+    "dateToken": "2006",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 2007,
+    "representationId": "representation.inventory.asset:159723",
+    "label": "m_nickel2007_43753603613.json.xz",
+    "relativePath": "Instagram/m_nickel2007/m_nickel2007_43753603613.json.xz",
+    "dateToken": "2007",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 2007,
+    "representationId": "representation.inventory.asset:20451",
+    "label": "m_nickel2007",
+    "relativePath": "Instagram/m_nickel2007",
+    "dateToken": "2007",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 2007,
+    "representationId": "representation.inventory.asset:636907",
+    "label": "session-m_nickel2007",
+    "relativePath": "Instagram/DEVTOOLS/session-m_nickel2007",
+    "dateToken": "2007",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 2007,
+    "representationId": "representation.inventory.asset:674081",
+    "label": "2007",
+    "relativePath": "Videos/year/2000s/2007",
+    "dateToken": "2007",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 2007,
+    "representationId": "representation.inventory.asset:678714",
+    "label": "2007-00-00 - JP - Brillia Mare Ariake - Commercial (Beyond Borders)",
+    "relativePath": "Videos/year/2000s/2007/2007-00-00 - JP - Brillia Mare Ariake - Commercial (Beyond Borders)",
+    "dateToken": "2007",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 2008,
+    "representationId": "representation.inventory.asset:10535",
+    "label": "Madonna Sticky & Sweet Tour Berlin TV news Report 2008.png",
+    "relativePath": "UNFILED/2011-2023/Madonna Sticky & Sweet Tour Berlin TV news Report 2008.png",
+    "dateToken": "2008",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 2008,
+    "representationId": "representation.inventory.asset:10673",
+    "label": "Madonna Sticky & Sweet Tour Dutch TV news report 2008 fans queuing.png",
+    "relativePath": "UNFILED/2011-2023/Madonna Sticky & Sweet Tour Dutch TV news report 2008 fans queuing.png",
+    "dateToken": "2008",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 2008,
+    "representationId": "representation.inventory.asset:10678",
+    "label": "Madonna Sticky & Sweet Cardiff Belgium TV news report 2008.png",
+    "relativePath": "UNFILED/2011-2023/Madonna Sticky & Sweet Cardiff Belgium TV news report 2008.png",
+    "dateToken": "2008",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 2008,
+    "representationId": "representation.inventory.asset:10697",
+    "label": "Madonna - Sticky & Sweet Tour Cardiff 2 Hours Dress Rehearsal (August 17th, 2008) [Fixed and Remastered Audio]",
+    "relativePath": "UNFILED/2011-2023/Madonna - Sticky & Sweet Tour Cardiff 2 Hours Dress Rehearsal (August 17th, 2008) [Fixed and Remastered Audio]",
+    "dateToken": "2008",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 2008,
+    "representationId": "representation.inventory.asset:10914",
+    "label": "Madonna Sticky & Sweet Tour Dutch TV news report 2008 fans queuing.mp4",
+    "relativePath": "UNFILED/2011-2023/Madonna Sticky & Sweet Tour Dutch TV news report 2008 fans queuing.mp4",
+    "dateToken": "2008",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 2009,
+    "representationId": "representation.inventory.asset:10314",
+    "label": "Madonna Tour 2009 TV NEWS.png",
+    "relativePath": "UNFILED/2011-2023/Madonna Tour 2009 TV NEWS.png",
+    "dateToken": "2009",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 2009,
+    "representationId": "representation.inventory.asset:10402",
+    "label": "Madonna - Holiday  Dress You Up (Sticky & Sweet Tour Dress Rehearsal) [June 22nd, 2009]",
+    "relativePath": "UNFILED/2011-2023/Madonna - Holiday  Dress You Up (Sticky & Sweet Tour Dress Rehearsal) [June 22nd, 2009]",
+    "dateToken": "2009",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 2009,
+    "representationId": "representation.inventory.asset:10781",
+    "label": "Madonna Sticky & Sweet Werchter Belgium DE RODE LOPER 13 07 2009.png",
+    "relativePath": "UNFILED/2011-2023/Madonna Sticky & Sweet Werchter Belgium DE RODE LOPER 13 07 2009.png",
+    "dateToken": "2009",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 2009,
+    "representationId": "representation.inventory.asset:11377",
+    "label": "Madonna - Holiday _ Dress You Up (Sticky & Sweet Tour Dress Rehearsal) [June 22nd, 2009].mov",
+    "relativePath": "UNFILED/2011-2023/Madonna - Holiday  Dress You Up (Sticky & Sweet Tour Dress Rehearsal) [June 22nd, 2009]/Madonna - Holiday _ Dress You Up (Sticky & Sweet Tour Dress Rehearsal) [June 22nd, 2009].mov",
+    "dateToken": "2009",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 2009,
+    "representationId": "representation.inventory.asset:11380",
+    "label": "Madonna - Holiday _ Dress You Up (Sticky & Sweet Tour Dress Rehearsal) [June 22nd, 2009].mov",
+    "relativePath": "UNFILED/2011-2023/Madonna - Holiday  Dress You Up (Sticky & Sweet Tour Dress Rehearsal) [June 22nd, 2009]/@eaDir/Madonna - Holiday _ Dress You Up (Sticky & Sweet Tour Dress Rehearsal) [June 22nd, 2009].mov",
+    "dateToken": "2009",
+    "observationState": "technical_sidecar",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "representation.inventory.asset:11377",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Technical sidecar observation retained separately; it is not proof of a second historical copy."
+  },
+  {
+    "year": 2010,
+    "representationId": "representation.inventory.asset:10757",
+    "label": "Madonna Sticky & Sweet DVD release & Wax figure presentation party FAME 25-03-2010.png",
+    "relativePath": "UNFILED/2011-2023/Madonna Sticky & Sweet DVD release & Wax figure presentation party FAME 25-03-2010.png",
+    "dateToken": "2010",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 2010,
+    "representationId": "representation.inventory.asset:10857",
+    "label": "Madonna Sticky & Sweet DVD release & Wax figure presentation party FAME 25-03-2010.mp4",
+    "relativePath": "UNFILED/2011-2023/Madonna Sticky & Sweet DVD release & Wax figure presentation party FAME 25-03-2010.mp4",
+    "dateToken": "2010",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 2010,
+    "representationId": "representation.inventory.asset:12918",
+    "label": "Madonna Sticky & Sweet DVD release & Wax figure presentation party FAME 25-03-2010.mp4@SynoResource",
+    "relativePath": "UNFILED/2011-2023/@eaDir/Madonna Sticky & Sweet DVD release & Wax figure presentation party FAME 25-03-2010.mp4@SynoResource",
+    "dateToken": "2010",
+    "observationState": "technical_sidecar",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "representation.inventory.asset:10857",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Technical sidecar observation retained separately; it is not proof of a second historical copy."
+  },
+  {
+    "year": 2010,
+    "representationId": "representation.inventory.asset:12919",
+    "label": "Madonna Sticky & Sweet DVD release & Wax figure presentation party FAME 25-03-2010.mp4@SynoEAStream",
+    "relativePath": "UNFILED/2011-2023/@eaDir/Madonna Sticky & Sweet DVD release & Wax figure presentation party FAME 25-03-2010.mp4@SynoEAStream",
+    "dateToken": "2010",
+    "observationState": "technical_sidecar",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "representation.inventory.asset:10857",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Technical sidecar observation retained separately; it is not proof of a second historical copy."
+  },
+  {
+    "year": 2010,
+    "representationId": "representation.inventory.asset:12920",
+    "label": "Madonna Sticky & Sweet DVD release & Wax figure presentation party FAME 25-03-2010.mp4",
+    "relativePath": "UNFILED/2011-2023/@eaDir/Madonna Sticky & Sweet DVD release & Wax figure presentation party FAME 25-03-2010.mp4",
+    "dateToken": "2010",
+    "observationState": "technical_sidecar",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "representation.inventory.asset:10857",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Technical sidecar observation retained separately; it is not proof of a second historical copy."
+  },
+  {
+    "year": 2011,
+    "representationId": "representation.inventory.asset:10069",
+    "label": "2011-2023",
+    "relativePath": "UNFILED/2011-2023",
+    "dateToken": "2011",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 2011,
+    "representationId": "representation.inventory.asset:10255",
+    "label": "MADONNA INTERVIEW at London Premiere of W.E. 2011.mp4",
+    "relativePath": "UNFILED/2011-2023/MADONNA INTERVIEW at London Premiere of W.E. 2011.mp4",
+    "dateToken": "2011",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 2011,
+    "representationId": "representation.inventory.asset:10441",
+    "label": "Madonna Material Girl Fall 2011 Kelly Osbourne campaign b-roll Lola.png",
+    "relativePath": "UNFILED/2011-2023/Madonna Material Girl Fall 2011 Kelly Osbourne campaign b-roll Lola.png",
+    "dateToken": "2011",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 2011,
+    "representationId": "representation.inventory.asset:10608",
+    "label": "Madonna Material Girl Fall 2011 Kelly Osbourne campaign b-roll Lola.mp4",
+    "relativePath": "UNFILED/2011-2023/Madonna Material Girl Fall 2011 Kelly Osbourne campaign b-roll Lola.mp4",
+    "dateToken": "2011",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 2011,
+    "representationId": "representation.inventory.asset:10640",
+    "label": "Madonna Material Girl collection Kelly Osbourne Fall 2011.png",
+    "relativePath": "UNFILED/2011-2023/Madonna Material Girl collection Kelly Osbourne Fall 2011.png",
+    "dateToken": "2011",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 2012,
+    "representationId": "representation.inventory.asset:10103",
+    "label": "Madonna Chile MDNA Tour 2012.mp4",
+    "relativePath": "UNFILED/2011-2023/Madonna Chile MDNA Tour 2012.mp4",
+    "dateToken": "2012",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 2012,
+    "representationId": "representation.inventory.asset:10157",
+    "label": "Madonna MDNA Tour New York Madison Square Garden November 13 2012 incl Psy Gangnam Style.mp4",
+    "relativePath": "UNFILED/2011-2023/Madonna MDNA Tour New York Madison Square Garden November 13 2012 incl Psy Gangnam Style.mp4",
+    "dateToken": "2012",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 2012,
+    "representationId": "representation.inventory.asset:10169",
+    "label": "Madonna MDNA Tour in Toronto CityNews Sept 12th 2012.png",
+    "relativePath": "UNFILED/2011-2023/Madonna MDNA Tour in Toronto CityNews Sept 12th 2012.png",
+    "dateToken": "2012",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 2012,
+    "representationId": "representation.inventory.asset:10234",
+    "label": "Madonna MDNA Tour Brussels Belgium TV news report 2012.mp4",
+    "relativePath": "UNFILED/2011-2023/Madonna MDNA Tour Brussels Belgium TV news report 2012.mp4",
+    "dateToken": "2012",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 2012,
+    "representationId": "representation.inventory.asset:10306",
+    "label": "Madonna MDNA Tour Brussels Belgium TV news report 2012.png",
+    "relativePath": "UNFILED/2011-2023/Madonna MDNA Tour Brussels Belgium TV news report 2012.png",
+    "dateToken": "2012",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 2013,
+    "representationId": "representation.inventory.asset:10100",
+    "label": "Madonna Malawi - SIC Noticias Report 04.04.2013.mp4",
+    "relativePath": "UNFILED/2011-2023/Madonna Malawi - SIC Noticias Report 04.04.2013.mp4",
+    "dateToken": "2013",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 2013,
+    "representationId": "representation.inventory.asset:10886",
+    "label": "Madonna Malawi - SIC Noticias Report 04.04.2013.png",
+    "relativePath": "UNFILED/2011-2023/Madonna Malawi - SIC Noticias Report 04.04.2013.png",
+    "dateToken": "2013",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 2013,
+    "representationId": "representation.inventory.asset:12023",
+    "label": "Madonna Malawi - SIC Noticias Report 04.04.2013.mp4@SynoResource",
+    "relativePath": "UNFILED/2011-2023/@eaDir/Madonna Malawi - SIC Noticias Report 04.04.2013.mp4@SynoResource",
+    "dateToken": "2013",
+    "observationState": "technical_sidecar",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "representation.inventory.asset:10100",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Technical sidecar observation retained separately; it is not proof of a second historical copy."
+  },
+  {
+    "year": 2013,
+    "representationId": "representation.inventory.asset:12024",
+    "label": "Madonna Malawi - SIC Noticias Report 04.04.2013.mp4@SynoEAStream",
+    "relativePath": "UNFILED/2011-2023/@eaDir/Madonna Malawi - SIC Noticias Report 04.04.2013.mp4@SynoEAStream",
+    "dateToken": "2013",
+    "observationState": "technical_sidecar",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "representation.inventory.asset:10100",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Technical sidecar observation retained separately; it is not proof of a second historical copy."
+  },
+  {
+    "year": 2013,
+    "representationId": "representation.inventory.asset:12025",
+    "label": "Madonna Malawi - SIC Noticias Report 04.04.2013.mp4",
+    "relativePath": "UNFILED/2011-2023/@eaDir/Madonna Malawi - SIC Noticias Report 04.04.2013.mp4",
+    "dateToken": "2013",
+    "observationState": "technical_sidecar",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "representation.inventory.asset:10100",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Technical sidecar observation retained separately; it is not proof of a second historical copy."
+  },
+  {
+    "year": 2014,
+    "representationId": "representation.inventory.asset:14865",
+    "label": "Madonna - Grammy Awards 26 Jan 2014.ts",
+    "relativePath": "UNFILED/2024/Madonna - Grammy Awards 26 Jan 2014.ts",
+    "dateToken": "2014",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 2014,
+    "representationId": "representation.inventory.asset:654720",
+    "label": "66ed3b1c2014fa7caa62a0f9db67440e701a08",
+    "relativePath": "Instagram/.git/objects/75/66ed3b1c2014fa7caa62a0f9db67440e701a08",
+    "dateToken": "2014",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 2014,
+    "representationId": "representation.inventory.asset:656091",
+    "label": "816009b109572132c6001d6922acd260a2014e",
+    "relativePath": "Instagram/.git/objects/64/816009b109572132c6001d6922acd260a2014e",
+    "dateToken": "2014",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 2014,
+    "representationId": "representation.inventory.asset:656241",
+    "label": "2e2014f0551ecf948c7c078360ddc7e5c5b735",
+    "relativePath": "Instagram/.git/objects/62/2e2014f0551ecf948c7c078360ddc7e5c5b735",
+    "dateToken": "2014",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 2014,
+    "representationId": "representation.inventory.asset:667608",
+    "label": "2014",
+    "relativePath": "Videos/year/2010s/2014",
+    "dateToken": "2014",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 2015,
+    "representationId": "representation.inventory.asset:14894",
+    "label": "2015 - Rebel Heart Tour (Studio Sessions)",
+    "relativePath": "UNFILED/2024/2015 - Rebel Heart Tour (Studio Sessions)",
+    "dateToken": "2015",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 2015,
+    "representationId": "representation.inventory.asset:20225",
+    "label": "2015 - Rebel Heart Tour (Studio Versions)",
+    "relativePath": "UNFILED/2024/$ REHEARSALS/2015 - Rebel Heart Tour (Studio Versions)",
+    "dateToken": "2015",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 2015,
+    "representationId": "representation.inventory.asset:20227",
+    "label": "2015 - Rebel Heart Tour (Studio Versions)_Clips from 'Backstage Pass with Madonna'",
+    "relativePath": "UNFILED/2024/$ REHEARSALS/2015 - Rebel Heart Tour (Studio Versions)_Clips from 'Backstage Pass with Madonna'",
+    "dateToken": "2015",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 2015,
+    "representationId": "representation.inventory.asset:20255",
+    "label": "2015 - Rebel Heart Tour (Studio Versions)",
+    "relativePath": "UNFILED/2024/$ REHEARSALS/2015 - Rebel Heart Tour (Studio Versions)_Clips from 'Backstage Pass with Madonna'/2015 - Rebel Heart Tour (Studio Versions)",
+    "dateToken": "2015",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 2015,
+    "representationId": "representation.inventory.asset:20283",
+    "label": "2015 - Rebel Heart Tour (Studio Versions)",
+    "relativePath": "UNFILED/2024/$ REHEARSALS/2015 - Rebel Heart Tour (Studio Versions)/2015 - Rebel Heart Tour (Studio Versions)",
+    "dateToken": "2015",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 2016,
+    "representationId": "representation.inventory.asset:10578",
+    "label": "Soundbreaking Segment (November 14, 2016)",
+    "relativePath": "UNFILED/2011-2023/Soundbreaking Segment (November 14, 2016)",
+    "dateToken": "2016",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 2016,
+    "representationId": "representation.inventory.asset:11331",
+    "label": "Soundbreaking Segment (November 14, 2016).mkv",
+    "relativePath": "UNFILED/2011-2023/Soundbreaking Segment (November 14, 2016)/Soundbreaking Segment (November 14, 2016).mkv",
+    "dateToken": "2016",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 2016,
+    "representationId": "representation.inventory.asset:20229",
+    "label": "2016 - Nothing Compares 2 U (Billboard Awards)",
+    "relativePath": "UNFILED/2024/$ REHEARSALS/2016 - Nothing Compares 2 U (Billboard Awards)",
+    "dateToken": "2016",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 2016,
+    "representationId": "representation.inventory.asset:11334",
+    "label": "Soundbreaking Segment (November 14, 2016).mkv",
+    "relativePath": "UNFILED/2011-2023/Soundbreaking Segment (November 14, 2016)/@eaDir/Soundbreaking Segment (November 14, 2016).mkv",
+    "dateToken": "2016",
+    "observationState": "technical_sidecar",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "representation.inventory.asset:11331",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Technical sidecar observation retained separately; it is not proof of a second historical copy."
+  },
+  {
+    "year": 2016,
+    "representationId": "representation.inventory.asset:12585",
+    "label": "Soundbreaking Segment (November 14, 2016)@SynoEAStream",
+    "relativePath": "UNFILED/2011-2023/@eaDir/Soundbreaking Segment (November 14, 2016)@SynoEAStream",
+    "dateToken": "2016",
+    "observationState": "technical_sidecar",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "representation.inventory.asset:10578",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Technical sidecar observation retained separately; it is not proof of a second historical copy."
+  },
+  {
+    "year": 2017,
+    "representationId": "representation.inventory.asset:656898",
+    "label": "0f2e2017d2a4e277b7407e5fd0ea6d484c7d1b",
+    "relativePath": "Instagram/.git/objects/5a/0f2e2017d2a4e277b7407e5fd0ea6d484c7d1b",
+    "dateToken": "2017",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 2017,
+    "representationId": "representation.inventory.asset:667611",
+    "label": "2017",
+    "relativePath": "Videos/year/2010s/2017",
+    "dateToken": "2017",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 2017,
+    "representationId": "representation.inventory.asset:667617",
+    "label": "2017 Women's March @ Washington DC - Jan. 21 [From ''Women's March On Washington'' YouTube Channel - Full] [HQ].mp4",
+    "relativePath": "Videos/year/2010s/2017/2017 Women's March @ Washington DC - Jan. 21 [From ''Women's March On Washington'' YouTube Channel - Full] [HQ].mp4",
+    "dateToken": "2017",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 2017,
+    "representationId": "representation.inventory.asset:667619",
+    "label": "2017 The 4th Annual St. Tropez Gala - July 26 [Fanmade Montage] [MQ].mp4",
+    "relativePath": "Videos/year/2010s/2017/2017 The 4th Annual St. Tropez Gala - July 26 [Fanmade Montage] [MQ].mp4",
+    "dateToken": "2017",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 2017,
+    "representationId": "representation.inventory.asset:667620",
+    "label": "2017 Women's March @ Washington DC - Jan. 21 [No Logo News Feed - Full - CloseUp] [HQ].ts",
+    "relativePath": "Videos/year/2010s/2017/2017 Women's March @ Washington DC - Jan. 21 [No Logo News Feed - Full - CloseUp] [HQ].ts",
+    "dateToken": "2017",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 2018,
+    "representationId": "representation.inventory.asset:644800",
+    "label": "dfd3ed55b3e2018b73153925ada09c2e257a24",
+    "relativePath": "Instagram/.git/objects/ef/dfd3ed55b3e2018b73153925ada09c2e257a24",
+    "dateToken": "2018",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 2018,
+    "representationId": "representation.inventory.asset:667612",
+    "label": "2018",
+    "relativePath": "Videos/year/2010s/2018",
+    "dateToken": "2018",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 2018,
+    "representationId": "representation.inventory.asset:667614",
+    "label": "2018 MET Gala - ''Like A Prayer - Beautiful Game - Hallelujah'' [Official Full Footage] [HQ].mp4",
+    "relativePath": "Videos/year/2010s/2018/2018 MET Gala - ''Like A Prayer - Beautiful Game - Hallelujah'' [Official Full Footage] [HQ].mp4",
+    "dateToken": "2018",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 2018,
+    "representationId": "representation.inventory.asset:667615",
+    "label": "2018 M @ The Stonewall Inn - Full Footage - Fanmade Montage - Dec. 31 [HQ].mp4",
+    "relativePath": "Videos/year/2010s/2018/2018 M @ The Stonewall Inn - Full Footage - Fanmade Montage - Dec. 31 [HQ].mp4",
+    "dateToken": "2018",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 2018,
+    "representationId": "representation.inventory.asset:720926",
+    "label": "Madonna - Aretha Franklin Tribute Speech & Camila Cabello Video of the Year - MTV Video Music Awards 2018 UNCENSORED BACKHAUL 1080i H264 46Mbps-ALANiS.ts",
+    "relativePath": "Videos/Music Videos/Madonna - Aretha Franklin Tribute Speech & Camila Cabello Video of the Year - MTV Video Music Awards 2018 UNCENSORED BACKHAUL 1080i H264 46Mbps-ALANiS.ts",
+    "dateToken": "2018",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 2019,
+    "representationId": "representation.inventory.asset:20226",
+    "label": "2019 - Madame X Tour (Studio Versions)",
+    "relativePath": "UNFILED/2024/$ REHEARSALS/2019 - Madame X Tour (Studio Versions)",
+    "dateToken": "2019",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 2019,
+    "representationId": "representation.inventory.asset:20270",
+    "label": "2019 - Madame X Tour (Studio Versions)",
+    "relativePath": "UNFILED/2024/$ REHEARSALS/2019 - Madame X Tour (Studio Versions)/2019 - Madame X Tour (Studio Versions)",
+    "dateToken": "2019",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 2019,
+    "representationId": "representation.inventory.asset:614376",
+    "label": "Fall 2019",
+    "relativePath": "Instagram/bigasbilly/Fall 2019",
+    "dateToken": "2019",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 2019,
+    "representationId": "representation.inventory.asset:614392",
+    "label": "Summer 2019",
+    "relativePath": "Instagram/bigasbilly/Summer 2019",
+    "dateToken": "2019",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 2019,
+    "representationId": "representation.inventory.asset:20311",
+    "label": "2019 - Madame X Tour (Studio Versions)@SynoEAStream",
+    "relativePath": "UNFILED/2024/$ REHEARSALS/@eaDir/2019 - Madame X Tour (Studio Versions)@SynoEAStream",
+    "dateToken": "2019",
+    "observationState": "technical_sidecar",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "representation.inventory.asset:20270",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Technical sidecar observation retained separately; it is not proof of a second historical copy."
+  },
+  {
+    "year": 2020,
+    "representationId": "representation.inventory.asset:614365",
+    "label": "1️⃣ 🦠🦠2020",
+    "relativePath": "Instagram/bigasbilly/1️⃣ 🦠🦠2020",
+    "dateToken": "2020",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 2020,
+    "representationId": "representation.inventory.asset:614368",
+    "label": "2️⃣ 🦠🦠 2020",
+    "relativePath": "Instagram/bigasbilly/2️⃣ 🦠🦠 2020",
+    "dateToken": "2020",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 2020,
+    "representationId": "representation.inventory.asset:614377",
+    "label": "Fall 2020",
+    "relativePath": "Instagram/bigasbilly/Fall 2020",
+    "dateToken": "2020",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 2020,
+    "representationId": "representation.inventory.asset:614385",
+    "label": "Paris 2020",
+    "relativePath": "Instagram/bigasbilly/Paris 2020",
+    "dateToken": "2020",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 2020,
+    "representationId": "representation.inventory.asset:614393",
+    "label": "Summer 2020",
+    "relativePath": "Instagram/bigasbilly/Summer 2020",
+    "dateToken": "2020",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 2021,
+    "representationId": "representation.inventory.asset:288060",
+    "label": "2021",
+    "relativePath": "Instagram/webo1958/Story Highlights/2021",
+    "dateToken": "2021",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 2021,
+    "representationId": "representation.inventory.asset:614379",
+    "label": "Fall 2021",
+    "relativePath": "Instagram/bigasbilly/Fall 2021",
+    "dateToken": "2021",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 2021,
+    "representationId": "representation.inventory.asset:614386",
+    "label": "Spring 2021",
+    "relativePath": "Instagram/bigasbilly/Spring 2021",
+    "dateToken": "2021",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 2021,
+    "representationId": "representation.inventory.asset:614394",
+    "label": "Summer 2021",
+    "relativePath": "Instagram/bigasbilly/Summer 2021",
+    "dateToken": "2021",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 2021,
+    "representationId": "representation.inventory.asset:288088",
+    "label": "2021@SynoEAStream",
+    "relativePath": "Instagram/webo1958/Story Highlights/@eaDir/2021@SynoEAStream",
+    "dateToken": "2021",
+    "observationState": "technical_sidecar",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "representation.inventory.asset:288060",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Technical sidecar observation retained separately; it is not proof of a second historical copy."
+  },
+  {
+    "year": 2022,
+    "representationId": "representation.inventory.asset:184853",
+    "label": "2022",
+    "relativePath": "Instagram/webo_1958/2022",
+    "dateToken": "2022",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 2022,
+    "representationId": "representation.inventory.asset:20230",
+    "label": "2022 - Finally Enough Live Pride",
+    "relativePath": "UNFILED/2024/$ REHEARSALS/2022 - Finally Enough Live Pride",
+    "dateToken": "2022",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 2022,
+    "representationId": "representation.inventory.asset:20234",
+    "label": "2022 - Finally Enough Live Pride",
+    "relativePath": "UNFILED/2024/$ REHEARSALS/2022 - Finally Enough Live Pride/2022 - Finally Enough Live Pride",
+    "dateToken": "2022",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 2022,
+    "representationId": "representation.inventory.asset:20316",
+    "label": "2022 - Finally Enough Live Pride@SynoEAStream",
+    "relativePath": "UNFILED/2024/$ REHEARSALS/@eaDir/2022 - Finally Enough Live Pride@SynoEAStream",
+    "dateToken": "2022",
+    "observationState": "technical_sidecar",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "representation.inventory.asset:20234",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Technical sidecar observation retained separately; it is not proof of a second historical copy."
+  },
+  {
+    "year": 2022,
+    "representationId": "representation.inventory.asset:238401",
+    "label": "2022@SynoEAStream",
+    "relativePath": "Instagram/webo_1958/@eaDir/2022@SynoEAStream",
+    "dateToken": "2022",
+    "observationState": "technical_sidecar",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "representation.inventory.asset:184853",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Technical sidecar observation retained separately; it is not proof of a second historical copy."
+  },
+  {
+    "year": 2023,
+    "representationId": "representation.inventory.asset:10898",
+    "label": "Cher - 2023 - Christmas",
+    "relativePath": "UNFILED/2011-2023/Cher - 2023 - Christmas",
+    "dateToken": "2023",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 2023,
+    "representationId": "representation.inventory.asset:14388",
+    "label": "Madame X Complete Theater Experience 2023 edit_Madame X Complete Theater Experience 2023 edit wav",
+    "relativePath": "UNFILED/2025/Madame X Complete Theater Experience 2023 edit_Madame X Complete Theater Experience 2023 edit wav",
+    "dateToken": "2023",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 2023,
+    "representationId": "representation.inventory.asset:14552",
+    "label": "Madame X Complete Theater Experience 2023 edit",
+    "relativePath": "UNFILED/2025/Madame X Complete Theater Experience 2023 edit_Madame X Complete Theater Experience 2023 edit wav/Madame X Complete Theater Experience 2023 edit",
+    "dateToken": "2023",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 2023,
+    "representationId": "representation.inventory.asset:14554",
+    "label": "Madame X Complete Theater Experience 2023 edit wav",
+    "relativePath": "UNFILED/2025/Madame X Complete Theater Experience 2023 edit_Madame X Complete Theater Experience 2023 edit wav/Madame X Complete Theater Experience 2023 edit/Madame X Complete Theater Experience 2023 edit wav",
+    "dateToken": "2023",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 2023,
+    "representationId": "representation.inventory.asset:12957",
+    "label": "Cher - 2023 - Christmas@SynoEAStream",
+    "relativePath": "UNFILED/2011-2023/@eaDir/Cher - 2023 - Christmas@SynoEAStream",
+    "dateToken": "2023",
+    "observationState": "technical_sidecar",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "representation.inventory.asset:10898",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Technical sidecar observation retained separately; it is not proof of a second historical copy."
+  },
+  {
+    "year": 2024,
+    "representationId": "representation.inventory.asset:10067",
+    "label": "2024",
+    "relativePath": "UNFILED/2024",
+    "dateToken": "2024",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 2024,
+    "representationId": "representation.inventory.asset:14393",
+    "label": "2024 Auction Photos",
+    "relativePath": "UNFILED/2025/Auction Photos/2024 Auction Photos",
+    "dateToken": "2024",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 2024,
+    "representationId": "representation.inventory.asset:8794",
+    "label": "Madonna - The Celebration Tour In Rio (04.05.2024) (Rebroadcast)",
+    "relativePath": "2026/Madonna - The Celebration Tour In Rio (04.05.2024) (Rebroadcast)",
+    "dateToken": "2024",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 2024,
+    "representationId": "representation.inventory.asset:10038",
+    "label": "Madonna - The Celebration Tour In Rio (04.05.2024) (Rebroadcast)@SynoEAStream",
+    "relativePath": "2026/@eaDir/Madonna - The Celebration Tour In Rio (04.05.2024) (Rebroadcast)@SynoEAStream",
+    "dateToken": "2024",
+    "observationState": "technical_sidecar",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "representation.inventory.asset:8794",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Technical sidecar observation retained separately; it is not proof of a second historical copy."
+  },
+  {
+    "year": 2024,
+    "representationId": "representation.inventory.asset:10039",
+    "label": "Madonna - The Celebration Tour In Rio (04.05.2024) (Rebroadcast)@SynoResource",
+    "relativePath": "2026/@eaDir/Madonna - The Celebration Tour In Rio (04.05.2024) (Rebroadcast)@SynoResource",
+    "dateToken": "2024",
+    "observationState": "technical_sidecar",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "representation.inventory.asset:8794",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Technical sidecar observation retained separately; it is not proof of a second historical copy."
+  },
+  {
+    "year": 2025,
+    "representationId": "representation.inventory.asset:8713",
+    "label": "I'm Going To Tell You a Secret [Extended HD cut · Dan·K 2025] 1080p.mkv",
+    "relativePath": "#recycle/2026/I'm Going To Tell You a Secret [Extended HD cut · Dan·K 2025] 1080p.mkv",
+    "dateToken": "2025",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 2025,
+    "representationId": "representation.inventory.asset:8780",
+    "label": "ScreenRecording_08-08-2025 19-07-04_1.MOV",
+    "relativePath": "2026/ScreenRecording_08-08-2025 19-07-04_1.MOV",
+    "dateToken": "2025",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 2025,
+    "representationId": "representation.inventory.asset:8808",
+    "label": "I'm Going To Tell You a Secret [Extended HD cut · Dan·K 2025] 1080p.mkv",
+    "relativePath": "2026/I'm Going To Tell You a Secret [Extended HD cut · Dan·K 2025] 1080p.mkv",
+    "dateToken": "2025",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 2025,
+    "representationId": "representation.inventory.asset:10005",
+    "label": "ScreenRecording_08-08-2025 19-07-04_1.MOV@SynoResource",
+    "relativePath": "2026/@eaDir/ScreenRecording_08-08-2025 19-07-04_1.MOV@SynoResource",
+    "dateToken": "2025",
+    "observationState": "technical_sidecar",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "representation.inventory.asset:8780",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Technical sidecar observation retained separately; it is not proof of a second historical copy."
+  },
+  {
+    "year": 2025,
+    "representationId": "representation.inventory.asset:8728",
+    "label": "I'm Going To Tell You a Secret [Extended HD cut · Dan·K 2025] 1080p.mkv@SynoResource",
+    "relativePath": "#recycle/2026/@eaDir/I'm Going To Tell You a Secret [Extended HD cut · Dan·K 2025] 1080p.mkv@SynoResource",
+    "dateToken": "2025",
+    "observationState": "technical_sidecar",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "representation.inventory.asset:8808",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "Technical sidecar observation retained separately; it is not proof of a second historical copy."
+  },
+  {
+    "year": 2026,
+    "representationId": "representation.inventory.asset:184801",
+    "label": "._1983",
+    "relativePath": "Instagram/webo_1958/._1983",
+    "dateToken": "1983",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 2026,
+    "representationId": "representation.inventory.asset:184831",
+    "label": "1983",
+    "relativePath": "Instagram/webo_1958/1983",
+    "dateToken": "1983",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 2026,
+    "representationId": "representation.inventory.asset:19593",
+    "label": "Like A Virgin (Studio Version).wav",
+    "relativePath": "UNFILED/2024/2015 - Rebel Heart Tour (Studio Sessions)/Like A Virgin (Studio Version).wav",
+    "dateToken": "",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "",
+    "sourceSenses": [
+      "archive.inventory.search_projection"
+    ],
+    "caution": "Year-scoped archive representation observation; its presence does not prove assignment to a specific event."
+  },
+  {
+    "year": 2026,
+    "representationId": "representation.inventory.asset:202",
+    "label": "1976 kentes (3).jpg",
+    "relativePath": "1976 - Peter Kentes/1976 kentes (3).jpg",
+    "dateToken": "1976",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 2026,
+    "representationId": "representation.inventory.asset:251641",
+    "label": "1983.txt",
+    "relativePath": "Instagram/webo1958/1983.txt",
+    "dateToken": "1983",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
+  },
+  {
+    "year": 2026,
+    "representationId": "representation.inventory.asset:4",
+    "label": "1976 - Set 1",
+    "relativePath": "1976 - Set 1",
+    "dateToken": "1976",
+    "observationState": "logical_archive_file",
+    "provenanceState": "source_observed",
+    "logicalRepresentationId": "",
+    "unresolvedReason": "No retained event reached the bounded two-token filename match threshold.",
+    "sourceSenses": [
+      "archive.nas.postgresql"
+    ],
+    "caution": "No retained event reached the bounded two-token filename match threshold."
   }
 ]
 ;

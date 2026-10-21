@@ -24,6 +24,7 @@ import {
 } from "@/lib/mercy-reader-data";
 import {
   mercyReaderYearHighlights,
+  mercyReaderYearRepresentations,
   mercyReaderYears,
   type MercyYearHighlight,
 } from "@/lib/mercy-reader-years";
@@ -105,6 +106,8 @@ export function MercyReader() {
   const selectedEvent = mercyTimeline.find((event) => event.factId === selectedFactId) ?? visibleEvents[0] ?? mercyTimeline[0];
   const selectedHighlight = visibleHighlights.find((highlight) => highlight.factId === selectedHighlightId) ?? visibleHighlights[0];
   const selectedHighlightYearSummary = mercyReaderYears.find((summary) => summary.year === selectedHighlight?.year) ?? selectedYearSummary;
+  const selectedContextYear = selectedHighlight?.year ?? selectedYear;
+  const selectedYearRepresentations = useMemo(() => mercyReaderYearRepresentations.filter((representation) => representation.year === selectedContextYear), [selectedContextYear]);
   const selectedConnections = mercyConnections.filter((connection) => connection.factId === selectedEvent.factId);
   const selectedRepresentationIds = new Set(selectedConnections.flatMap((connection) => connection.representationIds ?? []));
   const selectedRepresentations = mercyRepresentations.filter((representation) => selectedRepresentationIds.has(representation.representationId));
@@ -286,6 +289,7 @@ export function MercyReader() {
               {selectedHighlight ? <article className="mercy-year-highlight-detail"><strong>{selectedHighlight.title}</strong><span>{highlightDateLabel(selectedHighlight)} · {selectedHighlight.datePrecision} precision · {Math.round(selectedHighlight.confidence * 100)}% confidence</span><p>{selectedHighlight.assertion}</p><small>{selectedHighlight.factId} · {selectedHighlight.sourceLanes.join(", ")}</small></article> : <p className="mercy-muted">{searchScope === "all" ? "Enter a search term to inspect a source-labelled result across the historical index." : "No date-bearing historical-event highlight is materialized for this year in the compact index. That is a coverage boundary, not proof that nothing happened."}</p>}
             </div>
             {selectedHighlight?.sourceEvidence ? <div className="mercy-detail-block"><div className="mercy-block-heading"><h3>Retained source evidence</h3><span>{selectedHighlight.sourceItemCount} source {selectedHighlight.sourceItemCount === 1 ? "item" : "items"}</span></div><blockquote>{selectedHighlight.sourceEvidence.excerpt}</blockquote><div className="mercy-source-row"><span>{selectedHighlight.sourceEvidence.authority} · {selectedHighlight.sourceEvidence.sourceType} · {selectedHighlight.sourceEvidence.sourceItemId}</span>{selectedHighlight.sourceEvidence.url ? <a href={selectedHighlight.sourceEvidence.url} target="_blank" rel="noreferrer">Open retained source <ExternalLink size={13} /></a> : null}</div></div> : null}
+            <div className="mercy-detail-block"><div className="mercy-block-heading"><h3>Representation observations</h3><span>{selectedHighlightYearSummary.representationCount.toLocaleString()} in year · {selectedYearRepresentations.length} shown</span></div><p className="mercy-muted">These are real archive observations from the selected year. They remain separate from the historical lead unless a typed, evidence-backed relationship exists.</p>{selectedYearRepresentations.length ? <div className="mercy-representation-list">{selectedYearRepresentations.map((representation) => <article key={representation.representationId}><FileSearch size={15} /><div><strong>{representation.label}</strong><small>{representation.relativePath}</small><small>{representation.observationState} · {representation.provenanceState || "provenance not stated"} · {representation.sourceSenses.join(", ") || "source lane not stated"}</small><p>{representation.caution}</p></div></article>)}</div> : <p className="mercy-muted">No representative observation is materialized for this year. That is a coverage boundary, not proof that no archive representation exists.</p>}</div>
             <div className="mercy-uncertainty"><CircleAlert size={15} /><div><strong>Scope boundary stays visible</strong><span>{searchScope === "all" ? "Search finds source-labelled date-bearing leads across the full span; it does not merge identities or replace the connected event room." : "Full event, source-bundle, and representation detail is next for this year; the aggregate row remains a derived research lead."}</span></div></div>
           </>}
         </section>
