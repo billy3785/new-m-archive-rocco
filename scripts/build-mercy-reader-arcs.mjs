@@ -43,6 +43,11 @@ const selectedFactIds = [
   "mercy.fact.94de293f928b94d7e2fa",
   "mercy.fact.7886aba0b9f9fe5a7d68",
   "mercy.fact.0d47169ef0cfb585f8c3",
+  "mercy.fact.64d3c813362a472e4579",
+  "mercy.fact.a682a6c252c354c7e1a9",
+  "mercy.fact.389970d368ac6928d0f9",
+  "mercy.fact.c2d96da96f215d541033",
+  "mercy.fact.a83fba68e1573a885e2b",
 ];
 const ids = selectedFactIds.map((id) => `'${id}'`).join(",");
 const facts = await runSqlite(`SELECT fact_id,year,fact_type,title,assertion,date_start,date_end,date_precision,confidence,visibility_state,source_lanes_json,uncertainties_json FROM fact WHERE fact_id IN (${ids}) ORDER BY year,date_start,fact_id;`);
@@ -242,7 +247,32 @@ const photoRepresentationArc = {
   nextAction: "Inspect source provenance and any retained publication/outtake evidence before upgrading a representation association; preserve each logical file and technical sidecar separately.",
 };
 
-const arcs = [arc, likeAVirginArc, photoRepresentationArc];
+const crazyForYouArc = {
+  arcId: "mercy.arc.crazy-for-you-demo-to-release-1983-1985",
+  title: "Crazy for You · demo, Vision Quest, and 1985 release",
+  summary: "A source-labelled song-and-screen arc that keeps the 1983 live demo separate from the later soundtrack/single version while following the retained recording, filming, release, and soundtrack-promotion evidence.",
+  state: "archive_visible_supported_with_explicit_gap",
+  years: [1983, 1985],
+  steps: [
+    factStep("mercy.fact.64d3c813362a472e4579", "demo / song"),
+    factStep("mercy.fact.a682a6c252c354c7e1a9", "recording / song version"),
+    factStep("mercy.fact.389970d368ac6928d0f9", "film / scene"),
+    factStep("mercy.fact.c2d96da96f215d541033", "single / release"),
+    factStep("mercy.fact.a83fba68e1573a885e2b", "soundtrack / promotion"),
+  ],
+  gaps: [
+    "The retained source explicitly distinguishes the live demo from the later soundtrack/single version; this derived arc does not merge them into one canonical recording or version entity.",
+    "The recording-session fact is source-qualified as an inference (\"it would seem\") and retains a November–December range; no exact session day is invented.",
+    "No local film master, B-roll, tag, or other archive representation was directly matched to these facts in the pinned projection; that is an evidence boundary, not proof that no such file exists.",
+  ],
+  inputFingerprints: Object.fromEntries(Object.entries(receipt.input_files).map(([key, value]) => [key, value.fingerprint])),
+  provenanceJobId: graphQa.qa_id,
+  sourceSearchState: "source_bundles_materialized",
+  authorityBoundary: "Derived song-and-screen arc only; recording/version, release, and representation authorities remain separate, and no canonical, inventory, media, filesystem, or public-network writes occurred.",
+  nextAction: "Promote typed demo-to-recording-version and recording-to-release edges only after their endpoint identities and any local film/audio representations are independently evidenced.",
+};
+
+const arcs = [arc, likeAVirginArc, photoRepresentationArc, crazyForYouArc];
 
 const lines = [
   "// Generated from the QA-passed resumed MERCY working graph and the bounded connection-worker receipt. Do not hand-edit.",

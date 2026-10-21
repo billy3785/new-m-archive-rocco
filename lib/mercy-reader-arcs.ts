@@ -815,5 +815,230 @@ export const mercyReaderArcs: MercyReaderArc[] =
     "sourceSearchState": "representation_historical_match_projection",
     "authorityBoundary": "Derived visual arc and representation projection only; original paths and representation observations remain unchanged, and no canonical, inventory, media, filesystem, or public-network writes occurred.",
     "nextAction": "Inspect source provenance and any retained publication/outtake evidence before upgrading a representation association; preserve each logical file and technical sidecar separately."
+  },
+  {
+    "arcId": "mercy.arc.crazy-for-you-demo-to-release-1983-1985",
+    "title": "Crazy for You · demo, Vision Quest, and 1985 release",
+    "summary": "A source-labelled song-and-screen arc that keeps the 1983 live demo separate from the later soundtrack/single version while following the retained recording, filming, release, and soundtrack-promotion evidence.",
+    "state": "archive_visible_supported_with_explicit_gap",
+    "years": [
+      1983,
+      1985
+    ],
+    "steps": [
+      {
+        "stepId": "mercy.fact.64d3c813362a472e4579",
+        "year": 1983,
+        "lane": "demo / song",
+        "label": "Recording of Crazy for You demo",
+        "dateStart": "1983-08-15",
+        "dateEnd": "1983-11-15",
+        "datePrecision": "month",
+        "dateRole": "event_date",
+        "dateBasis": "source-preserved graph fact",
+        "factType": "historical_event",
+        "assertion": "The ‘live demo’ was recorded sometime between mid August and mid November, prior to Madonna filming her ‘Vision Quest’ scene on November 22nd ‘83.",
+        "confidence": 0.85,
+        "state": "archive_visible_supported",
+        "place": "",
+        "sourceCount": 1,
+        "sourceExcerpt": "The ‘live demo’ version of ‘Crazy for You’ is featured in a couple of other scenes throughout the movie. Performed by Madonna Written and produced by Jon Lind and John Bettis. The instrumentation is sparse in comparison to the final ‘soundtrack’ version recorded after filming and used as the singles release in 1985. The ‘live demo’ was recorded sometime between mid August and mid November, prior to Madonna filming her ‘Vision Quest’ scene on November 22nd ‘83.",
+        "sourcePointers": [
+          {
+            "sourceItemId": "source_item_8375c8fe95cdaad156897aab357ef1e4b1649d1c51fc06f1fd8ecb743cf070c4",
+            "authority": "WEBO retained local corpus",
+            "sourceType": "retained_webo_caption",
+            "locator": "",
+            "url": "https://www.instagram.com/p/C05AL-EMTlD/",
+            "excerpt": "The ‘live demo’ version of ‘Crazy for You’ is featured in a couple of other scenes throughout the movie. Performed by Madonna Written and produced by Jon Lind and John Bettis. The instrumentation is sparse in comparison to the final ‘soundtrack’ version recorded after filming and used as the singles release in 1985. The ‘live demo’ was recorded sometime between mid August and mid November, prior to Madonna filming her ‘Vision Quest’ scene on November 22nd ‘83."
+          }
+        ],
+        "representationIds": [],
+        "representations": [],
+        "uncertainties": [
+          {
+            "detail": "Retained evidence supports month precision; no day was invented.",
+            "kind": "date_precision"
+          },
+          {
+            "detail": "No event place is asserted by this retained event record.",
+            "kind": "place"
+          }
+        ]
+      },
+      {
+        "stepId": "mercy.fact.a682a6c252c354c7e1a9",
+        "year": 1983,
+        "lane": "recording / song version",
+        "label": "Vision Quest Recording Sessions",
+        "dateStart": "1983-11-01",
+        "dateEnd": "1983-12-31",
+        "datePrecision": "range",
+        "dateRole": "event_date",
+        "dateBasis": "source-preserved graph fact",
+        "factType": "historical_event",
+        "assertion": "It would seem that it was during this Sigma studio time in November and December that the tracks ‘Crazy for You’, ‘Gambler’, ‘Warning Signs’ were re-recorded",
+        "confidence": 0.85,
+        "state": "archive_visible_supported",
+        "place": "",
+        "sourceCount": 2,
+        "sourceExcerpt": "November - December 1983 Sigma Sound Studios 10TH FLOOR 1697 BROADWAY New York NY ————————- It would seem that it was during this Sigma studio time in November and December that the tracks ‘Crazy for You’, ‘Gambler’, ‘Warning Signs’ were re-recorded by Madonna and produced by Jellybean. With the exception of ‘Crazy for You’ Stephen Bray was also involved in these sessions too. Bray also suggested that ‘Shoo Bee Doo’ was first worked on during this time as well (as confirmed in the MLVC podcast interview dated October 2022). The only other time available for the re-recordings was around the week of December 11th whilst Madonna was in Los Angeles, however we are not aware that Jellybean or Stephen accompanied her to LA. Furthermore we were under the impression that all three tracks were recorded in New York City. To finish, evidence of the three ‘Vision Quest’ tracks being finalised by January ‘84 and Jellybeans involvement is given in the Warner Bros. in house magazine “Word of Mouth” dated Jan ‘84 (more to follow in due coarse). This cements the fact that they would have been laid down after the filming of ‘Vision Quest’ and the visit to Detroit for Thanksgiving. Leaving only a ver…",
+        "sourcePointers": [
+          {
+            "sourceItemId": "source_item_c49ca6712e366ed0c203e90419dc2e99ffbb5f68b6931bb0c7fc3ef89de800bc",
+            "authority": "WEBO retained local corpus",
+            "sourceType": "retained_webo_caption",
+            "locator": "",
+            "url": "https://www.instagram.com/p/C2r6nEbsHgf/",
+            "excerpt": "November - December 1983 Sigma Sound Studios 10TH FLOOR 1697 BROADWAY New York NY ————————- It would seem that it was during this Sigma studio time in November and December that the tracks ‘Crazy for You’, ‘Gambler’, ‘Warning Signs’ were re-recorded by Madonna and produced by Jellybean. With the exception of ‘Crazy for You’ Stephen Bray was also involved in these sessions too. Bray also suggested that ‘Shoo Bee Doo’ was first worked on during this time as well (as confirmed in the MLVC podcast interview dated October 2022). The only other time available for the re-recordings was around the week of December 11th whilst Madonna was in Los Angeles, however we are not aware that Jellybean or Stephen accompanied her to LA. Furthermore we were under the impression that all three tracks were recorded in New York City. To finish, evidence of the three ‘Vision Quest’ tracks being finalised by January ‘84 and Jellybeans involvement is given in the Warner Bros. in house magazine “Word of Mouth” dated Jan ‘84 (more to follow in due coarse). This cements the fact that they would have been laid down after the filming of ‘Vision Quest’ and the visit to Detroit for Thanksgiving. Leaving only a ver…"
+          },
+          {
+            "sourceItemId": "source_item_d8b52abe81d568ff0d87d563c38113709bd263374bda03cbdd5abccca3e2d885",
+            "authority": "WEBO retained local corpus",
+            "sourceType": "retained_webo_caption",
+            "locator": "",
+            "url": "https://www.instagram.com/p/C2r71C5Khyi/",
+            "excerpt": "November - December 1983 Sigma Sound Studios 10TH FLOOR 1697 BROADWAY New York NY ————————- It would seem that it was during this Sigma studio time in November and December that the tracks ‘Crazy for You’, ‘Gambler’, ‘Warning Signs’ were re-recorded by Madonna and produced by Jellybean. With the exception of ‘Crazy for You’ Stephen Bray was also involved in these sessions too. Bray also suggested that ‘Shoo Bee Doo’ was first worked on during this time as well (as confirmed in the MLVC podcast interview dated October 2022). The only other time available for the re-recordings was around the week of December 11th whilst Madonna was in Los Angeles, however we are not aware that Jellybean or Stephen accompanied her to LA. Furthermore we were under the impression that all three tracks were recorded in New York City. To finish, evidence of the three ‘Vision Quest’ tracks being finalised by January ‘84 and Jellybeans involvement is given in the Warner Bros. in house magazine “Word of Mouth” dated Jan ‘84 (more to follow in due coarse). This cements the fact that they would have been laid down after the filming of ‘Vision Quest’ and the visit to Detroit for Thanksgiving. Leaving only a ver…"
+          }
+        ],
+        "representationIds": [],
+        "representations": [],
+        "uncertainties": [
+          {
+            "detail": "Retained evidence supports range precision; no day was invented.",
+            "kind": "date_precision"
+          }
+        ]
+      },
+      {
+        "stepId": "mercy.fact.389970d368ac6928d0f9",
+        "year": 1983,
+        "lane": "film / scene",
+        "label": "Filming scene for Vision Quest",
+        "dateStart": "1983-11-22",
+        "dateEnd": "1983-11-22",
+        "datePrecision": "day",
+        "dateRole": "event_date",
+        "dateBasis": "source-preserved graph fact",
+        "factType": "historical_event",
+        "assertion": "Madonna shoots her nightclub scene for the Warner Bros. Pictures film ‘Vision Quest’.",
+        "confidence": 0.95,
+        "state": "archive_visible_high_confidence",
+        "place": "",
+        "sourceCount": 3,
+        "sourceExcerpt": "Tuesday 22nd November 1983 Bigfoot Pub & Eatery 9115 N Division Street Spokane Washington —————————— Madonna shoots her nightclub scene for the Warner Bros. Pictures film ‘Vision Quest’. News paper paragraph from: The Spokesman Review - May 19th 1991 —————————— Madonna had met with Jon Peters, the ex-lover / business associate of Barbra Streisand and producer of forthcoming film ‘Vision Quest’ during her visit to Los Angeles in August ‘83. It is not clear if she also met the films director Harold Becker and the films musical producer legendary Phil Ramone at this time or if that happened earlier or later in New York. From Wikipedia: “Film producers Jon Peters and Peter Guber, along with music director Phil Ramone, decided to use Madonna after listening to her previous recordings, employing John Bettis and Jon Lind to write. After reading the script of the film, Bettis and Lind wrote the song about the situation in which the lead characters meet at a nightclub”. By November 22nd three tracks had been recorded as “live demos” in preparation for the filming process. Two of the tracks, ‘Gambler’ and ‘Warning Signs’ were written by Madonna. With the third track ‘Crazy for You’ written b…",
+        "sourcePointers": [
+          {
+            "sourceItemId": "source_item_8784fe6f1af17ff62f320f0b54ed7845c9875f07b01126fdb4b9beb384df8a7e",
+            "authority": "WEBO retained local corpus",
+            "sourceType": "retained_webo_caption",
+            "locator": "",
+            "url": "https://www.instagram.com/p/C0o3aHtqLde/",
+            "excerpt": "Tuesday 22nd November 1983 Bigfoot Pub & Eatery 9115 N Division Street Spokane Washington —————————— Madonna shoots her nightclub scene for the Warner Bros. Pictures film ‘Vision Quest’. News paper paragraph from: The Spokesman Review - May 19th 1991 —————————— Madonna had met with Jon Peters, the ex-lover / business associate of Barbra Streisand and producer of forthcoming film ‘Vision Quest’ during her visit to Los Angeles in August ‘83. It is not clear if she also met the films director Harold Becker and the films musical producer legendary Phil Ramone at this time or if that happened earlier or later in New York. From Wikipedia: “Film producers Jon Peters and Peter Guber, along with music director Phil Ramone, decided to use Madonna after listening to her previous recordings, employing John Bettis and Jon Lind to write. After reading the script of the film, Bettis and Lind wrote the song about the situation in which the lead characters meet at a nightclub”. By November 22nd three tracks had been recorded as “live demos” in preparation for the filming process. Two of the tracks, ‘Gambler’ and ‘Warning Signs’ were written by Madonna. With the third track ‘Crazy for You’ written b…"
+          },
+          {
+            "sourceItemId": "source_item_4a79cd7cff32f9c0987955ff34e9da2bb185b957e99f706b10facedb7e4f95f4",
+            "authority": "WEBO retained local corpus",
+            "sourceType": "retained_webo_caption",
+            "locator": "",
+            "url": "https://www.instagram.com/p/C03hVQ-shdE/",
+            "excerpt": "Tuesday 22nd November 1983 Bigfoot Pub & Eatery 9115 N Division Street Spokane Washington —————————— Madonna shoots her nightclub scene for the Warner Bros. Pictures film ‘Vision Quest’. The Making of ‘Vision Quest’, promo footage from 1985 during the films release. On set interview and footage from the filming of the nightclub scene. Also includes interviews with Harold Becker and Phil Ramone. —————————— Madonna had met with Jon Peters, the ex-lover / business associate of Barbra Streisand and producer of forthcoming film ‘Vision Quest’ during her visit to Los Angeles in August ‘83. It is not clear if she also met the films director Harold Becker and the films musical producer legendary Phil Ramone at this time or if that happened earlier or later in New York. From Wikipedia: “Film producers Jon Peters and Peter Guber, along with music director Phil Ramone, decided to use Madonna after listening to her previous recordings, employing John Bettis and Jon Lind to write. After reading the script of the film, Bettis and Lind wrote the song about the situation in which the lead characters meet at a nightclub”. By November 22nd three tracks had been recorded as “live demos” in preparatio…"
+          },
+          {
+            "sourceItemId": "source_item_d8ebcfcafef5dcdd37b24a1774ceab204bd25dcc915cf3e55ec7a12f70aa8fa8",
+            "authority": "WEBO retained local corpus",
+            "sourceType": "retained_webo_caption",
+            "locator": "",
+            "url": "https://www.instagram.com/p/C043OJlMhv1/",
+            "excerpt": "Tuesday 22nd November 1983 Bigfoot Pub & Eatery 9115 N Division Street Spokane Washington —————————— Madonna shoots her nightclub scene for the Warner Bros. Pictures film ‘Vision Quest’. On set interview and footage from the filming of the nightclub scene. —————————— Madonna had met with Jon Peters, the ex-lover / business associate of Barbra Streisand and producer of forthcoming film ‘Vision Quest’ during her visit to Los Angeles in August ‘83. It is not clear if she also met the films director Harold Becker and the films musical producer legendary Phil Ramone at this time or if that happened earlier or later in New York. From Wikipedia: “Film producers Jon Peters and Peter Guber, along with music director Phil Ramone, decided to use Madonna after listening to her previous recordings, employing John Bettis and Jon Lind to write. After reading the script of the film, Bettis and Lind wrote the song about the situation in which the lead characters meet at a nightclub”. By November 22nd three tracks had been recorded as “live demos” in preparation for the filming process. Two of the tracks, ‘Gambler’ and ‘Warning Signs’ were written by Madonna. With the third track ‘Crazy for You’ wri…"
+          }
+        ],
+        "representationIds": [],
+        "representations": [],
+        "uncertainties": []
+      },
+      {
+        "stepId": "mercy.fact.c2d96da96f215d541033",
+        "year": 1985,
+        "lane": "single / release",
+        "label": "Release of Crazy for You single",
+        "dateStart": "1985-02-20",
+        "dateEnd": "1985-02-20",
+        "datePrecision": "day",
+        "dateRole": "event_date",
+        "dateBasis": "source-preserved graph fact",
+        "factType": "historical_event",
+        "assertion": "Wednesday 20th February 1985 Geffen Records release the 7” single ‘Crazy for You’ to the U.S. market.",
+        "confidence": 1,
+        "state": "archive_visible_high_confidence",
+        "place": "",
+        "sourceCount": 1,
+        "sourceExcerpt": "Wednesday 20th February 1985 Geffen Records USA ————————————- Geffen Records release the 7” single ‘Crazy for You’ to the U.S. market. A single sided Madonna record lifted from the ‘Vision Quest’ soundtrack. For its U.S. release it was backed with a Berlin track ‘No More Words’ - this track was used in the film, but not featured on the films soundtrack. The vinyl was housed in a unique picture sleeve, featuring an uncredited shot of Madonna captured on set by Richard Corman while filming her ‘Vision Quest’ scenes in Spokane, Washington on November 22nd 1983. Corman had previously shot Madonna many times through ‘83 and was personally invited by her to the set. Most online information regarding this release points to the date of March 2nd ‘85. According to Billboard it entered the Hot 100 chart on March 2nd, so therefore the release date would have to of been the week previous - Wed 20th Feb. Geffen Records – 7-29051 Geffen Records – 9 29051-7 A. Madonna Crazy For You Arranged By – Rob Mounsey Producer – John “Jellybean” Benitez Written-By – John Bettis, Jon Lind 4:08 B. Berlin No More Words Producer – Giorgio Moroder, Richie Zito Written-By – John Crawford 3:54 Phonographic Copyrig…",
+        "sourcePointers": [
+          {
+            "sourceItemId": "source_item_ed8cf6d4ddbe277dc1f0daaa18753b41ba05189f75d7d51e9ac6d797af666414",
+            "authority": "WEBO retained local corpus",
+            "sourceType": "retained_webo_caption",
+            "locator": "",
+            "url": "https://www.instagram.com/p/DXgwnvxCOZV/",
+            "excerpt": "Wednesday 20th February 1985 Geffen Records USA ————————————- Geffen Records release the 7” single ‘Crazy for You’ to the U.S. market. A single sided Madonna record lifted from the ‘Vision Quest’ soundtrack. For its U.S. release it was backed with a Berlin track ‘No More Words’ - this track was used in the film, but not featured on the films soundtrack. The vinyl was housed in a unique picture sleeve, featuring an uncredited shot of Madonna captured on set by Richard Corman while filming her ‘Vision Quest’ scenes in Spokane, Washington on November 22nd 1983. Corman had previously shot Madonna many times through ‘83 and was personally invited by her to the set. Most online information regarding this release points to the date of March 2nd ‘85. According to Billboard it entered the Hot 100 chart on March 2nd, so therefore the release date would have to of been the week previous - Wed 20th Feb. Geffen Records – 7-29051 Geffen Records – 9 29051-7 A. Madonna Crazy For You Arranged By – Rob Mounsey Producer – John “Jellybean” Benitez Written-By – John Bettis, Jon Lind 4:08 B. Berlin No More Words Producer – Giorgio Moroder, Richie Zito Written-By – John Crawford 3:54 Phonographic Copyrig…"
+          }
+        ],
+        "representationIds": [],
+        "representations": [],
+        "uncertainties": [
+          {
+            "detail": "No event place is asserted by this retained event record.",
+            "kind": "place"
+          }
+        ]
+      },
+      {
+        "stepId": "mercy.fact.a83fba68e1573a885e2b",
+        "year": 1985,
+        "lane": "soundtrack / promotion",
+        "label": "Billboard Soundtrack Mention",
+        "dateStart": "1985-02-23",
+        "dateEnd": "1985-02-23",
+        "datePrecision": "day",
+        "dateRole": "event_date",
+        "dateBasis": "source-preserved graph fact",
+        "factType": "historical_event",
+        "assertion": "Billboard article by Brian Chin mentions Madonna's inclusion in the soundtrack.",
+        "confidence": 0.95,
+        "state": "archive_visible_high_confidence",
+        "place": "",
+        "sourceCount": 1,
+        "sourceExcerpt": "Weekending Saturday 23rd February 1985 Hit newsstands Wednesday 20th Feb Billboard New York NY ———————————- Brian Chin gives mention to the ‘Vision Quest’ soundtrack. A local radio station reveals Madonna’s inclusion in its playlists. A TV show reveals Madonna’s fifth week at number one. And Warner reveal their huge success has been due to their artists like Prince, Madonna and others. Cheap advert, incase anyone wants any Madonna Lace Bows!",
+        "sourcePointers": [
+          {
+            "sourceItemId": "source_item_83b4d2c649554d92001299b7e6c053af8206841984aaebfc9af8b3fd7024a46b",
+            "authority": "WEBO retained local corpus",
+            "sourceType": "retained_webo_caption",
+            "locator": "",
+            "url": "https://www.instagram.com/p/DXRvJC2iD_j/",
+            "excerpt": "Weekending Saturday 23rd February 1985 Hit newsstands Wednesday 20th Feb Billboard New York NY ———————————- Brian Chin gives mention to the ‘Vision Quest’ soundtrack. A local radio station reveals Madonna’s inclusion in its playlists. A TV show reveals Madonna’s fifth week at number one. And Warner reveal their huge success has been due to their artists like Prince, Madonna and others. Cheap advert, incase anyone wants any Madonna Lace Bows!"
+          }
+        ],
+        "representationIds": [],
+        "representations": [],
+        "uncertainties": []
+      }
+    ],
+    "gaps": [
+      "The retained source explicitly distinguishes the live demo from the later soundtrack/single version; this derived arc does not merge them into one canonical recording or version entity.",
+      "The recording-session fact is source-qualified as an inference (\"it would seem\") and retains a November–December range; no exact session day is invented.",
+      "No local film master, B-roll, tag, or other archive representation was directly matched to these facts in the pinned projection; that is an evidence boundary, not proof that no such file exists."
+    ],
+    "inputFingerprints": {
+      "graph_database": "sha256:a58a64bd595ff091637ccd7795fdea601176e1ee9a9b57a0a0ce69adab589b99",
+      "graph_receipt": "sha256:af7f1cc4a9a266f9850217ab22648197430a40357c756e4e2eaa5ae5019c8369",
+      "qa_receipt": "sha256:793838d3eea5f33811a422b5338d8cc47c79cea24ee75b6d240e652630db8205",
+      "retained_snapshot": "sha256:cf1f1c40f52bf0c43f378c20a31e27a4e8b02d79cf2531c0dde925ccd5e84558"
+    },
+    "provenanceJobId": "mercy-working-graph-1958-2026-v1.rebuild-20261021-resumed-qa",
+    "sourceSearchState": "source_bundles_materialized",
+    "authorityBoundary": "Derived song-and-screen arc only; recording/version, release, and representation authorities remain separate, and no canonical, inventory, media, filesystem, or public-network writes occurred.",
+    "nextAction": "Promote typed demo-to-recording-version and recording-to-release edges only after their endpoint identities and any local film/audio representations are independently evidenced."
   }
 ];
