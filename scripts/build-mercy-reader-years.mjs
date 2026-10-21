@@ -10,6 +10,7 @@ const dbPath = resolve(
   workspaceRoot,
   "lmstudio_operating_model/knowledge/mercy-working-canon/mercy-full-span-connected-working-canon-1958-2026-v1.aggregate-v1/mercy-working-graph-1958-2026-v1.rebuild-20261021-indexed.sqlite",
 );
+const sourceLabel = "lmstudio_operating_model/knowledge/mercy-working-canon/mercy-full-span-connected-working-canon-1958-2026-v1.aggregate-v1/mercy-working-graph-1958-2026-v1.rebuild-20261021-indexed.sqlite";
 const outputPath = resolve(repoDir, "lib/mercy-reader-years.ts");
 
 const runSqlite = (sql) => new Promise((resolvePromise, reject) => {
@@ -70,7 +71,7 @@ const json = (value) => JSON.stringify(value, null, 2);
 const lines = [
   "// Generated from the read-only aggregate MERCY working graph. Do not hand-edit.",
   "// Source status remains derived/qa_pending; this index never promotes canonical or inventory claims.",
-  `// Source DB: ${dbPath}`,
+  `// Source DB: ${sourceLabel}`,
   "// Source DB fingerprint: sha256:5fdd7b4e671dd46337afa72293ff85ba28e131a666a629f5560e04b9b3f0b828",
   "",
   "export type MercyYearSummary = {",
