@@ -28,6 +28,7 @@ const parse = (value) => {
 };
 
 const selectedFactIds = [
+  "mercy.fact.02cb7a58d582a22515b9",
   "mercy.fact.4c1d21bfa7cbd55361bc",
   "mercy.fact.ea26511de50d033f7e3f",
   "mercy.fact.caf970534db4f661c9f6",
@@ -60,6 +61,7 @@ const representationRows = await runSqlite(`SELECT representation_id,year,observ
 const receipt = await readJson(resolve(workerDir, "worker-receipt.json"));
 const sourceSearch = await readJson(resolve(workerDir, "source-search-receipt.json"));
 const graphQa = await readJson(resolve(workspaceRoot, "lmstudio_operating_model/receipts/mercy-working-graph/mercy-working-graph-1958-2026-v1.rebuild-20261021-resumed-qa/qa-receipt.json"));
+const virginTourInspection = await readJson(resolve(workspaceRoot, "lmstudio_operating_model/receipts/mercy-reader-virgin-tour-opening-inspection-2026-10-21-v1/receipt.json"));
 
 const factsById = new Map(facts.map((fact) => [fact.fact_id, fact]));
 const sourcesByFact = new Map();
@@ -305,7 +307,41 @@ const beautifulStrangerArc = {
   nextAction: "The two local files are now receipt-backed read-only observations; consider aired-master, B-roll, tag, or recording-version edges only if additional evidence supports them.",
 };
 
-const arcs = [arc, likeAVirginArc, photoRepresentationArc, crazyForYouArc, beautifulStrangerArc];
+const virginTourOpeningStep = factStep("mercy.fact.02cb7a58d582a22515b9", "performance / broadcast");
+const virginTourOpeningArc = {
+  arcId: "mercy.arc.virgin-tour-opening-broadcast-representations-1985",
+  title: "Virgin Tour opening · Seattle performance, TV report, and local files",
+  summary: "A source-labelled performance-to-broadcast arc for the 10 April 1985 Seattle opening, with 15 retained source items and two preserved local TV-news representations kept as inferred filename/context matches.",
+  state: "archive_visible_supported_with_explicit_gap",
+  years: [1985],
+  steps: [virginTourOpeningStep],
+  relationshipEdges: virginTourOpeningStep.representations.map((representation) => ({
+    edgeId: `mercy.edge.virgin-tour-opening.${representation.representationId}`,
+    fromId: virginTourOpeningStep.stepId,
+    toId: representation.representationId,
+    predicate: "contextually_matches_representation",
+    state: representation.matchState,
+    sourceSense: "archive.nas.postgresql",
+    evidence: `Preserved filename tokens: ${representation.matchedTokens.join(", ")}; the graph match is source-scoped and the file was fingerprinted in the read-only inspection receipt.`,
+    nonclaim: "This edge does not identify the aired master, original production file, complete broadcast capture, or canonical performance representation.",
+  })),
+  gaps: [
+    "The two local files are receipt-backed filename/context matches to the Seattle opening fact; neither is promoted as the aired master, original production file, or complete broadcast capture.",
+    "The retained source describes opening-night costume variation across the tour but does not identify which local file corresponds to which captured segment.",
+    "No typed setlist-item, broadcast-master, tag, or recording-version edge is asserted from the filename alone.",
+  ],
+  inputFingerprints: {
+    ...Object.fromEntries(Object.entries(receipt.input_files).map(([key, value]) => [key, value.fingerprint])),
+    virgin_tour_png: virginTourInspection.representations.find((representation) => representation.representation_id === "representation.inventory.asset:10259")?.sha256 || "",
+    virgin_tour_mp4: virginTourInspection.representations.find((representation) => representation.representation_id === "representation.inventory.asset:10690")?.sha256 || "",
+  },
+  provenanceJobId: virginTourInspection.job_id,
+  sourceSearchState: "source_bundles_and_representation_match_materialized",
+  authorityBoundary: "Derived performance, broadcast, and representation projection only; the retained source, operational inventory, local files, and canonical performance/release authorities remain separate, and no canonical, inventory, media, filesystem, or public-network writes occurred.",
+  nextAction: "Seek retained broadcast provenance, a technical tag, or curator testimony before adding aired-master, B-roll, setlist-item, or recording-version edges; preserve the current inferred state until then.",
+};
+
+const arcs = [arc, likeAVirginArc, photoRepresentationArc, crazyForYouArc, beautifulStrangerArc, virginTourOpeningArc];
 
 const lines = [
   "// Generated from the QA-passed resumed MERCY working graph and the bounded connection-worker receipt. Do not hand-edit.",
@@ -328,8 +364,10 @@ const lines = [
   "  stepId: string; year: number; lane: string; label: string; dateStart: string; dateEnd: string; datePrecision: string; dateRole: string; dateBasis: string; factType: string; assertion: string; confidence: number; state: string; place: string; sourceCount: number; sourceExcerpt: string; sourcePointers: MercyArcSourcePointer[]; representationIds: string[]; representations: MercyArcRepresentation[]; uncertainties: Array<{ detail?: string; kind?: string } | string>;",
   "};",
   "",
+  "export type MercyArcRelationshipEdge = { edgeId: string; fromId: string; toId: string; predicate: string; state: string; sourceSense: string; evidence: string; nonclaim: string; };",
+  "",
   "export type MercyReaderArc = {",
-  "  arcId: string; title: string; summary: string; state: string; years: number[]; steps: MercyArcStep[]; gaps: string[]; inputFingerprints: Record<string, string>; provenanceJobId: string; sourceSearchState: string; authorityBoundary: string; nextAction: string;",
+  "  arcId: string; title: string; summary: string; state: string; years: number[]; steps: MercyArcStep[]; relationshipEdges?: MercyArcRelationshipEdge[]; gaps: string[]; inputFingerprints: Record<string, string>; provenanceJobId: string; sourceSearchState: string; authorityBoundary: string; nextAction: string;",
   "};",
   "",
   "export const mercyReaderArcs: MercyReaderArc[] = ",

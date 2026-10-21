@@ -18,8 +18,10 @@ export type MercyArcStep = {
   stepId: string; year: number; lane: string; label: string; dateStart: string; dateEnd: string; datePrecision: string; dateRole: string; dateBasis: string; factType: string; assertion: string; confidence: number; state: string; place: string; sourceCount: number; sourceExcerpt: string; sourcePointers: MercyArcSourcePointer[]; representationIds: string[]; representations: MercyArcRepresentation[]; uncertainties: Array<{ detail?: string; kind?: string } | string>;
 };
 
+export type MercyArcRelationshipEdge = { edgeId: string; fromId: string; toId: string; predicate: string; state: string; sourceSense: string; evidence: string; nonclaim: string; };
+
 export type MercyReaderArc = {
-  arcId: string; title: string; summary: string; state: string; years: number[]; steps: MercyArcStep[]; gaps: string[]; inputFingerprints: Record<string, string>; provenanceJobId: string; sourceSearchState: string; authorityBoundary: string; nextAction: string;
+  arcId: string; title: string; summary: string; state: string; years: number[]; steps: MercyArcStep[]; relationshipEdges?: MercyArcRelationshipEdge[]; gaps: string[]; inputFingerprints: Record<string, string>; provenanceJobId: string; sourceSearchState: string; authorityBoundary: string; nextAction: string;
 };
 
 export const mercyReaderArcs: MercyReaderArc[] = 
@@ -1325,5 +1327,160 @@ export const mercyReaderArcs: MercyReaderArc[] =
     "sourceSearchState": "source_bundles_and_representation_match_materialized",
     "authorityBoundary": "Derived music-video and representation arc only; source facts, operational inventory, local files, and canonical recording/release authorities remain separate, and no canonical, inventory, media, filesystem, or public-network writes occurred.",
     "nextAction": "The two local files are now receipt-backed read-only observations; consider aired-master, B-roll, tag, or recording-version edges only if additional evidence supports them."
+  },
+  {
+    "arcId": "mercy.arc.virgin-tour-opening-broadcast-representations-1985",
+    "title": "Virgin Tour opening · Seattle performance, TV report, and local files",
+    "summary": "A source-labelled performance-to-broadcast arc for the 10 April 1985 Seattle opening, with 15 retained source items and two preserved local TV-news representations kept as inferred filename/context matches.",
+    "state": "archive_visible_supported_with_explicit_gap",
+    "years": [
+      1985
+    ],
+    "steps": [
+      {
+        "stepId": "mercy.fact.02cb7a58d582a22515b9",
+        "year": 1985,
+        "lane": "performance / broadcast",
+        "label": "Virgin Tour Opening",
+        "dateStart": "1985-04-10",
+        "dateEnd": "1985-04-10",
+        "datePrecision": "day",
+        "dateRole": "event_date",
+        "dateBasis": "source-preserved graph fact",
+        "factType": "historical_event",
+        "assertion": "Madonna's Virgin Tour began at Seattle on April 10th, 1985.",
+        "confidence": 0.95,
+        "state": "archive_visible_high_confidence",
+        "place": "",
+        "sourceCount": 15,
+        "sourceExcerpt": "On April 10th 1985 the Virgin Tour started its 40 date run of North America/Canada. Seattle was its first stop for three nights 10th/12th/13th. Unlike today's shows the setlist stayed the same throughout, however the costumes (all by Maripol) for the opening performance changed from venue to venue. Showcased here are the variations from show one in Seattle up until show forty in Madison Square Gardens on June 11th 1985. #Madonna #virgintour #Seattle #openingnight #1985",
+        "sourcePointers": [
+          {
+            "sourceItemId": "source_item_5e5b8efb4b9defdc541d4759800cf52d2b5dda87281dd654190592895284d2dc",
+            "authority": "WEBO retained local corpus",
+            "sourceType": "retained_webo_caption",
+            "locator": "",
+            "url": "https://www.instagram.com/p/BE5OScgDYTmBdY6MAXrKGp9xRF8PdVIAhWkr7M0/",
+            "excerpt": "On April 10th 1985 the Virgin Tour started its 40 date run of North America/Canada. Seattle was its first stop for three nights 10th/12th/13th. Unlike today's shows the setlist stayed the same throughout, however the costumes (all by Maripol) for the opening performance changed from venue to venue. Showcased here are the variations from show one in Seattle up until show forty in Madison Square Gardens on June 11th 1985. #Madonna #virgintour #Seattle #openingnight #1985"
+          },
+          {
+            "sourceItemId": "source_item_3f8089023456ec3a749d6916735f433c2fffe70dd1247e2452147479948c079c",
+            "authority": "WEBO retained local corpus",
+            "sourceType": "retained_webo_caption",
+            "locator": "",
+            "url": "https://www.instagram.com/p/BE5Of4LjYT78vg0eg2SM-oeKBnP-hVDMxqN4cc0/",
+            "excerpt": "On April 10th 1985 the Virgin Tour started its 40 date run of North America/Canada. Seattle was its first stop for three nights 10th/12th/13th. Unlike today's shows the setlist stayed the same throughout, however the costumes (all by Maripol) for the opening performance changed from venue to venue. Showcased here are the variations from show one in Seattle up until show forty in Madison Square Gardens on June 11th 1985. #Madonna #virgintour #Seattle #openingnight #1985 @madonna"
+          },
+          {
+            "sourceItemId": "source_item_6e49fd53cdfb9930bc3a775cf4ef45b81d0e90acac57d1350e43894821acd7c4",
+            "authority": "WEBO retained local corpus",
+            "sourceType": "retained_webo_caption",
+            "locator": "",
+            "url": "https://www.instagram.com/p/BE5O6YTjYUeoW7wnSRzqHB4AFQpcKT8DcQamD80/",
+            "excerpt": "On April 10th 1985 the Virgin Tour started its 40 date run of North America/Canada. Seattle was its first stop for three nights 10th/12th/13th. Unlike today's shows the setlist stayed the same throughout, however the costumes (all by Maripol) for the opening performance changed from venue to venue. Showcased here are the variations from show one in Seattle up until show forty in Madison Square Gardens on June 11th 1985. #Madonna #virgintour #Seattle #openingnight #1985 @madonna"
+          },
+          {
+            "sourceItemId": "source_item_b7a63fce8370434c3f79fa5023fc26e6328ecebb6d8731a2e43bf389a693636a",
+            "authority": "WEBO retained local corpus",
+            "sourceType": "retained_webo_caption",
+            "locator": "",
+            "url": "https://www.instagram.com/p/BE5Pc-RjYVgfLS6bFhn6ln3feJ4BMSQEI0SIbc0/",
+            "excerpt": "On April 10th 1985 the Virgin Tour started its 40 date run of North America/Canada. Seattle was its first stop for three nights 10th/12th/13th. Unlike today's shows the setlist stayed the same throughout, however the costumes (all by Maripol) for the opening performance changed from venue to venue. Showcased here are the variations from show one in Seattle up until show forty in Madison Square Gardens on June 11th 1985. #Madonna #virgintour #Seattle #openingnight #1985"
+          }
+        ],
+        "representationIds": [
+          "representation.inventory.asset:10259",
+          "representation.inventory.asset:10690"
+        ],
+        "representations": [
+          {
+            "representationId": "representation.inventory.asset:10259",
+            "label": "Madonna The Virgin Tour opens in Seattle USA 1985 TV news report.png",
+            "relativePath": "UNFILED/2011-2023/Madonna The Virgin Tour opens in Seattle USA 1985 TV news report.png",
+            "dateToken": "1985",
+            "extension": "png",
+            "fileKind": "file",
+            "bytes": 120753,
+            "sourceSenses": [
+              "archive.nas.postgresql"
+            ],
+            "matchedTokens": [
+              "seattle",
+              "tour",
+              "virgin"
+            ],
+            "observationState": "logical_archive_file",
+            "provenanceState": "source_observed",
+            "logicalRepresentationId": "",
+            "matchState": "visible_inferred_filename_match",
+            "unresolvedReason": "",
+            "caution": "Filename/context association is evidence-labelled and does not prove the file is the original shoot, an outtake, or the canonical publication object."
+          },
+          {
+            "representationId": "representation.inventory.asset:10690",
+            "label": "Madonna The Virgin Tour opens in Seattle USA 1985 TV news report.mp4",
+            "relativePath": "UNFILED/2011-2023/Madonna The Virgin Tour opens in Seattle USA 1985 TV news report.mp4",
+            "dateToken": "1985",
+            "extension": "mp4",
+            "fileKind": "file",
+            "bytes": 36418201,
+            "sourceSenses": [
+              "archive.nas.postgresql"
+            ],
+            "matchedTokens": [
+              "seattle",
+              "tour",
+              "virgin"
+            ],
+            "observationState": "logical_archive_file",
+            "provenanceState": "source_observed",
+            "logicalRepresentationId": "",
+            "matchState": "visible_inferred_filename_match",
+            "unresolvedReason": "",
+            "caution": "Filename/context association is evidence-labelled and does not prove the file is the original shoot, an outtake, or the canonical publication object."
+          }
+        ],
+        "uncertainties": []
+      }
+    ],
+    "relationshipEdges": [
+      {
+        "edgeId": "mercy.edge.virgin-tour-opening.representation.inventory.asset:10259",
+        "fromId": "mercy.fact.02cb7a58d582a22515b9",
+        "toId": "representation.inventory.asset:10259",
+        "predicate": "contextually_matches_representation",
+        "state": "visible_inferred_filename_match",
+        "sourceSense": "archive.nas.postgresql",
+        "evidence": "Preserved filename tokens: seattle, tour, virgin; the graph match is source-scoped and the file was fingerprinted in the read-only inspection receipt.",
+        "nonclaim": "This edge does not identify the aired master, original production file, complete broadcast capture, or canonical performance representation."
+      },
+      {
+        "edgeId": "mercy.edge.virgin-tour-opening.representation.inventory.asset:10690",
+        "fromId": "mercy.fact.02cb7a58d582a22515b9",
+        "toId": "representation.inventory.asset:10690",
+        "predicate": "contextually_matches_representation",
+        "state": "visible_inferred_filename_match",
+        "sourceSense": "archive.nas.postgresql",
+        "evidence": "Preserved filename tokens: seattle, tour, virgin; the graph match is source-scoped and the file was fingerprinted in the read-only inspection receipt.",
+        "nonclaim": "This edge does not identify the aired master, original production file, complete broadcast capture, or canonical performance representation."
+      }
+    ],
+    "gaps": [
+      "The two local files are receipt-backed filename/context matches to the Seattle opening fact; neither is promoted as the aired master, original production file, or complete broadcast capture.",
+      "The retained source describes opening-night costume variation across the tour but does not identify which local file corresponds to which captured segment.",
+      "No typed setlist-item, broadcast-master, tag, or recording-version edge is asserted from the filename alone."
+    ],
+    "inputFingerprints": {
+      "graph_database": "sha256:a58a64bd595ff091637ccd7795fdea601176e1ee9a9b57a0a0ce69adab589b99",
+      "graph_receipt": "sha256:af7f1cc4a9a266f9850217ab22648197430a40357c756e4e2eaa5ae5019c8369",
+      "qa_receipt": "sha256:793838d3eea5f33811a422b5338d8cc47c79cea24ee75b6d240e652630db8205",
+      "retained_snapshot": "sha256:cf1f1c40f52bf0c43f378c20a31e27a4e8b02d79cf2531c0dde925ccd5e84558",
+      "virgin_tour_png": "64b44e00cac94bdd56c70802aa1b5f04a7e16f4ff0fc0e9d0d238b2296195a60",
+      "virgin_tour_mp4": "8556f055139c26dad4bd6b652f8b31c0d08a1f515fc179dbaf9d016813b5ad39"
+    },
+    "provenanceJobId": "mercy-reader-virgin-tour-opening-inspection-2026-10-21-v1",
+    "sourceSearchState": "source_bundles_and_representation_match_materialized",
+    "authorityBoundary": "Derived performance, broadcast, and representation projection only; the retained source, operational inventory, local files, and canonical performance/release authorities remain separate, and no canonical, inventory, media, filesystem, or public-network writes occurred.",
+    "nextAction": "Seek retained broadcast provenance, a technical tag, or curator testimony before adding aired-master, B-roll, setlist-item, or recording-version edges; preserve the current inferred state until then."
   }
 ];
