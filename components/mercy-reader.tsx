@@ -30,6 +30,7 @@ import {
 import { MercyCandidateQueue } from "@/components/mercy-candidate-queue";
 
 type CorrectionType = "connect" | "separate_identity" | "hold_relationship";
+type SearchScope = "year" | "all";
 
 const correctionOptions: Array<{ value: CorrectionType; label: string; detail: string }> = [
   { value: "connect", label: "Keep this link", detail: "The relationship is useful in this context." },
@@ -69,6 +70,7 @@ function highlightDateLabel(highlight: MercyYearHighlight) {
 export function MercyReader() {
   const [query, setQuery] = useState("");
   const [eventType, setEventType] = useState("all");
+  const [searchScope, setSearchScope] = useState<SearchScope>("year");
   const [readerMode, setReaderMode] = useState<"calendar" | "candidates">("calendar");
   const [selectedYear, setSelectedYear] = useState(mercyReaderMeta.year);
   const [selectedFactId, setSelectedFactId] = useState(mercyTimeline[0].factId);
@@ -82,22 +84,27 @@ export function MercyReader() {
   const eventTypes = useMemo(() => ["all", ...Array.from(new Set(mercyTimeline.map((event) => event.eventType)))], []);
   const selectedYearSummary = mercyReaderYears.find((summary) => summary.year === selectedYear) ?? mercyReaderYears[0];
   const selectedYearHighlights = useMemo(() => mercyReaderYearHighlights.filter((highlight) => highlight.year === selectedYear), [selectedYear]);
+  const normalizedQuery = query.trim().toLowerCase();
+  const allYearHighlights = useMemo(() => {
+    if (searchScope !== "all" || normalizedQuery.length < 2) return [];
+    return mercyReaderYearHighlights.filter((highlight) => [highlight.year, highlight.title, highlight.factType, highlight.assertion, highlight.dateStart, highlight.dateEnd, ...highlight.sourceLanes].join(" ").toLowerCase().includes(normalizedQuery));
+  }, [normalizedQuery, searchScope]);
   const visibleEvents = useMemo(() => {
-    const normalized = query.trim().toLowerCase();
-    if (selectedYear !== mercyReaderMeta.year) return [];
+    if (selectedYear !== mercyReaderMeta.year || searchScope !== "year") return [];
     return mercyTimeline.filter((event) => {
       const matchesType = eventType === "all" || event.eventType === eventType;
       const searchable = [event.title, event.place, event.eventType, event.assertion, event.sourceExcerpt, ...event.sourceClusters].join(" ").toLowerCase();
-      return matchesType && (!normalized || searchable.includes(normalized));
+      return matchesType && (!normalizedQuery || searchable.includes(normalizedQuery));
     });
-  }, [eventType, query, selectedYear]);
+  }, [eventType, normalizedQuery, searchScope, selectedYear]);
   const visibleHighlights = useMemo(() => {
-    const normalized = query.trim().toLowerCase();
-    return selectedYearHighlights.filter((highlight) => !normalized || [highlight.title, highlight.assertion, highlight.dateStart, ...highlight.sourceLanes].join(" ").toLowerCase().includes(normalized));
-  }, [query, selectedYearHighlights]);
+    if (searchScope === "all") return allYearHighlights;
+    return selectedYearHighlights.filter((highlight) => !normalizedQuery || [highlight.title, highlight.assertion, highlight.dateStart, ...highlight.sourceLanes].join(" ").toLowerCase().includes(normalizedQuery));
+  }, [allYearHighlights, normalizedQuery, searchScope, selectedYearHighlights]);
 
   const selectedEvent = mercyTimeline.find((event) => event.factId === selectedFactId) ?? visibleEvents[0] ?? mercyTimeline[0];
-  const selectedHighlight = selectedYearHighlights.find((highlight) => highlight.factId === selectedHighlightId) ?? visibleHighlights[0] ?? selectedYearHighlights[0];
+  const selectedHighlight = visibleHighlights.find((highlight) => highlight.factId === selectedHighlightId) ?? visibleHighlights[0];
+  const selectedHighlightYearSummary = mercyReaderYears.find((summary) => summary.year === selectedHighlight?.year) ?? selectedYearSummary;
   const selectedConnections = mercyConnections.filter((connection) => connection.factId === selectedEvent.factId);
   const selectedRepresentationIds = new Set(selectedConnections.flatMap((connection) => connection.representationIds ?? []));
   const selectedRepresentations = mercyRepresentations.filter((representation) => selectedRepresentationIds.has(representation.representationId));
@@ -110,6 +117,7 @@ export function MercyReader() {
 
   function chooseYear(year: number) {
     setSelectedYear(year);
+    setSearchScope("year");
     setQuery("");
     setEventType("all");
     setSelectedHighlightId(mercyReaderYearHighlights.find((highlight) => highlight.year === year)?.factId ?? "");
@@ -118,6 +126,7 @@ export function MercyReader() {
   }
 
   function chooseHighlight(highlight: MercyYearHighlight) {
+    setSelectedYear(highlight.year);
     setSelectedHighlightId(highlight.factId);
     setCorrection(null);
     setCorrectionStatus("");
@@ -200,38 +209,49 @@ export function MercyReader() {
           <div><strong>{selectedYearSummary.connectionCount.toLocaleString()}</strong><span>typed links</span></div>
           <div><strong>{selectedYearSummary.representationCount.toLocaleString()}</strong><span>representations</span></div>
         </div>
+        <div className="mercy-search-scope" role="group" aria-label="Historical search scope">
+          <span>Search scope</span>
+          <button type="button" className={searchScope === "year" ? "selected" : ""} onClick={() => setSearchScope("year")}>This year</button>
+          <button type="button" className={searchScope === "all" ? "selected" : ""} onClick={() => setSearchScope("all")}>All years <small>1958–2026</small></button>
+        </div>
       </div>
 
       <div className="mercy-reader-layout">
-        <section className="mercy-timeline-panel" aria-label={`${selectedYear} timeline`}>
+        <section className="mercy-timeline-panel" aria-label={searchScope === "all" ? "Historical knowledge search" : `${selectedYear} timeline`}>
           <div className="mercy-section-heading">
-            <div><p className="eyebrow">TIMELINE</p><h2>{selectedYear === mercyReaderMeta.year ? "One year, many connected moments" : `${selectedYear} date-bearing highlights`}</h2></div>
-            <span>{selectedYear === mercyReaderMeta.year ? visibleEvents.length : visibleHighlights.length} shown</span>
+            <div><p className="eyebrow">{searchScope === "all" ? "HISTORICAL SEARCH" : "TIMELINE"}</p><h2>{searchScope === "all" ? "Search across the archive spine" : selectedYear === mercyReaderMeta.year ? "One year, many connected moments" : `${selectedYear} date-bearing highlights`}</h2></div>
+            <span>{searchScope === "all" ? `${visibleHighlights.length} matches` : `${selectedYear === mercyReaderMeta.year ? visibleEvents.length : visibleHighlights.length} shown`}</span>
           </div>
           <div className="mercy-search-row">
-            <label className="mercy-search-box"><Search size={16} /><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder={`Search ${selectedYear}`} aria-label={`Search the ${selectedYear} working canon`} /></label>
-            <label className="mercy-filter"><span className="sr-only">Filter event type</span><select value={eventType} disabled={selectedYear !== mercyReaderMeta.year} onChange={(event) => setEventType(event.target.value)} aria-label="Filter event type">{eventTypes.map((value) => <option key={value} value={value}>{value === "all" ? "All types" : value}</option>)}</select></label>
+            <label className="mercy-search-box"><Search size={16} /><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder={searchScope === "all" ? "Search people, works, places, or sources" : `Search ${selectedYear}`} aria-label={searchScope === "all" ? "Search all historical knowledge" : `Search the ${selectedYear} working canon`} /></label>
+            <label className="mercy-filter"><span className="sr-only">Filter event type</span><select value={eventType} disabled={selectedYear !== mercyReaderMeta.year || searchScope === "all"} onChange={(event) => setEventType(event.target.value)} aria-label="Filter event type">{eventTypes.map((value) => <option key={value} value={value}>{value === "all" ? "All types" : value}</option>)}</select></label>
           </div>
           <div className="mercy-timeline-list">
-            {selectedYear === mercyReaderMeta.year && visibleEvents.length ? visibleEvents.map((event) => (
+            {searchScope === "all" && query.trim().length < 2 ? <p className="mercy-empty-state">Type at least two characters to search the 113 indexed date-bearing highlights across 1958–2026. Results remain compact, source-labelled research leads.</p> : searchScope === "all" && visibleHighlights.length ? visibleHighlights.map((highlight) => (
+              <button key={highlight.factId} type="button" className={`mercy-event-row mercy-highlight-row ${selectedHighlight?.factId === highlight.factId ? "selected" : ""}`} onClick={() => chooseHighlight(highlight)}>
+                <span className="mercy-event-date"><CalendarDays size={14} />{highlightDateLabel(highlight)}</span>
+                <span className="mercy-event-copy"><strong>{highlight.title}</strong><small>{highlight.year} · {highlight.datePrecision} precision · {highlight.sourceLanes.join(", ")}</small><em>{highlight.assertion}</em></span>
+                <ArrowUpRight size={16} />
+              </button>
+            )) : searchScope === "year" && selectedYear === mercyReaderMeta.year && visibleEvents.length ? visibleEvents.map((event) => (
               <button key={event.factId} type="button" className={`mercy-event-row ${selectedEvent.factId === event.factId ? "selected" : ""}`} onClick={() => chooseEvent(event)}>
                 <span className="mercy-event-date"><CalendarDays size={14} />{dateLabel(event)}</span>
                 <span className="mercy-event-copy"><strong>{event.title}</strong><small>{event.place} · {event.eventType}</small><em>{sourceLabel(event)}</em></span>
                 <ArrowUpRight size={16} />
               </button>
-            )) : selectedYear !== mercyReaderMeta.year && visibleHighlights.length ? visibleHighlights.map((highlight) => (
+            )) : searchScope === "year" && selectedYear !== mercyReaderMeta.year && visibleHighlights.length ? visibleHighlights.map((highlight) => (
               <button key={highlight.factId} type="button" className={`mercy-event-row mercy-highlight-row ${selectedHighlight?.factId === highlight.factId ? "selected" : ""}`} onClick={() => chooseHighlight(highlight)}>
                 <span className="mercy-event-date"><CalendarDays size={14} />{highlightDateLabel(highlight)}</span>
                 <span className="mercy-event-copy"><strong>{highlight.title}</strong><small>{highlight.datePrecision} precision · {highlight.sourceLanes.join(", ")}</small><em>{highlight.assertion}</em></span>
                 <ArrowUpRight size={16} />
               </button>
-            )) : <p className="mercy-empty-state">No {selectedYear} event matches that search. An empty result is a search boundary, not proof that nothing happened.</p>}
+            )) : <p className="mercy-empty-state">{searchScope === "all" ? "No historical highlight matches that search. An empty result is a search boundary, not proof that nothing happened." : `No ${selectedYear} event matches that search. An empty result is a search boundary, not proof that nothing happened.`}</p>}
           </div>
-          <p className="mercy-cohort-footnote">{selectedYear === mercyReaderMeta.year ? <>Connected room source bundle: <span className="mono">{mercyReaderMeta.sourceReceipt}</span></> : <>Compact index source: <span className="mono">{mercyReaderMeta.aggregateContract.sourcePath}</span></>}</p>
+          <p className="mercy-cohort-footnote">{searchScope === "all" ? <>Search index source: <span className="mono">{mercyReaderMeta.aggregateContract.sourcePath}</span></> : selectedYear === mercyReaderMeta.year ? <>Connected room source bundle: <span className="mono">{mercyReaderMeta.sourceReceipt}</span></> : <>Compact index source: <span className="mono">{mercyReaderMeta.aggregateContract.sourcePath}</span></>}</p>
         </section>
 
         <section className="mercy-detail-panel" aria-label="Selected event detail">
-          {selectedYear === mercyReaderMeta.year ? <>
+          {searchScope === "year" && selectedYear === mercyReaderMeta.year ? <>
           <div className="mercy-detail-kicker"><Sparkles size={15} /> Selected historical moment</div>
           <h2>{selectedEvent.title}</h2>
           <p className="mercy-detail-assertion">{selectedEvent.assertion}</p>
@@ -254,18 +274,18 @@ export function MercyReader() {
           {correctionStatus ? <div className="mercy-correction-status"><Check size={15} /> {correctionStatus}</div> : null}
           {correction ? <div className="mercy-correction-box"><div className="mercy-block-heading"><div><h3>Private curator correction</h3><span>{correction.predicate} → {correction.target}</span></div><button type="button" className="mercy-close-button" onClick={() => setCorrection(null)} aria-label="Close correction form">×</button></div><p className="mercy-muted">This records your bounded decision in the private ledger. It does not rewrite the working canon, canonical SQLite, NAS inventory, or archive media.</p><div className="mercy-choice-list">{correctionOptions.map((option) => <button key={option.value} type="button" className={correctionType === option.value ? "selected" : ""} onClick={() => setCorrectionType(option.value)}><span><strong>{option.label}</strong><small>{option.detail}</small></span>{correctionType === option.value ? <Check size={15} /> : null}</button>)}</div><textarea value={correctionNote} onChange={(event) => setCorrectionNote(event.target.value)} placeholder="Optional: say what you know and where this decision should stop." aria-label="Correction note" /><button type="button" className="mercy-save-button" onClick={saveCorrection} disabled={savingCorrection}>{savingCorrection ? "Saving private correction…" : "Save private correction"}</button></div> : null}
           </> : <>
-            <div className="mercy-detail-kicker"><CalendarDays size={15} /> Aggregate year surface</div>
-            <h2>{selectedYear} working-canon highlights</h2>
-            <p className="mercy-detail-assertion">This year is visible through the independently QA-passed resumed graph snapshot. The compact index keeps date-bearing leads discoverable while the upstream aggregate JSON&apos;s duplicate-ID hold remains explicit; no working-graph row becomes a canonical claim.</p>
+            <div className="mercy-detail-kicker"><CalendarDays size={15} /> {searchScope === "all" ? "Historical search result" : "Aggregate year surface"}</div>
+            <h2>{searchScope === "all" ? selectedHighlight ? `${selectedHighlight.year} · ${selectedHighlight.title}` : "Search the historical index" : `${selectedYear} working-canon highlights`}</h2>
+            <p className="mercy-detail-assertion">{searchScope === "all" ? "This is a source-labelled result from the QA-passed full-span index. It is a research lead with date precision and provenance, not an automatic canonical claim." : "This year is visible through the independently QA-passed resumed graph snapshot. The compact index keeps date-bearing leads discoverable while the upstream aggregate JSON's duplicate-ID hold remains explicit; no working-graph row becomes a canonical claim."}</p>
             <div className="mercy-fact-grid">
-              <div><span>Visible facts</span><strong>{selectedYearSummary.factCount.toLocaleString()}</strong><small>derived year projection</small></div>
-              <div><span>Date claims</span><strong>{selectedYearSummary.dateClaimCount.toLocaleString()}</strong><small>date roles remain separate</small></div>
-              <div><span>Connections</span><strong>{selectedYearSummary.connectionCount.toLocaleString()}</strong><small>typed, not identity merges</small></div>
+              <div><span>Visible facts</span><strong>{selectedHighlightYearSummary.factCount.toLocaleString()}</strong><small>derived year projection</small></div>
+              <div><span>Date claims</span><strong>{selectedHighlightYearSummary.dateClaimCount.toLocaleString()}</strong><small>date roles remain separate</small></div>
+              <div><span>Connections</span><strong>{selectedHighlightYearSummary.connectionCount.toLocaleString()}</strong><small>typed, not identity merges</small></div>
             </div>
-            <div className="mercy-detail-block"><div className="mercy-block-heading"><h3>Selected date-bearing lead</h3><span>source-labelled</span></div>
-              {selectedHighlight ? <article className="mercy-year-highlight-detail"><strong>{selectedHighlight.title}</strong><span>{highlightDateLabel(selectedHighlight)} · {selectedHighlight.datePrecision} precision · {Math.round(selectedHighlight.confidence * 100)}% confidence</span><p>{selectedHighlight.assertion}</p><small>{selectedHighlight.factId} · {selectedHighlight.sourceLanes.join(", ")}</small></article> : <p className="mercy-muted">No date-bearing historical-event highlight is materialized for this year in the compact index. That is a coverage boundary, not proof that nothing happened.</p>}
+            <div className="mercy-detail-block"><div className="mercy-block-heading"><h3>{searchScope === "all" ? "Selected search result" : "Selected date-bearing lead"}</h3><span>source-labelled</span></div>
+              {selectedHighlight ? <article className="mercy-year-highlight-detail"><strong>{selectedHighlight.title}</strong><span>{highlightDateLabel(selectedHighlight)} · {selectedHighlight.datePrecision} precision · {Math.round(selectedHighlight.confidence * 100)}% confidence</span><p>{selectedHighlight.assertion}</p><small>{selectedHighlight.factId} · {selectedHighlight.sourceLanes.join(", ")}</small></article> : <p className="mercy-muted">{searchScope === "all" ? "Enter a search term to inspect a source-labelled result across the historical index." : "No date-bearing historical-event highlight is materialized for this year in the compact index. That is a coverage boundary, not proof that nothing happened."}</p>}
             </div>
-            <div className="mercy-uncertainty"><CircleAlert size={15} /><div><strong>Scope boundary stays visible</strong><span>Full event, source-bundle, and representation detail is next for this year; the aggregate row remains a derived research lead.</span></div></div>
+            <div className="mercy-uncertainty"><CircleAlert size={15} /><div><strong>Scope boundary stays visible</strong><span>{searchScope === "all" ? "Search finds source-labelled date-bearing leads across the full span; it does not merge identities or replace the connected event room." : "Full event, source-bundle, and representation detail is next for this year; the aggregate row remains a derived research lead."}</span></div></div>
           </>}
         </section>
       </div>
