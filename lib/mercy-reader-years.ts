@@ -1,7 +1,7 @@
 // Generated from the read-only aggregate MERCY working graph. Do not hand-edit.
-// Source status remains derived/qa_pending; this index never promotes canonical or inventory claims.
-// Source DB: lmstudio_operating_model/knowledge/mercy-working-canon/mercy-full-span-connected-working-canon-1958-2026-v1.aggregate-v1/mercy-working-graph-1958-2026-v1.rebuild-20261021-indexed.sqlite
-// Source DB fingerprint: sha256:5fdd7b4e671dd46337afa72293ff85ba28e131a666a629f5560e04b9b3f0b828
+// Source graph status is qa_pass_working_graph; this index never promotes canonical or inventory claims.
+// Source DB: lmstudio_operating_model/knowledge/mercy-working-canon/mercy-full-span-connected-working-canon-1958-2026-v1.aggregate-v1/mercy-working-graph-1958-2026-v1.rebuild-20261021-resumed.sqlite
+// Source DB fingerprint: sha256:a58a64bd595ff091637ccd7795fdea601176e1ee9a9b57a0a0ce69adab589b99
 
 export type MercyYearSummary = {
   year: number;
